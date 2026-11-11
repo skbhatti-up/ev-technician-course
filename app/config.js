@@ -3,6 +3,6 @@
 // automatic sharing of study time and quiz results (see sync/README.md).
 // Leave it empty to keep everything on the trainee's phone.
 window.EV_CONFIG = {
-  syncUrl: '',
+  syncUrl: 'https://script.google.com/macros/s/AKfycbyaiyAiA-5OsTVouELL-xCevlD6rDBCDulyb4uaPCDrXEMVaZe5B5lo1lDrwqTS7EYo/exec',
   version: '__VERSION__'
 };
