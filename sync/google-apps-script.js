@@ -6,11 +6,13 @@
  *
  * Setup steps are in sync/README.md.
  * Version 2: adds "Needs help with", "Comments" and "Weak in exams".
+ * Version 3: adds the Car tab columns (parts explored, fault jobs solved, job results).
  */
 var HEADERS = ['Name', 'Last update', 'Study hours', 'Study days', 'Modules read', 'Quizzes passed',
   'Quiz average %', 'Exam attempts', 'Exams not finished', 'Exam passes', 'Best exam %',
   'Best exam safety', 'Last exam', 'Practice answered', 'Practice correct', 'Ready', 'Device id',
-  'Needs help with', 'Comments', 'Weak in exams'];
+  'Needs help with', 'Comments', 'Weak in exams',
+  'Car parts explored', 'Car jobs solved', 'Car job results'];
 var ID_COL = 17; // "Device id" stays in column 17 so rows made by version 1 still match
 
 function doPost(e) {
@@ -32,7 +34,8 @@ function doPost(e) {
       d.bestExam === null || d.bestExam === undefined ? '' : d.bestExam,
       clean(d.bestExamSafety, 10), d.lastExam ? new Date(d.lastExam) : '',
       d.practiceAnswered || 0, d.practiceCorrect || 0, d.ready ? 'YES' : 'not yet', clean(d.id, 40),
-      clean(help, 4000), clean(d.comments, 3000), clean(d.examWeak, 200)
+      clean(help, 4000), clean(d.comments, 3000), clean(d.examWeak, 200),
+      (d.carPartsExplored || 0) + ' / 19', (d.carJobsSolved || 0) + ' / 8', clean(d.carJobs, 400)
     ];
 
     var ss = SpreadsheetApp.getActiveSpreadsheet();

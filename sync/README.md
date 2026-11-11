@@ -31,6 +31,15 @@ git commit -m "Switch on progress sharing"
 git push
 ```
 
+## Updating the script (keeps the same address)
+
+When `google-apps-script.js` changes (for example version 3 added the Car tab columns):
+
+1. Open the sheet, then **Extensions → Apps Script**. Replace all the code with the new file and press **Save**.
+2. Press **Deploy → Manage deployments**, click the pencil (edit) icon, set **Version** to **New version**, and press **Deploy**.
+
+The web app address stays the same, so the app needs no change. New columns appear at the right of both tabs after the next update arrives. Until you do this, the old script keeps working and simply ignores the new fields.
+
 ## What you will see
 
 - **Latest** tab: one row per trainee with name, last update, study hours, study days, modules read, quizzes passed, exam attempts and passes, best exam score, safety score and whether they have met the readiness rule.

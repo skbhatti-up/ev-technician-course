@@ -57,7 +57,10 @@ for a, b in zip(marks, marks[1:]):
 
 # ---- shell
 shell = open(os.path.join(here, 'shell.html'), encoding='utf-8').read()
-out = (shell.replace('/*COURSE_CSS*/', css)
+cardir = os.path.join(root, 'car')
+car_page = open(os.path.join(cardir, 'index.html'), encoding='utf-8').read()
+car_view = re.search(r'<!--CAR-->(.*?)<!--/CAR-->', car_page, flags=re.S).group(1)
+out = (shell.replace('<!--CAR_VIEW-->', car_view).replace('/*COURSE_CSS*/', css)
             .replace('<!--SVG_DEFS-->', defs)
             .replace('<!--TEMPLATES-->', '\n'.join(templates + apx))
             .replace('__VERSION__', version))
@@ -65,6 +68,8 @@ open(os.path.join(docs, 'index.html'), 'w', encoding='utf-8').write(out)
 open(os.path.join(docs, 'bank.js'), 'w', encoding='utf-8').write('window.BANK=' + json.dumps(bank, ensure_ascii=False, separators=(',', ':')) + ';')
 for f in ('app.js', 'app.css', 'manifest.webmanifest'):
     shutil.copyfile(os.path.join(here, f), os.path.join(docs, f))
+for f in ('car.js', 'car.css', 'parts.js', 'faults.js'):   # the car explorer (Car tab)
+    shutil.copyfile(os.path.join(cardir, f), os.path.join(docs, f))
 sw = open(os.path.join(here, 'sw.js'), encoding='utf-8').read().replace('__VERSION__', version)
 open(os.path.join(docs, 'sw.js'), 'w', encoding='utf-8').write(sw)
 cfg_path = os.path.join(docs, 'config.js')

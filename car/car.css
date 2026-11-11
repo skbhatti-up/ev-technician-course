@@ -1,0 +1,163 @@
+.carx{
+  --teal:#0B6E69;--teal-l:#E3F3F1;--ink:#1B2A33;--mute:#5A6B76;--line:#D5DDE2;--bg:#F4F7F8;
+  --hv:#E8590C;--ac:#7048E8;--lv:#1C7ED6;--cool:#0CA5B0;--il:#E0A800;--mech:#6B7780;
+}
+.carx .wrap{max-width:1040px;margin:0 auto;padding:12px 16px 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:820px){
+.carx .wrap{grid-template-columns:minmax(0,420px) minmax(0,1fr);align-items:start}
+.carx .stage{position:sticky;top:58px}}
+.carx .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 12px;overflow:hidden}
+.carx .card h3{margin:0 0 .4em;font-size:1.05em}
+.carx .muted{color:var(--mute);font-size:.9em;margin:.2em 0}
+.carx .stage{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 10px 8px}
+.carx .statebar{display:flex;align-items:center;gap:10px;min-height:32px;padding:0 4px 6px}
+.carx .state{font-weight:700;font-size:.85em;border-radius:20px;padding:3px 11px;background:#EEF2F4;color:var(--mute);white-space:nowrap}
+.carx .state.ready{background:#E9F7EC;color:#2B8A3E}
+.carx .state.drive{background:#FFF0E6;color:var(--hv)}
+.carx .state.regen{background:#E7F5FF;color:var(--lv)}
+.carx .state.charge{background:#F3F0FF;color:var(--ac)}
+.carx .state.busy{background:#FFF6DD;color:#B7791F}
+.carx #car{display:block;width:100%;max-height:72vh;margin:0 auto;touch-action:manipulation}
+
+/* drawing */
+.carx .body rect{fill:#F7FAFB;stroke:#AEB8BF;stroke-width:2}
+.carx .body .glass{fill:#DCEBF2;stroke:#AEB8BF;stroke-width:1}
+.carx .body .seat{fill:#EEF2F4;stroke:#C6D0D6;stroke-width:1.2}
+.carx .front{font-size:9px;letter-spacing:.2em;fill:#8A99A3;text-anchor:middle;font-weight:700}
+.carx .wheel{fill:#2D3A42}
+.carx .shaft{stroke:var(--mech);stroke-width:6;stroke-linecap:round;stroke-dasharray:10 4}
+.carx .shaft.dead{stroke:#C6D0D6;stroke-dasharray:none;stroke-width:4}
+.carx .box{stroke-width:2;fill:#fff}
+.carx .box.hv{stroke:var(--hv);fill:#FFF4EC}
+.carx .box.lv{stroke:var(--lv);fill:#EEF6FD}
+.carx .box.cool{stroke:var(--cool);fill:#E6F7F8}
+.carx .box.mech{stroke:var(--mech);fill:#F1F3F4}
+.carx .box.batt{stroke:var(--hv);fill:rgba(255,244,236,.55);stroke-width:2.5}
+.carx .box.msd{stroke:var(--hv);fill:var(--hv)}
+.carx .part[data-id=msd] .lbl{fill:#fff}
+.carx .cellgrid{pointer-events:none}
+.carx .socfill{fill:rgba(43,138,62,.16);pointer-events:none;transition:y .4s,height .4s}
+.carx .rotor{stroke:var(--hv);stroke-width:3;stroke-linecap:round;transform-box:fill-box;transform-origin:center}
+.carx .hvilknob{fill:#FFF8DB;stroke:var(--il);stroke-width:2}
+.carx .lbl{font-size:11px;font-weight:650;fill:var(--ink);text-anchor:middle;pointer-events:none}
+.carx .lbl.sm{font-size:9.5px}
+.carx .lbl.xs{font-size:8.5px}
+.carx .battlbl{fill:#A6460A}
+.carx .part{cursor:pointer;outline:none}
+.carx .part:hover .box,.carx .part:focus-visible .box{filter:drop-shadow(0 0 3px rgba(11,110,105,.6))}
+.carx .part.sel .box,.carx .part.sel .hvilknob,.carx .part.sel .wheel{stroke:var(--teal);stroke-width:3.5;filter:drop-shadow(0 0 5px rgba(11,110,105,.8))}
+.carx .part.live .box.hv,.carx .part.live .box.batt,.carx .part.live .box.msd{animation:glow 1.6s ease-in-out infinite}
+.carx .part.live .box.lv{filter:drop-shadow(0 0 3px rgba(28,126,214,.7))}
+.carx .part.live .box.cool{filter:drop-shadow(0 0 3px rgba(12,165,176,.7))}
+@keyframes glow{50%{filter:drop-shadow(0 0 5px rgba(232,89,12,.9))}}
+
+/* cables */
+.carx .cable{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.carx .cable.hv{stroke:var(--hv);stroke-width:5;opacity:.45}
+.carx .cable.ac{stroke:var(--ac);stroke-width:5;opacity:.45}
+.carx .cable.lv{stroke:var(--lv);stroke-width:3;opacity:.45}
+.carx .cable.cool{stroke:var(--cool);stroke-width:3;opacity:.4;stroke-dasharray:2 4}
+.carx .cable.il{stroke:var(--il);stroke-width:1.6;opacity:.55;stroke-dasharray:1 3}
+.carx .cable.tap{stroke:transparent;stroke-width:14;opacity:1;cursor:pointer}
+.carx .flow{fill:none;stroke-linecap:round;stroke:#fff;stroke-width:2.2;stroke-dasharray:4 10;opacity:0;animation:dash var(--dur,1.2s) linear infinite;pointer-events:none}
+.carx .flow.on{opacity:1}
+.carx .flow.rev{animation-direction:reverse}
+.carx .flow.cool{stroke:#0CA5B0;stroke-width:3;stroke-dasharray:6 8}
+.carx .flow.il{stroke:var(--il);stroke-width:2.4;stroke-dasharray:3 5}
+.carx .on-cable{opacity:1!important}
+@keyframes dash{to{stroke-dashoffset:-28}}
+.carx .spin .shaft:not(.dead){animation:dash calc(var(--wdur,1s)) linear infinite}
+.carx .rotor{stroke-dasharray:6 4}
+.carx .spin .rotor{animation:dash calc(var(--wdur,1s) / 3) linear infinite}
+.carx .legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.74em;color:var(--mute);padding:6px 4px 0}
+.carx .legend .k{display:inline-block;width:16px;height:4px;border-radius:2px;vertical-align:middle;margin-right:4px}
+.carx .k.hv{background:var(--hv)}
+.carx .k.ac{background:var(--ac)}
+.carx .k.lv{background:var(--lv)}
+.carx .k.cool{background:var(--cool)}
+.carx .k.il{background:var(--il)}
+
+/* controls */
+.carx .modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.carx .modes button{font:inherit;font-size:.86em;font-weight:650;padding:10px 4px;border-radius:10px;border:2px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.carx .modes button.on{border-color:var(--teal);background:var(--teal);color:#fff}
+.carx .modes button:disabled{opacity:.45;cursor:not-allowed}
+.carx .drive{margin:14px 0 4px}
+.carx .pedlbl{display:flex;justify-content:space-between;align-items:baseline;font-size:.8em;color:var(--mute)}
+.carx .pedlbl b{color:var(--ink);font-size:1.1em}
+.carx input[type=range]{width:100%;margin:8px 0;accent-color:var(--teal);height:28px}
+.carx #pedal{background:linear-gradient(90deg,#D0EBFF 0,#fff 50%,#FFE8D9 100%);border-radius:14px}
+.carx .toggles{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:.88em}
+.carx .mini{font:inherit;font-size:.85em;padding:5px 10px;border-radius:8px;border:1.5px solid var(--teal);color:var(--teal);background:#fff;cursor:pointer}
+.carx .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+@media (min-width:520px){
+.carx .grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.carx .grid div{background:#F3F6F7;border-radius:10px;padding:7px 9px;min-width:0}
+.carx .grid small{display:block;font-size:.7em;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.carx .grid b{font-size:1.35em;font-variant-numeric:tabular-nums}
+.carx .grid em{font-style:normal;font-size:.72em;color:var(--mute);margin-left:3px}
+.carx .note{min-height:1.4em;font-size:.88em;margin:10px 0 0;color:#8A4B00}
+.carx .socset{margin-top:8px;font-size:.85em;color:var(--mute)}
+
+/* contactor diagram */
+.carx #kdiag{width:100%;display:block}
+.carx #kdiag .kbatt{fill:#FFF4EC;stroke:var(--hv);stroke-width:2}
+.carx #kdiag .kw{fill:none;stroke:#8A99A3;stroke-width:2}
+.carx #kdiag .kres{fill:#FFF6DD;stroke:#B7791F;stroke-width:1.5}
+.carx #kdiag .cap{stroke:var(--ink);stroke-width:3}
+.carx #kdiag g circle{fill:#fff;stroke:var(--ink);stroke-width:1.5}
+.carx #kdiag .blade{stroke:var(--ink);stroke-width:2.5;stroke-linecap:round;transform-box:view-box;transition:transform .25s}
+.carx #kdiag g.closed .blade{stroke:#2B8A3E}
+.carx #kdiag g.closed circle{fill:#2B8A3E;stroke:#2B8A3E}
+.carx .busbar{height:8px;background:#E6ECEF;border-radius:6px;overflow:hidden;margin:4px 0 8px}
+.carx .busbar i{display:block;height:100%;width:0;background:var(--hv);border-radius:6px}
+.carx .seq{margin:0;padding-left:1.3em;font-size:.88em}
+.carx .seq li{margin:3px 0;color:var(--mute)}
+.carx .seq li.now{color:var(--ink);font-weight:650}
+.carx .seq li.done{color:#2B8A3E}
+.carx .seq li.fail{color:#C92A2A;font-weight:700}
+.carx .warn{display:flex;flex-wrap:wrap;gap:6px;padding:0 4px}
+.carx .warn span{background:#FFF3BF;color:#8A4B00;border:1px solid #F2C94C;font-size:.78em;font-weight:700;border-radius:8px;padding:3px 9px;margin-bottom:6px}
+.carx .part.removed .box{opacity:.25;stroke-dasharray:3 3}
+
+/* fault finding */
+.carx .fault h3{color:#C92A2A}
+.carx .fault .jobcard{background:#FFF9F0;border:1px dashed #E8A55C;border-radius:10px;padding:10px 12px;margin:8px 0}
+.carx .fault .jobcard b{display:block;font-size:.78em;letter-spacing:.06em;text-transform:uppercase;color:#A6460A;margin-bottom:2px}
+.carx .tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:10px 0}
+.carx .tools button,.carx .ptools button{font:inherit;font-size:.84em;font-weight:650;padding:9px 6px;border-radius:9px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);cursor:pointer;text-align:center}
+.carx .tools button.safe{border-color:#C92A2A;color:#C92A2A}
+.carx .tools button.safe.isolated{background:#C92A2A;color:#fff}
+.carx .ptools{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.carx .ptools button{flex:1;min-width:120px}
+.carx .clock{float:right;font-size:.8em;font-weight:700;color:var(--mute);background:#EEF2F4;border-radius:20px;padding:2px 9px}
+.carx .findings{list-style:none;padding:0;margin:8px 0 0;font-size:.88em;max-height:300px;overflow:auto}
+.carx .findings li{border-left:3px solid var(--line);padding:5px 9px;margin:0 0 6px;background:#FAFBFC;border-radius:0 6px 6px 0}
+.carx .findings li small{display:block;color:var(--mute);font-weight:700;font-size:.78em;text-transform:uppercase;letter-spacing:.04em}
+.carx .findings li.bad{border-color:#C92A2A;background:#FFF5F5}
+.carx .findings li.key{border-color:#E8590C}
+.carx .findings table{border-collapse:collapse;width:100%;margin-top:3px}
+.carx .findings td{padding:2px 4px;border-bottom:1px solid #EEF2F4}
+.carx .findings td:last-child{text-align:right;font-weight:650;font-variant-numeric:tabular-nums}
+.carx .iso{border:2px solid #C92A2A;border-radius:10px;padding:10px 12px;margin:8px 0;background:#FFF5F5}
+.carx .iso p{margin:.2em 0 .5em;font-size:.9em}
+.carx .iso button{display:block;width:100%;margin:5px 0;font:inherit;font-size:.88em;padding:8px;border-radius:8px;border:1.5px solid #C92A2A;background:#fff;color:#1B2A33;cursor:pointer;text-align:left}
+.carx .iso button.done{background:#E9F7EC;border-color:#2B8A3E;color:#2B8A3E}
+.carx .iso button:disabled{cursor:default}
+.carx .finish select{width:100%;font:inherit;padding:9px;border:2px solid var(--line);border-radius:10px;margin:6px 0}
+.carx .result{border-radius:10px;padding:10px 12px;margin:8px 0}
+.carx .result.ok{background:#E9F7EC}
+.carx .result.no{background:#FDECEC}
+.carx .result ul{margin:.3em 0;padding-left:1.2em}
+.carx .btn{display:inline-block;background:var(--teal);color:#fff;border:0;border-radius:10px;padding:10px 16px;font:inherit;font-weight:650;cursor:pointer}
+.carx .btn.wide{display:block;width:100%;margin:8px 0 0}
+.carx .btn.alt{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+
+/* info */
+.carx #info h3{color:var(--teal)}
+.carx #iBody p{margin:.45em 0}
+.carx #iBody .safety{background:#FDECEC;border-left:4px solid #C92A2A;padding:7px 10px;border-radius:6px}
+.carx #iBody .livep{background:#E9F7EC;padding:6px 10px;border-radius:6px;font-size:.92em}
+.carx .mods{margin-top:8px}
+.carx .mods span,.carx .mods a{text-decoration:none;display:inline-block;background:var(--teal-l);color:var(--teal);font-weight:700;font-size:.8em;border-radius:20px;padding:3px 10px;margin:0 4px 4px 0}
+.carx .explored{text-align:center}

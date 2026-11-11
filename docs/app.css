@@ -59,3 +59,7 @@ input.txt{width:100%;font:inherit;padding:11px 12px;border:2px solid #D5DDE2;bor
 .readmark{text-align:center;margin:18px 0 0;font-weight:650}
 pre.report{white-space:pre-wrap;background:#F3F5F6;border-radius:10px;padding:12px;font-family:inherit;font-size:.92em;margin:8px 0}
 @media print{.bar,.tabs{display:none}body{padding:0}}
+/* Car tab */
+#carView .wrap{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+#carView .stage{top:62px}
+.tabs a{padding-left:2px;padding-right:2px}

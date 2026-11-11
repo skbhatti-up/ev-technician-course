@@ -1,7 +1,8 @@
 // Service worker: makes the app installable and usable offline.
 // Network first (so updates arrive when online), cache as the offline fallback.
 const CACHE = 'evhtc-__VERSION__';
-const CORE = ['./', 'index.html', 'app.css', 'app.js', 'bank.js', 'config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const CORE = ['./', 'index.html', 'app.css', 'app.js', 'bank.js', 'config.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png',
+  'car.js', 'car.css', 'parts.js', 'faults.js'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

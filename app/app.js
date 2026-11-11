@@ -74,7 +74,19 @@
       needHelp: Object.keys(S.help).slice(0, 60),
       comments: Object.keys(S.notes).map(function (m) { return 'M' + m + ': ' + S.notes[m]; }).join(' | ').slice(0, 3000),
       examWeak: weakMods(),
+      carPartsExplored: car().parts, carJobsSolved: car().solved, carJobsTried: car().tried, carJobs: car().jobs,
       modules: MODS.map(function (x) { var o = mod(x.m); return { m: x.m, seconds: o.t, read: o.read, quizBest: o.qbest < 0 ? null : o.qbest + '/' + o.qn, quizTries: o.qtries }; })
+    };
+  }
+  // the Car tab keeps its own records; summarise them for the report and the sheet
+  function car() {
+    var v = {}, f = {};
+    try { v = JSON.parse(localStorage.getItem('evcar.v1')) || {}; f = JSON.parse(localStorage.getItem('evcar.faults')) || {}; } catch (e) { }
+    var parts = Object.keys(v.parts || {}).length, ids = Object.keys(f);
+    var solved = ids.filter(function (k) { return f[k].ok; });
+    return {
+      parts: parts, tried: ids.length, solved: solved.length,
+      jobs: ids.map(function (k) { return (f[k].t || k) + (f[k].ok ? ' ✔' : ' ✘') + ' ' + f[k].stars + '/6'; }).join(', ')
     };
   }
   function weakMods() {
@@ -98,6 +110,7 @@
       .then(function () { syncing = false; showSync(); });
   }
   window.addEventListener('online', function () { sync(true); });
+  window.addEventListener('evcar', function () { save(); });   // Car tab progress changed
   document.addEventListener('visibilitychange', function () { sync(document.hidden); });
   setInterval(function () { sync(false); }, 15 * 60000);
 
@@ -341,6 +354,7 @@
       'Module quizzes passed: ' + st.qpass + ' of ' + QUIZ_MODS.length + (st.qdone ? ' (average ' + st.qavg + '%)' : '') + '\n' +
       'Exam attempts: ' + st.exams + (st.abandoned ? ' (+' + st.abandoned + ' not finished)' : '') + ', passes: ' + st.passes + '\n' +
       (st.best ? 'Best exam: ' + Math.round(100 * st.best.score / st.best.total) + '%, safety ' + st.best.safeRight + '/' + st.best.safeTotal + '\n' : '') +
+      'Car explorer: ' + car().parts + ' of 19 parts explored, ' + car().solved + ' of 8 fault jobs solved' + (car().tried ? ' (' + car().jobs + ')' : '') + '\n' +
       'Ready for hands-on training: ' + (st.ready ? 'YES' : 'not yet') +
       (Object.keys(S.help).length ? '\n\nI need help with:\n- ' + Object.keys(S.help).join('\n- ') : '') +
       (Object.keys(S.notes).length ? '\n\nMy comments:\n' + Object.keys(S.notes).map(function (m) { return 'Module ' + m + ': ' + S.notes[m]; }).join('\n') : '');
@@ -366,6 +380,9 @@
     clearInterval(activeTimer); activeTimer = null;
     if (!S.name) return welcome();
     var h = location.hash.replace(/^#/, '') || 'home', p = h.split('/');
+    var carView = document.getElementById('carView');
+    if (carView) { carView.hidden = p[0] !== 'car'; view.hidden = p[0] === 'car'; }
+    if (p[0] === 'car') { chrome('Car explorer', 'car'); return; }
     if (p[0] === 'm') return reader(+p[1]);
     if (p[0] === 'apx') return appendix(p[1]);
     if (p[0] === 'course') return course();
