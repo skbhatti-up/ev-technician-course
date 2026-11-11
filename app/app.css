@@ -1,6 +1,5 @@
 /* App shell styles (the course's own styles are injected separately) */
-html,body{height:100%}
-body{background:#F4F7F8;padding-bottom:76px}
+body{background:#F4F7F8;min-height:100vh}
 .bar{position:sticky;top:0;z-index:20;background:#0B6E69;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 16px;box-shadow:0 1px 6px rgba(0,0,0,.2)}
 .bar b{font-size:1.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bar .back{background:none;border:0;color:#fff;font-size:1.5em;line-height:1;padding:0 6px 2px 0;cursor:pointer;display:none}
@@ -9,8 +8,8 @@ body{background:#F4F7F8;padding-bottom:76px}
 .tabs a{flex:1;text-align:center;padding:9px 4px 8px;text-decoration:none;color:#5A6B76;font-size:.74em;font-weight:600}
 .tabs a svg{display:block;margin:0 auto 2px;width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .tabs a.on{color:#0B6E69}
-#view{max-width:860px;margin:0 auto;padding:14px 16px 24px;background:transparent}
-#view.reader{background:#fff;padding:0 16px 40px}
+#view{max-width:860px;margin:0 auto;padding:14px 16px calc(110px + env(safe-area-inset-bottom));background:transparent;min-width:0}
+#view.reader{background:#fff;padding:0 16px calc(120px + env(safe-area-inset-bottom))}
 #view.reader section.mod{padding-top:18px}
 .card{background:#fff;border:1px solid #D5DDE2;border-radius:14px;padding:14px 16px;margin:0 0 12px}
 .card h3{border:0;margin:0 0 .4em;padding:0;color:#1B2A33;font-size:1.05em}
@@ -39,6 +38,13 @@ body{background:#F4F7F8;padding-bottom:76px}
 .check li{padding:4px 0 4px 30px;position:relative}
 .check li::before{content:"";position:absolute;left:2px;top:7px;width:18px;height:18px;border-radius:50%;border:2px solid #AEB8BF}
 .check li.ok::before{background:#2B8A3E;border-color:#2B8A3E;box-shadow:inset 0 0 0 3px #fff}
+select.txt{width:100%;max-width:100%;min-width:0;font:inherit;padding:11px 12px;border:2px solid #D5DDE2;border-radius:10px;margin:6px 0;background:#fff;text-overflow:ellipsis}
+.card{overflow:hidden}
+.helpbtn{display:inline-block;margin:2px 0 6px;font:inherit;font-size:.82em;font-weight:650;border:1.5px solid #7048E8;color:#7048E8;background:#fff;border-radius:20px;padding:4px 12px;cursor:pointer}
+.helpbtn.on{background:#7048E8;color:#fff}
+textarea.txt{width:100%;font:inherit;padding:11px 12px;border:2px solid #D5DDE2;border-radius:10px;margin:6px 0;min-height:84px;resize:vertical}
+.fb{border:2px solid #B197FC;background:#FBFAFF;border-radius:12px;padding:12px 14px;margin:22px 0 0}
+.fb h4{margin:0 0 .2em;color:#7048E8}
 input.txt{width:100%;font:inherit;padding:11px 12px;border:2px solid #D5DDE2;border-radius:10px;margin:6px 0}
 /* quiz runner */
 .qhead{display:flex;justify-content:space-between;align-items:center;font-size:.85em;color:#5A6B76;font-weight:600}

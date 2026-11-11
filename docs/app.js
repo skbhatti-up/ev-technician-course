@@ -25,6 +25,7 @@
     try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; }
   }
   var S = load() || { v: 1, id: 'd' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8), name: '', created: Date.now(), mods: {}, days: {}, practice: { n: 0, right: 0 }, exams: [], lastSync: 0, dirty: true };
+  S.help = S.help || {}; S.notes = S.notes || {};
   function save() { S.dirty = true; try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { } }
   function mod(m) { return S.mods[m] || (S.mods[m] = { t: 0, read: false, qbest: -1, qn: 0, qtries: 0 }); }
   function today() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
@@ -70,8 +71,15 @@
       bestExamSafety: st.best ? st.best.safeRight + '/' + st.best.safeTotal : null,
       lastExam: S.exams.length ? new Date(S.exams[S.exams.length - 1].ts).toISOString() : null,
       ready: st.ready,
+      needHelp: Object.keys(S.help).slice(0, 60),
+      comments: Object.keys(S.notes).map(function (m) { return 'M' + m + ': ' + S.notes[m]; }).join(' | ').slice(0, 3000),
+      examWeak: weakMods(),
       modules: MODS.map(function (x) { var o = mod(x.m); return { m: x.m, seconds: o.t, read: o.read, quizBest: o.qbest < 0 ? null : o.qbest + '/' + o.qn, quizTries: o.qtries }; })
     };
+  }
+  function weakMods() {
+    var c = {}; S.exams.forEach(function (e) { (e.weak || []).forEach(function (m) { c[m] = (c[m] || 0) + 1; }); });
+    return Object.keys(c).map(Number).sort(function (a, b) { return c[b] - c[a] || a - b; }).slice(0, 8).map(function (m) { return 'M' + m + (c[m] > 1 ? ' x' + c[m] : ''); }).join(', ');
   }
   function showSync() {
     if (!CFG.syncUrl) { syncEl.textContent = ''; return; }
@@ -181,6 +189,24 @@
       '<div class="nextmod">' + (prev ? '<a class="btn alt" href="#m/' + prev.m + '">← Module ' + prev.m + '</a>' : '') +
       (nxt ? '<a class="btn" href="#m/' + nxt.m + '">Module ' + nxt.m + ' →</a>' : '<a class="btn" href="#quiz">Go to the exam →</a>') + '</div><div id="endmark" style="height:1px"></div>';
     view.appendChild(foot);
+    // 'I need help with this' flag under every section heading
+    view.querySelectorAll('section.mod > h3').forEach(function (h) {
+      var key = h.textContent.trim().slice(0, 70);
+      var b = document.createElement('button'); b.className = 'helpbtn'; b.type = 'button';
+      function paint() { var on = !!S.help[key]; b.classList.toggle('on', on); b.textContent = on ? 'Marked: I need help with this ✓' : 'I need help with this'; }
+      b.onclick = function () { if (S.help[key]) delete S.help[key]; else S.help[key] = Date.now(); save(); paint(); sync(false); };
+      paint(); h.insertAdjacentElement('afterend', b);
+    });
+    var fb = document.createElement('div'); fb.className = 'fb';
+    fb.innerHTML = '<h4>What was hard to understand?</h4><p class="muted">Write in English, Urdu or Roman Urdu. Your sponsor will see this and can arrange extra help.</p>' +
+      '<textarea class="txt" id="note" maxlength="500" placeholder="For example: I do not understand why pre-charge is needed"></textarea>' +
+      '<button class="btn alt" id="notesave" type="button">Save comment</button>';
+    view.insertBefore(fb, foot);
+    var ta = fb.querySelector('#note'); ta.value = S.notes[m] || '';
+    fb.querySelector('#notesave').onclick = function () {
+      var v = ta.value.trim(); if (v) S.notes[m] = v; else delete S.notes[m];
+      save(); S.lastSync = 0; sync(true); this.textContent = 'Saved ✓';
+    };
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es, ob) {
         if (es[0].isIntersecting && current && current.m === m) { current.atEnd = true; if (!o.read && o.t >= MIN_READ_S) { o.read = true; save(); markRead(); } ob.disconnect(); }
@@ -220,7 +246,7 @@
     current = { q: 1 }; chrome('Quiz', 'quiz');
     var st = stats(), last = S.exams[S.exams.length - 1];
     var wait = last ? last.ts + COOLDOWN_H * 3600000 - Date.now() : 0;
-    var opts = '<option value="0">All modules</option>' + MODS.map(function (x) { return '<option value="' + x.m + '">Module ' + x.m + ' — ' + esc(x.title) + '</option>'; }).join('');
+    var opts = '<option value="0">All modules</option>' + MODS.map(function (x) { var t = x.title.length > 24 ? x.title.slice(0, 23) + '…' : x.title; return '<option value="' + x.m + '">' + x.m + ' · ' + esc(t) + '</option>'; }).join('');
     var hist = S.exams.slice().reverse().map(function (e) {
       return '<li>' + fmtDate(e.ts) + ' — ' + (e.abandoned ? '<span class="chip wait">not finished</span>' : Math.round(100 * e.score / e.total) + '% · safety ' + e.safeRight + '/' + e.safeTotal + (e.pass ? '<span class="chip ok">pass</span>' : '<span class="chip no">fail</span>')) + '</li>';
     }).join('');
@@ -255,6 +281,7 @@
       var n = o.qs.length, html;
       if (o.exam) {
         var pass = right / n >= PASS && safeRight === safeTotal;
+        o.rec.weak = Object.keys(wrongMods).map(Number);
         o.rec.abandoned = false; o.rec.score = right; o.rec.total = n; o.rec.safeRight = safeRight; o.rec.safeTotal = safeTotal; o.rec.pass = pass; o.rec.dur = Math.round((Date.now() - start) / 1000);
         save(); sync(true);
         var rev = Object.keys(wrongMods).map(Number).sort(function (a, b) { return a - b; });
@@ -314,7 +341,9 @@
       'Module quizzes passed: ' + st.qpass + ' of ' + QUIZ_MODS.length + (st.qdone ? ' (average ' + st.qavg + '%)' : '') + '\n' +
       'Exam attempts: ' + st.exams + (st.abandoned ? ' (+' + st.abandoned + ' not finished)' : '') + ', passes: ' + st.passes + '\n' +
       (st.best ? 'Best exam: ' + Math.round(100 * st.best.score / st.best.total) + '%, safety ' + st.best.safeRight + '/' + st.best.safeTotal + '\n' : '') +
-      'Ready for hands-on training: ' + (st.ready ? 'YES' : 'not yet');
+      'Ready for hands-on training: ' + (st.ready ? 'YES' : 'not yet') +
+      (Object.keys(S.help).length ? '\n\nI need help with:\n- ' + Object.keys(S.help).join('\n- ') : '') +
+      (Object.keys(S.notes).length ? '\n\nMy comments:\n' + Object.keys(S.notes).map(function (m) { return 'Module ' + m + ': ' + S.notes[m]; }).join('\n') : '');
   }
   function report() {
     current = { q: 1 }; chrome('Report', 'report');
@@ -326,6 +355,7 @@
         ? 'Your study time and quiz results are sent automatically to your course sponsor whenever the app is open and online. Last sent: ' + (S.lastSync ? new Date(S.lastSync).toLocaleString() : 'not yet') + '.'
         : 'Automatic sharing is not switched on yet. Use the WhatsApp button above.') + '</p>' +
       (CFG.syncUrl ? '<button class="btn alt wide" id="sy">Send now</button>' : '') + '</div>' +
+      '<div class="card"><h3>Topics I need help with</h3>' + (Object.keys(S.help).length ? '<ul>' + Object.keys(S.help).map(function (k) { return '<li>' + esc(k) + '</li>'; }).join('') + '</ul>' : '<p class="muted">None marked. Inside any module, tap "I need help with this" under a heading you find difficult.</p>') + '</div>' +
       '<div class="card"><h3>Profile</h3><p class="muted">Name: ' + esc(S.name) + '<br>Started: ' + fmtDate(S.created) + '<br>App version: ' + esc(CFG.version || '') + '</p></div>';
     document.getElementById('cp').onclick = function () { if (navigator.clipboard) navigator.clipboard.writeText(txt); this.textContent = 'Copied'; };
     var sy = document.getElementById('sy'); if (sy) sy.onclick = function () { S.dirty = true; sync(true); this.textContent = 'Sent'; };
