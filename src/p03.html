@@ -1,0 +1,442 @@
+
+<!-- ===================== MODULE 6 ===================== -->
+<section class="mod" data-part="Part C · The battery" data-title="Battery cells and chemistry">
+<div class="mh"><div class="n">6</div><div><div class="pt">Part C · The battery</div><h2>Battery cells and chemistry</h2><p>The battery is the most expensive part of the car. It starts with a single cell.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>How a lithium-ion cell stores and releases energy</li>
+<li>The main chemistries: LFP, NMC, NiMH and lead-acid</li>
+<li>The shapes cells come in, including BYD's Blade</li>
+<li>Why chemistry matters for safety, life and range</li></ul></div>
+
+<h3>6.1 Inside a lithium-ion cell</h3>
+<p>A cell has four main parts:</p>
+<ul>
+<li><b>Negative electrode (anode)</b> — graphite coated on copper foil.</li>
+<li><b>Positive electrode (cathode)</b> — a lithium metal compound coated on aluminium foil. The compound gives the chemistry its name (LFP, NMC…).</li>
+<li><b>Separator</b> — a very thin plastic sheet with tiny holes. It keeps the electrodes apart but lets lithium ions pass.</li>
+<li><b>Electrolyte</b> — a liquid that carries the ions. It is flammable.</li>
+</ul>
+<figure>
+<svg viewBox="0 0 720 280" role="img" aria-label="Cross-section of a lithium-ion cell during discharge">
+<rect x="150" y="70" width="420" height="160" rx="8" fill="#F6F8F9" stroke="#1B2A33" stroke-width="2"/>
+<rect x="160" y="80" width="18" height="140" fill="#C97B3C"/><rect x="178" y="80" width="110" height="140" class="kb"/>
+<rect x="542" y="80" width="18" height="140" fill="#AEB8BF"/><rect x="432" y="80" width="110" height="140" class="gb"/>
+<path d="M360 80 V220" stroke="#B7791F" stroke-width="5" stroke-dasharray="7 5"/>
+<text x="233" y="110" class="m bd">Anode (−)</text><text x="233" y="126" class="m s">graphite</text>
+<text x="487" y="110" class="m bd">Cathode (+)</text><text x="487" y="126" class="m s">LFP or NMC</text>
+<text x="360" y="246" class="m s">Separator, soaked in electrolyte</text>
+<g fill="#E8590C"><circle cx="250" cy="160" r="8"/><circle cx="310" cy="180" r="8"/><circle cx="330" cy="150" r="8"/><circle cx="400" cy="170" r="8"/><circle cx="210" cy="190" r="8"/></g>
+<g class="m s bd w"><text x="250" y="164">Li⁺</text><text x="310" y="184">Li⁺</text><text x="330" y="154">Li⁺</text><text x="400" y="174">Li⁺</text><text x="210" y="194">Li⁺</text></g>
+<path d="M280 200 H430" class="hv" style="stroke-width:2.5" marker-end="url(#ao)"/><text x="355" y="214" class="m s o">ions move inside the cell</text>
+<path d="M169 80 V36 H300 M420 36 H551 V80" class="ln"/><rect x="300" y="20" width="120" height="32" rx="6" class="yb"/><text x="360" y="41" class="m bd">Motor (load)</text>
+<path d="M190 28 H280" class="lv" marker-end="url(#ab)"/><text x="232" y="20" class="m s bl">electrons</text>
+<path d="M440 28 H530" class="lv" marker-end="url(#ab)"/>
+<text x="84" y="150" class="m s mu">copper foil</text><path d="M118 150 H158" class="ln" marker-end="url(#a)"/>
+<text x="636" y="150" class="m s mu">aluminium foil</text><path d="M596 150 H562" class="ln" marker-end="url(#a)"/>
+<text x="360" y="270" class="m s mu">Discharging shown. When charging, ions and electrons move the opposite way.</text>
+</svg>
+<figcaption><b>Figure 6.1</b> A lithium-ion cell while discharging. Lithium ions travel through the separator; electrons travel through the outside circuit and do the work.</figcaption></figure>
+<p>When you <b>charge</b>, the charger pushes lithium ions from the cathode into the graphite anode. When you <b>discharge</b>, they flow back and the electrons flow round the outside circuit, driving the motor. Nothing is burned or used up — ions simply move back and forth. That is why the cell can be recharged thousands of times.</p>
+<aside class="c danger"><h4>Danger</h4><p>If the separator is damaged — by a crash, a nail, a manufacturing fault or overheating — the two electrodes touch. This is an <b>internal short circuit</b>. The cell heats very quickly and can catch fire. Never drop, crush, puncture or open a lithium cell.</p></aside>
+
+<h3>6.2 The main chemistries</h3>
+<div class="tw"><table>
+<caption>Table 6.1 — Battery chemistries you will meet</caption>
+<thead><tr><th></th><th>LFP</th><th>NMC ("ternary")</th><th>NiMH</th><th>Lead-acid</th></tr></thead>
+<tbody>
+<tr><td><b>Full name</b></td><td>Lithium iron phosphate</td><td>Lithium nickel manganese cobalt oxide</td><td>Nickel-metal hydride</td><td>Lead-acid (incl. "graphene" type)</td></tr>
+<tr><td><b>Nominal cell voltage</b></td><td>3.2 V</td><td>3.6–3.7 V</td><td>1.2 V</td><td>2.0 V</td></tr>
+<tr><td><b>Working range per cell</b></td><td>2.5–3.65 V</td><td>3.0–4.2 V</td><td>1.0–1.5 V</td><td>1.75–2.4 V</td></tr>
+<tr><td><b>Energy per kg</b></td><td>Medium (150–190 Wh/kg)</td><td>High (220–280 Wh/kg)</td><td>Low (60–80)</td><td>Very low (30–40)</td></tr>
+<tr><td><b>Cycle life</b></td><td>Very long (3,000+)</td><td>Good (1,000–2,000)</td><td>Long in hybrid use</td><td>Short (300–500)</td></tr>
+<tr><td><b>Fire safety</b></td><td>Best of the lithium types</td><td>Needs more protection</td><td>Good</td><td>Good (acid and gas hazards)</td></tr>
+<tr><td><b>Cost</b></td><td>Lower</td><td>Higher</td><td>Medium</td><td>Lowest</td></tr>
+<tr><td><b>Where used</b></td><td>All BYD cars (Blade), most affordable Chinese EVs and PHEVs</td><td>Deepal S07/L07, long-range and performance EVs, Korean EVs</td><td>Toyota Aqua, Prius, older hybrids</td><td>12 V batteries, cheap e-bikes and rickshaws</td></tr>
+</tbody></table></div>
+
+<h4>What this means in practice</h4>
+<ul>
+<li><b>LFP</b> is tough, safe and long-lived, and it tolerates being charged to 100% often. It stores less energy per kilogram, so the pack is heavier for the same range. Its voltage hardly changes between 20% and 90% charge, which makes it hard for the car to know the exact charge level; makers ask owners to charge to 100% regularly so the BMS can re-calibrate.</li>
+<li><b>NMC</b> stores more energy in less weight, so it gives longer range and stronger power. It is less tolerant of heat and of sitting at 100% charge. Makers usually recommend charging to 80% for daily use. Chinese documents call it <b>NCM</b> or "ternary lithium" (三元锂); it is the same chemistry.</li>
+<li><b>NiMH</b> is old but reliable. It is heavy and holds little energy, which is fine for a hybrid that only needs 1–2 kWh.</li>
+<li><b>Lead-acid</b> is cheap and heavy and wears out quickly when deeply discharged.</li>
+</ul>
+<aside class="c pk"><h4>In Pakistan</h4><p>Our summers are hard on batteries. LFP copes with heat better than NMC, which is one reason it suits this market. But <b>no</b> lithium battery likes being parked in direct sun at 45 °C. Advising customers to park in shade is real, useful battery care.</p></aside>
+<p><b>Coming next:</b> <em>sodium-ion</em> cells (cheaper, no lithium, lower energy) are starting to appear in small Chinese EVs and scooters. <em>Solid-state</em> cells, with no liquid electrolyte, are in development. The principles in this course apply to both.</p>
+
+<h3>6.3 Cell shapes</h3>
+<figure>
+<svg viewBox="0 0 720 210" role="img" aria-label="Four cell formats: cylindrical, prismatic, pouch and blade">
+<g><ellipse cx="90" cy="50" rx="30" ry="9" class="kb"/><path d="M60 50 V140 A30 9 0 0 0 120 140 V50" class="kb"/><rect x="82" y="36" width="16" height="8" class="db"/>
+<text x="90" y="174" class="m bd">Cylindrical</text><text x="90" y="190" class="m s">like a large torch cell</text><text x="90" y="204" class="m s mu">Tesla, e-bikes</text></g>
+<g><rect x="220" y="50" width="100" height="100" rx="5" class="lb"/><rect x="238" y="40" width="16" height="10" class="db"/><rect x="286" y="40" width="16" height="10" class="db"/>
+<text x="270" y="174" class="m bd">Prismatic</text><text x="270" y="190" class="m s">hard aluminium can</text><text x="270" y="204" class="m s mu">most Chinese EVs</text></g>
+<g><rect x="400" y="56" width="110" height="90" rx="12" fill="#D5DDE2" stroke="#5A6B76" stroke-width="1.5"/><rect x="418" y="44" width="22" height="12" fill="#C97B3C"/><rect x="470" y="44" width="22" height="12" fill="#AEB8BF"/>
+<text x="455" y="174" class="m bd">Pouch</text><text x="455" y="190" class="m s">soft foil bag</text><text x="455" y="204" class="m s mu">Hyundai, Kia, some hybrids</text></g>
+<g><rect x="560" y="86" width="140" height="22" rx="3" class="hb"/><rect x="552" y="92" width="8" height="10" class="db"/><rect x="700" y="92" width="8" height="10" class="db"/>
+<text x="630" y="76" class="m s mu">about 96 cm long, 9 cm high</text>
+<text x="630" y="174" class="m bd">Blade</text><text x="630" y="190" class="m s">long, thin prismatic LFP</text><text x="630" y="204" class="m s mu">BYD</text></g>
+</svg>
+<figcaption><b>Figure 6.2</b> Cell formats. The chemistry inside can be the same; only the packaging differs.</figcaption></figure>
+<div class="tw"><table>
+<thead><tr><th>Format</th><th>Strong points</th><th>Weak points</th></tr></thead>
+<tbody>
+<tr><td>Cylindrical</td><td>Cheap to make, strong case, easy to cool</td><td>Thousands of cells and welds in one pack</td></tr>
+<tr><td>Prismatic</td><td>Large cells, fewer connections, easy to stack</td><td>Can swell with age</td></tr>
+<tr><td>Pouch</td><td>Light, flexible shape</td><td>Easily damaged, swells, needs strong support</td></tr>
+<tr><td>Blade</td><td>Cells act as structural beams; very good safety record in nail tests</td><td>Individual cells are hard to replace</td></tr>
+</tbody></table></div>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>A lithium-ion cell has an anode, cathode, separator and electrolyte. Ions move inside; electrons do work outside.</li>
+<li>LFP: 3.2 V, safer, longer life, heavier. NMC: 3.7 V, more energy, needs more care.</li>
+<li>NiMH is used in Toyota hybrids. Lead-acid in 12 V batteries and cheap e-bikes.</li>
+<li>Cells are cylindrical, prismatic, pouch or blade.</li>
+<li>A damaged separator means an internal short and possible fire.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 6</h3><p>Choose one answer for each question.</p><ol>
+<li>What is the nominal voltage of one LFP cell?<ul><li>1.2 V</li><li>2.0 V</li><li data-c>3.2 V</li><li>12 V</li></ul></li>
+<li>What is the job of the separator?<ul><li>Stores the lithium</li><li data-c>Keeps the electrodes apart while letting ions pass</li><li>Carries electrons to the motor</li><li>Cools the cell</li></ul></li>
+<li>Which chemistry does BYD's Blade battery use?<ul><li>NMC</li><li>NiMH</li><li>Lead-acid</li><li data-c>LFP</li></ul></li>
+<li>Compared with LFP, an NMC cell generally has…<ul><li data-c>more energy per kg but needs more care with heat and full charge</li><li>lower voltage and longer life</li><li>no fire risk</li><li>a lower price</li></ul></li>
+<li>Which battery type is found in a Toyota Aqua hybrid?<ul><li>LFP</li><li>Lead-acid</li><li data-c>NiMH</li><li>Sodium-ion</li></ul></li>
+<li>Why do makers ask owners of LFP cars to charge to 100% regularly?<ul><li>LFP is damaged below 100%</li><li data-c>Its flat voltage curve makes charge level hard to measure, so the BMS needs to re-calibrate</li><li>To heat the battery</li><li>To make the car faster</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 7 ===================== -->
+<section class="mod" data-part="Part C · The battery" data-title="Battery pack design and specifications">
+<div class="mh"><div class="n">7</div><div><div class="pt">Part C · The battery</div><h2>Battery pack design and specifications</h2><p>How hundreds of cells become one pack, and how to read the numbers that describe it.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>How cells are grouped into modules and packs</li>
+<li>How to calculate pack voltage and energy</li>
+<li>The meaning of SOC, SOH, C-rate and usable capacity</li>
+<li>How packs are cooled, and the difference between 400 V and 800 V systems</li></ul></div>
+
+<h3>7.1 Cell → module → pack</h3>
+<figure>
+<svg viewBox="0 0 720 220" role="img" aria-label="Cells are grouped into modules, modules into a pack">
+<rect x="40" y="70" width="34" height="70" rx="4" class="hb"/><text x="57" y="164" class="m bd">Cell</text><text x="57" y="180" class="m s">3.2 V</text>
+<path d="M90 105 H150" class="ln" marker-end="url(#a)"/>
+<g class="hb"><rect x="170" y="70" width="14" height="70"/><rect x="186" y="70" width="14" height="70"/><rect x="202" y="70" width="14" height="70"/><rect x="218" y="70" width="14" height="70"/><rect x="234" y="70" width="14" height="70"/><rect x="250" y="70" width="14" height="70"/><rect x="266" y="70" width="14" height="70"/><rect x="282" y="70" width="14" height="70"/></g>
+<rect x="164" y="62" width="138" height="86" rx="6" fill="none" stroke="#1B2A33" stroke-width="2"/>
+<text x="233" y="164" class="m bd">Module</text><text x="233" y="180" class="m s">cells welded together</text><text x="233" y="194" class="m s">+ voltage and temperature sensors</text>
+<path d="M320 105 H380" class="ln" marker-end="url(#a)"/>
+<rect x="400" y="40" width="290" height="130" rx="10" fill="#F6F8F9" stroke="#1B2A33" stroke-width="2"/>
+<g class="hb"><rect x="414" y="54" width="60" height="46" rx="3"/><rect x="480" y="54" width="60" height="46" rx="3"/><rect x="546" y="54" width="60" height="46" rx="3"/><rect x="414" y="108" width="60" height="46" rx="3"/><rect x="480" y="108" width="60" height="46" rx="3"/><rect x="546" y="108" width="60" height="46" rx="3"/></g>
+<rect x="616" y="54" width="62" height="46" rx="3" class="yb"/><text x="647" y="74" class="m s bd">BMS</text><text x="647" y="88" class="m s">contactors</text>
+<rect x="616" y="108" width="62" height="46" rx="3" class="lb"/><text x="647" y="128" class="m s bd">Cooling</text><text x="647" y="142" class="m s">plate</text>
+<text x="545" y="190" class="m bd">Pack</text><text x="545" y="206" class="m s">sealed case, 300–800 V, 300–600 kg</text>
+</svg>
+<figcaption><b>Figure 7.1</b> The traditional build: cell, module, pack.</figcaption></figure>
+<p>Newer designs remove steps to save weight and space:</p>
+<ul>
+<li><b>Cell-to-pack (CTP)</b> — no modules. Cells go straight into the pack. BYD Blade and many CATL packs do this.</li>
+<li><b>Cell-to-body (CTB)</b> — the top of the pack is the floor of the car (BYD Seal).</li>
+</ul>
+<aside class="c tip"><h4>Workshop tip</h4><p>Older module-type packs can be repaired by swapping one bad module. CTP and CTB packs are much harder to repair at cell level; often the whole pack is exchanged. Knowing which type you have tells you what repair is realistic before you quote a price.</p></aside>
+
+<h3>7.2 Pack voltage and energy</h3>
+<p>Pack layout is written as <b>xS yP</b>: x groups in series, each group having y cells in parallel.</p>
+<p style="text-align:center"><span class="f">Pack voltage = cells in series × cell voltage</span><br><span class="f">Pack capacity (Ah) = cells in parallel × cell Ah</span><br><span class="f">Pack energy (kWh) = pack voltage × pack Ah ÷ 1,000</span></p>
+<aside class="c ex"><h4>Worked example — BYD Atto 3 (extended range)</h4>
+<p>Published data: 126 Blade cells in series (126S1P), each 3.2 V and 150 Ah.</p>
+<p>Voltage = 126 × 3.2 = <b>403.2 V</b><br>Energy = 403.2 × 150 ÷ 1,000 = <b>60.48 kWh</b> — exactly the figure on the brochure.</p></aside>
+<aside class="c ex"><h4>Worked example — a typical NMC pack</h4>
+<p>96S2P using 3.65 V, 78 Ah cells.</p>
+<p>Nominal voltage = 96 × 3.65 = 350 V. Capacity = 2 × 78 = 156 Ah. Energy = 350 × 156 ÷ 1,000 = <b>54.6 kWh</b>.</p>
+<p>Fully charged: 96 × 4.2 = <b>403 V</b>. Empty: 96 × 3.0 = <b>288 V</b>.</p></aside>
+<aside class="c"><h4>Key idea</h4><p>Pack voltage is <b>not fixed</b>. It rises as the pack charges and falls as it empties. A "400 V" car may measure anything from about 290 V to 420 V. Always think in terms of <em>minimum, nominal and maximum</em> voltage.</p></aside>
+<figure>
+<svg viewBox="0 0 720 240" role="img" aria-label="Cell voltage against state of charge for LFP and NMC">
+<path d="M70 20 V190 H690" class="ln"/>
+<g class="s e"><text x="62" y="34">4.2 V</text><text x="62" y="76">3.7 V</text><text x="62" y="118">3.2 V</text><text x="62" y="176">2.5 V</text></g>
+<g class="s m"><text x="70" y="208">0%</text><text x="225" y="208">25%</text><text x="380" y="208">50%</text><text x="535" y="208">75%</text><text x="690" y="208">100%</text></g>
+<text x="380" y="230" class="m s bd">State of charge (SOC)</text>
+<path d="M70 150 C90 110 110 100 160 92 C300 74 500 58 640 40 L690 30" class="lv" style="stroke-width:3"/>
+<path d="M70 176 C80 130 95 122 130 119 C300 116 500 113 640 110 C670 108 682 96 690 78" class="hv" style="stroke-width:3"/>
+<text x="150" y="62" class="bd bl">NMC — voltage climbs steadily</text>
+<text x="330" y="140" class="bd o">LFP — almost flat from 20% to 90%</text>
+</svg>
+<figcaption><b>Figure 7.2</b> Cell voltage against state of charge. The flat LFP curve is why voltage alone cannot tell you the charge level of an LFP pack.</figcaption></figure>
+
+<h3>7.3 The words used to describe a battery</h3>
+<div class="tw"><table>
+<thead><tr><th>Term</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><b>SOC</b> — state of charge</td><td>How full the battery is now, in %</td><td>Like the fuel gauge: 80%</td></tr>
+<tr><td><b>SOH</b> — state of health</td><td>Present full capacity compared with when new, in %</td><td>A 60 kWh pack that now holds 54 kWh has SOH 90%</td></tr>
+<tr><td><b>DoD</b> — depth of discharge</td><td>How much has been used: 100% − SOC</td><td>SOC 30% = DoD 70%</td></tr>
+<tr><td><b>Gross capacity</b></td><td>Total energy the cells can hold</td><td>64 kWh</td></tr>
+<tr><td><b>Usable (net) capacity</b></td><td>The part the car lets you use. The rest is a hidden safety buffer at top and bottom.</td><td>60 kWh</td></tr>
+<tr><td><b>C-rate</b></td><td>Charge or discharge current compared with capacity. 1C empties or fills the battery in 1 hour.</td><td>60 kWh pack at 120 kW = 2C</td></tr>
+<tr><td><b>Cycle</b></td><td>One full charge and discharge (two half-charges count as one cycle)</td><td>LFP: 3,000+ cycles</td></tr>
+<tr><td><b>Internal resistance</b></td><td>Resistance inside the cells. Causes heat and voltage drop under load. Rises with age and cold.</td><td>Milliohms per cell</td></tr>
+</tbody></table></div>
+<figure>
+<svg viewBox="0 0 720 110" role="img" aria-label="Usable capacity window with buffers at top and bottom">
+<rect x="40" y="30" width="40" height="40" class="rb"/><rect x="80" y="30" width="560" height="40" class="gb"/><rect x="640" y="30" width="40" height="40" class="rb"/>
+<text x="360" y="55" class="m bd">Usable capacity — what the driver sees as 0% to 100%</text>
+<text x="60" y="88" class="m s r">bottom buffer</text><text x="660" y="88" class="m s r">top buffer</text>
+<path d="M40 16 H680" class="ln" marker-start="url(#a)" marker-end="url(#a)"/><text x="360" y="12" class="m s">Gross capacity</text>
+</svg>
+<figcaption><b>Figure 7.3</b> The car hides a small part of the battery at each end to protect the cells. "0%" on the dashboard is not truly empty.</figcaption></figure>
+<aside class="c ex"><h4>Worked example — C-rate</h4>
+<p>A 50 kWh pack is charged at a 100 kW fast charger. C-rate = 100 ÷ 50 = <b>2C</b>. In theory 0–100% in half an hour (in practice the car slows down above 80%).</p>
+<p>The same pack on a 7 kW home charger: 7 ÷ 50 = 0.14C — very gentle, about 7 hours.</p></aside>
+
+<h3>7.4 Battery power: why a small pack limits performance</h3>
+<p>A battery can only supply a certain maximum current safely. Since <span class="f">P = V × I</span>, the battery has a <b>maximum power</b>, and the motor cannot use more than the battery can give.</p>
+<ul>
+<li>A <b>bigger pack</b> (more cells in parallel) can give more current, so more power.</li>
+<li>A <b>cold, hot, old or nearly empty</b> pack can give less. The BMS tells the car to reduce power — the driver feels this as weak acceleration or sees a "tortoise" warning light.</li>
+<li>Under heavy current, voltage sags: <span class="f">V<sub>drop</sub> = I × R<sub>internal</sub></span>. An aged pack with high internal resistance sags more and heats more.</li>
+</ul>
+<p>This is why a hybrid with a 1.5 kWh battery can only drive electrically at low power, while a 60 kWh BEV pack can deliver 150 kW easily. Module 11 returns to this.</p>
+
+<h3>7.5 Keeping the pack at the right temperature</h3>
+<p>Lithium cells are happiest between about <b>15 °C and 35 °C</b>. Too hot and they age quickly or become unsafe. Too cold and they give less power and cannot be charged quickly.</p>
+<div class="tw"><table>
+<caption>Table 7.1 — Battery cooling methods</caption>
+<thead><tr><th>Method</th><th>How it works</th><th>Found on</th><th>Service points</th></tr></thead>
+<tbody>
+<tr><td><b>Air cooling</b></td><td>A fan blows cabin air through the pack</td><td>Toyota and Honda hybrids, older or cheaper EVs</td><td>Intake grille and filter under/behind the rear seat block with dust and pet hair → battery overheats. Very common fault.</td></tr>
+<tr><td><b>Liquid cooling</b></td><td>Coolant flows through a plate under the cells, then to a radiator or a chiller on the A/C system</td><td>Most modern EVs and PHEVs</td><td>Coolant level and condition, pump, leaks, special low-conductivity coolant</td></tr>
+<tr><td><b>Refrigerant (direct) cooling</b></td><td>A/C refrigerant flows directly through plates in the pack</td><td>BYD and some others</td><td>A/C system health directly affects the battery</td></tr>
+</tbody></table></div>
+<aside class="c pk"><h4>In Pakistan</h4><p>With 45 °C summers, battery cooling works very hard. A weak air-conditioning system is not only a comfort problem — on many EVs it will slow charging, cut power and shorten battery life. Dust is our other enemy: blocked battery fan filters on used Aqua and Prius cars are one of the most common causes of early hybrid battery failure here.</p></aside>
+
+<h3>7.6 400 V and 800 V systems</h3>
+<p>Most EVs today are called "400 V" (roughly 300–450 V). Newer high-end platforms use "800 V" (roughly 550–900 V).</p>
+<ul>
+<li><b>Advantage of 800 V:</b> half the current for the same power, so thinner cables, less heat, and much faster DC charging (250 kW and above).</li>
+<li><b>Cost:</b> more cells in series, more expensive power electronics (silicon carbide), and stricter insulation.</li>
+<li><b>For you:</b> the safety procedure is the same, but your meter and gloves must be rated for the voltage. A CAT III 1,000 V meter and Class 0 gloves cover both.</li>
+</ul>
+
+<h3>7.7 The pack case</h3>
+<p>The pack is a sealed metal case, usually rated <b>IP67</b> (dust-tight and able to survive short immersion in water). On it you will find the HV connectors, low-voltage signal connector, coolant pipes, a pressure-relief vent, the service disconnect on many models, and a <b>data label</b>.</p>
+<div class="tw"><table>
+<caption>Table 7.2 — Reading a battery pack label (example)</caption>
+<thead><tr><th>On the label</th><th>What it tells you</th></tr></thead>
+<tbody>
+<tr><td>Type: Li-ion (LFP)</td><td>Chemistry</td></tr>
+<tr><td>Rated voltage: 403.2 V</td><td>Nominal pack voltage → 126 LFP cells in series</td></tr>
+<tr><td>Rated capacity: 150 Ah</td><td>Pack amp-hours</td></tr>
+<tr><td>Rated energy: 60.48 kWh</td><td>403.2 × 150 ÷ 1,000</td></tr>
+<tr><td>Mass: 420 kg</td><td>You need a proper lifting table, not a trolley jack</td></tr>
+<tr><td>Warning symbols</td><td>High voltage, do not open, do not burn, recycle</td></tr>
+</tbody></table></div>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>Cells → modules → pack, or cells straight to pack (CTP).</li>
+<li>Voltage = series count × cell voltage. Energy = voltage × Ah.</li>
+<li>Pack voltage moves between a minimum and maximum as SOC changes.</li>
+<li>SOC = how full. SOH = how healthy. C-rate = how hard it is charged or discharged.</li>
+<li>The battery limits the maximum power available to the motor.</li>
+<li>Cooling is by air, liquid or refrigerant. Heat and dust are the big enemies in Pakistan.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 7</h3><p>Choose one answer for each question.</p><ol>
+<li>A pack has 100 LFP cells (3.2 V, 200 Ah) in series. What is its energy?<ul><li>32 kWh</li><li data-c>64 kWh</li><li>100 kWh</li><li>640 kWh</li></ul></li>
+<li>A battery that held 50 kWh when new now holds 40 kWh. What is its SOH?<ul><li>40%</li><li>50%</li><li data-c>80%</li><li>125%</li></ul></li>
+<li>A 40 kWh battery is charged at 80 kW. What is the C-rate?<ul><li>0.5C</li><li>1C</li><li data-c>2C</li><li>40C</li></ul></li>
+<li>What does "usable capacity" mean?<ul><li>The capacity when the battery is old</li><li data-c>The part of the total capacity the car allows the driver to use</li><li>The capacity at 800 V</li><li>The 12 V battery capacity</li></ul></li>
+<li>A used Toyota hybrid has an overheating battery. What simple thing should you check first?<ul><li>Engine oil</li><li>Tyre pressure</li><li data-c>Blocked battery cooling fan intake or filter</li><li>Wiper blades</li></ul></li>
+<li>What is the main benefit of an 800 V system over a 400 V system?<ul><li>It is safer to touch</li><li>It needs no cooling</li><li data-c>Half the current for the same power, allowing faster charging and thinner cables</li><li>It uses fewer cells</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 8 ===================== -->
+<section class="mod" data-part="Part C · The battery" data-title="Battery management and protection">
+<div class="mh"><div class="n">8</div><div><div class="pt">Part C · The battery</div><h2>Battery management and protection</h2><p>The BMS, contactors and pre-charge circuit: how the pack looks after itself.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>What the battery management system (BMS) measures and controls</li>
+<li>How contactors and the pre-charge circuit connect the battery to the car</li>
+<li>What cell balancing is and why one weak cell limits the whole pack</li>
+<li>What thermal runaway is, and what shortens battery life</li></ul></div>
+
+<h3>8.1 What the BMS does</h3>
+<p>A lithium cell is damaged by over-charging, over-discharging, too much current and extreme temperature. The <b>BMS</b> exists to stop these things happening.</p>
+<div class="tw"><table>
+<thead><tr><th>Job</th><th>How</th></tr></thead>
+<tbody>
+<tr><td><b>Measure</b></td><td>Voltage of every cell (or cell group), pack voltage, pack current, and temperatures at many points</td></tr>
+<tr><td><b>Calculate</b></td><td>SOC, SOH, and how much power the pack can safely give or accept right now</td></tr>
+<tr><td><b>Protect</b></td><td>Opens the contactors if voltage, current or temperature go outside safe limits</td></tr>
+<tr><td><b>Balance</b></td><td>Keeps all cells at the same charge level</td></tr>
+<tr><td><b>Control temperature</b></td><td>Requests cooling or heating</td></tr>
+<tr><td><b>Monitor insulation</b></td><td>Checks resistance between the HV system and the car body</td></tr>
+<tr><td><b>Communicate</b></td><td>Talks to the vehicle computer and the charger over CAN bus; stores fault codes</td></tr>
+</tbody></table></div>
+<p>The BMS usually has a <b>master</b> controller and several <b>slave</b> boards, one on each module or group of cells, which read the cell voltages and temperatures.</p>
+
+<h3>8.2 Inside the pack: contactors and pre-charge</h3>
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="Circuit of a battery pack with service disconnect, fuse, main contactors, pre-charge circuit and current sensor">
+<rect x="20" y="20" width="490" height="290" rx="12" fill="#FFF9F3" stroke="#E8590C" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="34" y="42" class="s bd o">INSIDE THE BATTERY PACK — always live</text>
+<g class="hb"><rect x="50" y="70" width="46" height="70" rx="4"/><rect x="50" y="190" width="46" height="70" rx="4"/></g>
+<text x="73" y="100" class="m s bd">Cells</text><text x="73" y="116" class="m s">half 1</text><text x="73" y="220" class="m s bd">Cells</text><text x="73" y="236" class="m s">half 2</text>
+<path d="M73 140 V152" class="hv"/><path d="M73 178 V190" class="hv"/>
+<rect x="36" y="152" width="74" height="26" rx="5" class="rb"/><text x="73" y="170" class="m s bd">Service plug</text>
+<path d="M73 70 V56 H150" class="hv"/>
+<rect x="150" y="44" width="60" height="24" rx="5" class="kb"/><text x="180" y="61" class="m s bd">Fuse</text>
+<path d="M210 56 H300" class="hv"/>
+<rect x="292" y="42" width="106" height="28" rx="5" class="yb"/><text x="345" y="61" class="m s bd">Main + contactor</text>
+<path d="M390 56 H560" class="hv"/>
+<path d="M240 56 V108 H262" class="hv" style="stroke-width:2.5"/>
+<rect x="262" y="96" width="70" height="24" rx="5" class="yb"/><text x="297" y="113" class="m s bd">Pre-charge</text>
+<rect x="344" y="96" width="70" height="24" rx="5" class="kb"/><text x="379" y="113" class="m s bd">Resistor</text>
+<path d="M332 108 H344 M414 108 H440 V56" class="hv" style="stroke-width:2.5"/>
+<path d="M73 260 V276 H170" class="hv"/>
+<rect x="170" y="264" width="90" height="24" rx="5" class="lb"/><text x="215" y="281" class="m s bd">Current sensor</text>
+<path d="M260 276 H300" class="hv"/>
+<rect x="292" y="262" width="106" height="28" rx="5" class="yb"/><text x="345" y="281" class="m s bd">Main − contactor</text>
+<path d="M390 276 H560" class="hv"/>
+<rect x="180" y="150" width="200" height="60" rx="8" class="gb"/><text x="280" y="176" class="m bd">BMS</text><text x="280" y="194" class="m s">measures cells, drives contactors</text>
+<path d="M96 105 H140 V165 H180 M96 225 H140 V195 H180" class="lv da"/>
+<path d="M330 150 V120 M345 210 V262 M360 150 V70 M215 264 V210" class="lv da"/>
+<rect x="560" y="40" width="140" height="252" rx="10" class="kb"/><text x="630" y="130" class="m bd">Inverter</text><text x="630" y="148" class="m s">with large</text><text x="630" y="162" class="m s">capacitor</text>
+<path d="M606 190 H654 M606 200 H654 M630 176 V190 M630 200 V214" class="ln" style="stroke-width:2.5"/>
+<text x="630" y="240" class="m s mu">+ charger, DC-DC,</text><text x="630" y="254" class="m s mu">A/C compressor</text>
+<text x="475" y="48" class="m s bd o">HV +</text><text x="475" y="296" class="m s bd o">HV −</text>
+</svg>
+<figcaption><b>Figure 8.1</b> Simplified battery pack circuit. Dashed blue lines are low-voltage sensing and control wires.</figcaption></figure>
+<p><b>Contactors</b> are heavy-duty relays. They are opened and closed by 12 V signals from the BMS. When the car is off, all contactors are open and no voltage leaves the pack.</p>
+
+<h4>Why pre-charge is needed</h4>
+<p>The inverter contains a large capacitor. An empty capacitor behaves like a short circuit for an instant. If the main contactors closed straight onto it, a huge current would rush in and weld the contacts together.</p>
+<aside class="c pic"><h4>Picture it — the canal gate</h4><p>Open a big gate suddenly onto a dry canal and the first rush of water tears at the banks. A careful operator opens a <b>small side gate</b> first, lets the canal fill gently, and only then lifts the main gate. Nothing rushes, because the levels are already equal. The pre-charge resistor is the small side gate; the inverter capacitor is the dry canal.</p></aside>
+<p>So the car connects in stages:</p>
+<ol class="steps">
+<li><b>Main negative contactor closes.</b> Click.</li>
+<li><b>Pre-charge contactor closes.</b> Current flows gently through the resistor and fills the capacitor. This takes a fraction of a second.</li>
+<li><b>BMS checks the voltage</b> on the inverter side. When it reaches about 95% of pack voltage, pre-charge is complete.</li>
+<li><b>Main positive contactor closes.</b> Click. The pre-charge contactor opens. The car shows <b>READY</b>.</li>
+</ol>
+<aside class="c tip"><h4>Workshop tip</h4><p>Listen when a car is switched to READY: you can hear the contactors click in sequence. If the voltage does not rise during pre-charge (for example, because of a short circuit or a failed resistor), the BMS stops and stores a <b>"pre-charge failure"</b> fault code. If a contactor has welded shut, the BMS will detect voltage where there should be none and refuse to start. These are common, logical faults you will learn to diagnose.</p></aside>
+
+<h3>8.3 Cell balancing: the weakest cell rule</h3>
+<p>Cells in series are like links in a chain. All carry the same current. But no two cells are perfectly identical; over time some hold slightly more charge than others.</p>
+<figure>
+<svg viewBox="0 0 720 230" role="img" aria-label="Unbalanced cells limit charging and discharging; balanced cells give full capacity">
+<text x="180" y="22" class="m bd">Unbalanced pack</text>
+<path d="M40 40 H320" class="rd da"/><text x="326" y="44" class="s r">max</text><path d="M40 170 H320" class="rd da"/><text x="326" y="174" class="s r">min</text>
+<g class="kb"><rect x="60" y="40" width="34" height="130"/><rect x="110" y="40" width="34" height="130"/><rect x="160" y="40" width="34" height="130"/><rect x="210" y="40" width="34" height="130"/><rect x="260" y="40" width="34" height="130"/></g>
+<g fill="#2B8A3E"><rect x="60" y="62" width="34" height="108"/><rect x="110" y="40" width="34" height="130"/><rect x="160" y="66" width="34" height="104"/><rect x="260" y="60" width="34" height="110"/></g>
+<rect x="210" y="96" width="34" height="74" fill="#C92A2A"/>
+<text x="127" y="60" class="m s bd w">full</text><text x="227" y="90" class="m s bd r">weak</text>
+<text x="180" y="192" class="m s">Charging stops when the fullest cell is full.</text><text x="180" y="208" class="m s">Driving stops when the weakest cell is empty.</text>
+<text x="180" y="224" class="m s bd r">Usable capacity is lost.</text>
+<path d="M360 10 V220" class="ln da"/>
+<text x="545" y="22" class="m bd">Balanced pack</text>
+<path d="M400 40 H680" class="rd da"/><path d="M400 170 H680" class="rd da"/>
+<g class="kb"><rect x="420" y="40" width="34" height="130"/><rect x="470" y="40" width="34" height="130"/><rect x="520" y="40" width="34" height="130"/><rect x="570" y="40" width="34" height="130"/><rect x="620" y="40" width="34" height="130"/></g>
+<g fill="#2B8A3E"><rect x="420" y="46" width="34" height="124"/><rect x="470" y="46" width="34" height="124"/><rect x="520" y="46" width="34" height="124"/><rect x="570" y="46" width="34" height="124"/><rect x="620" y="46" width="34" height="124"/></g>
+<text x="545" y="192" class="m s">All cells reach full and empty together.</text><text x="545" y="208" class="m s bd g">Full capacity available.</text>
+</svg>
+<figcaption><b>Figure 8.2</b> A pack is only as good as its weakest cell.</figcaption></figure>
+<p><b>Balancing</b> corrects this. In <em>passive</em> balancing (the common type), the BMS switches a small resistor across the highest cells to bleed off a little charge, usually near the end of charging. In <em>active</em> balancing, charge is moved from high cells to low cells.</p>
+<aside class="c"><h4>Key idea</h4><p>On a scan tool, look at the <b>difference between the highest and lowest cell voltage</b>. A healthy pack at rest shows a spread of a few millivolts (for example under 0.02–0.03 V). A large spread, or one cell that drops quickly under load, points to a failing cell or module. This single reading is one of the most useful in battery diagnosis.</p></aside>
+
+<h3>8.4 Insulation monitoring</h3>
+<p>Remember that the HV system is insulated from the car body. The BMS (or a separate unit) keeps measuring the resistance between HV+ and the body, and HV− and the body. Healthy values are in <b>megohms</b>. Regulations require at least 100 Ω per volt for DC parts and 500 Ω per volt where AC is present — for a 400 V car that is 40 kΩ to 200 kΩ as an absolute minimum.</p>
+<p>If the resistance falls — because of water, damaged cable insulation, coolant leaking into the pack, or a failed A/C compressor — the car logs an <b>"insulation fault"</b> (also called isolation fault or leakage fault) and may refuse to drive or charge. Finding these is a core EV diagnostic skill (Module 18).</p>
+
+<h3>8.5 Thermal runaway</h3>
+<p><b>Thermal runaway</b> is when a cell heats itself faster than it can cool. Heat triggers chemical reactions that make more heat. The cell vents hot, toxic, flammable gas and may burn, and the heat can spread to the next cell.</p>
+<div class="two">
+<div><h4>Causes</h4><ul><li>Crash or impact damage from below</li><li>Internal short from a manufacturing defect</li><li>Over-charging (failed BMS or wrong charger)</li><li>External short circuit</li><li>Outside fire or extreme heat</li><li>Water inside the pack</li></ul></div>
+<div><h4>Warning signs</h4><ul><li>Sweet, solvent-like or burning smell</li><li>Hissing or popping from the pack</li><li>White or grey "smoke" (vent gas)</li><li>Pack case hot to the back of the hand</li><li>Swollen case or modules</li><li>Battery temperature warning on dash</li></ul></div>
+</div>
+<aside class="c danger"><h4>Danger</h4><p>If you see any of these signs: stop work, move people away, move the car outside if it is safe to do so, and call the fire service. Do not try to open the pack. LFP is much harder to push into runaway than NMC, but <b>no chemistry is immune</b>.</p></aside>
+
+<h3>8.6 What makes a battery age</h3>
+<p>All batteries slowly lose capacity. A well-treated EV battery typically keeps more than 80% after 8–10 years. These things speed up ageing:</p>
+<div class="tw"><table>
+<thead><tr><th>Bad for the battery</th><th>Advice you can give customers</th></tr></thead>
+<tbody>
+<tr><td>High temperature</td><td>Park in shade or a garage. Keep the cooling system serviced.</td></tr>
+<tr><td>Sitting at 100% for long periods (especially NMC)</td><td>For daily use charge NMC to 80%. Charge to 100% just before a long trip. Follow the maker's advice for LFP.</td></tr>
+<tr><td>Sitting near 0%</td><td>Do not leave the car parked empty. Store at 40–60% if leaving it for weeks.</td></tr>
+<tr><td>Frequent DC fast charging</td><td>Use home AC charging for normal days; fast chargers for journeys.</td></tr>
+<tr><td>Poor-quality or wrong chargers</td><td>Especially on e-bikes: use the correct charger for the battery.</td></tr>
+</tbody></table></div>
+
+<h3>8.7 Inside a battery repair: what gets measured</h3>
+<p>Opening a pack is Level 4 work (Module 21) and is taught only under supervision. But you should understand the measurements, because they explain every battery report you will read.</p>
+<div class="tw"><table>
+<caption>Table 8.1 — Battery repair measurements</caption>
+<thead><tr><th>Measurement</th><th>What it is</th><th>What it tells you</th></tr></thead>
+<tbody>
+<tr><td><b>OCV</b> — open-circuit voltage</td><td>Cell voltage at rest, with no current flowing</td><td>The cell's state of charge; cells that sit lower than the rest</td></tr>
+<tr><td><b>Internal resistance</b> (IR)</td><td>Measured in milliohms with a special battery tester</td><td>Cell health. A worn or damaged cell has higher resistance, sags under load and runs hot.</td></tr>
+<tr><td><b>Capacity test</b></td><td>Charge fully, discharge at a set current, and count the amp-hours delivered</td><td>True SOH: measured capacity ÷ rated capacity. Slow, but the most reliable.</td></tr>
+<tr><td><b>Insulation resistance</b></td><td>Pack + and pack − to the metal case, with an insulation tester</td><td>Leakage inside the pack</td></tr>
+<tr><td><b>Airtightness test</b></td><td>After the lid is refitted, the pack is filled with low-pressure air and the pressure is watched</td><td>Whether the seal will keep water out (IP67)</td></tr>
+</tbody></table></div>
+<figure>
+<svg viewBox="0 0 720 220" role="img" aria-label="Cell status matrix: 24 cell voltages with one cell 59 millivolts low and one 28 millivolts low">
+<text x="40" y="24" class="bd">Cell status matrix — open-circuit voltage of each cell</text>
+<rect x="40" y="40" width="72" height="36" rx="4" class="gb"/><text x="76" y="63" class="m s bd">3.298 V</text>
+<rect x="120" y="40" width="72" height="36" rx="4" class="gb"/><text x="156" y="63" class="m s bd">3.301 V</text>
+<rect x="200" y="40" width="72" height="36" rx="4" class="gb"/><text x="236" y="63" class="m s bd">3.299 V</text>
+<rect x="280" y="40" width="72" height="36" rx="4" class="gb"/><text x="316" y="63" class="m s bd">3.300 V</text>
+<rect x="360" y="40" width="72" height="36" rx="4" class="gb"/><text x="396" y="63" class="m s bd">3.297 V</text>
+<rect x="440" y="40" width="72" height="36" rx="4" class="gb"/><text x="476" y="63" class="m s bd">3.302 V</text>
+<rect x="520" y="40" width="72" height="36" rx="4" class="gb"/><text x="556" y="63" class="m s bd">3.299 V</text>
+<rect x="600" y="40" width="72" height="36" rx="4" class="gb"/><text x="636" y="63" class="m s bd">3.300 V</text>
+<rect x="40" y="84" width="72" height="36" rx="4" class="gb"/><text x="76" y="107" class="m s bd">3.301 V</text>
+<rect x="120" y="84" width="72" height="36" rx="4" class="gb"/><text x="156" y="107" class="m s bd">3.298 V</text>
+<rect x="200" y="84" width="72" height="36" rx="4" class="yb"/><text x="236" y="107" class="m s bd">3.272 V</text>
+<rect x="280" y="84" width="72" height="36" rx="4" class="gb"/><text x="316" y="107" class="m s bd">3.300 V</text>
+<rect x="360" y="84" width="72" height="36" rx="4" class="gb"/><text x="396" y="107" class="m s bd">3.299 V</text>
+<rect x="440" y="84" width="72" height="36" rx="4" class="gb"/><text x="476" y="107" class="m s bd">3.301 V</text>
+<rect x="520" y="84" width="72" height="36" rx="4" class="gb"/><text x="556" y="107" class="m s bd">3.300 V</text>
+<rect x="600" y="84" width="72" height="36" rx="4" class="gb"/><text x="636" y="107" class="m s bd">3.298 V</text>
+<rect x="40" y="128" width="72" height="36" rx="4" class="gb"/><text x="76" y="151" class="m s bd">3.300 V</text>
+<rect x="120" y="128" width="72" height="36" rx="4" class="gb"/><text x="156" y="151" class="m s bd">3.299 V</text>
+<rect x="200" y="128" width="72" height="36" rx="4" class="gb"/><text x="236" y="151" class="m s bd">3.301 V</text>
+<rect x="280" y="128" width="72" height="36" rx="4" class="gb"/><text x="316" y="151" class="m s bd">3.297 V</text>
+<rect x="360" y="128" width="72" height="36" rx="4" class="gb"/><text x="396" y="151" class="m s bd">3.300 V</text>
+<rect x="440" y="128" width="72" height="36" rx="4" class="rb"/><text x="476" y="151" class="m s bd r">3.241 V</text>
+<rect x="520" y="128" width="72" height="36" rx="4" class="gb"/><text x="556" y="151" class="m s bd">3.299 V</text>
+<rect x="600" y="128" width="72" height="36" rx="4" class="gb"/><text x="636" y="151" class="m s bd">3.301 V</text>
+<rect x="40" y="186" width="16" height="16" rx="3" class="gb"/><text x="62" y="199" class="s">within 20 mV: good</text>
+<rect x="220" y="186" width="16" height="16" rx="3" class="yb"/><text x="242" y="199" class="s">20–50 mV low: watch, balance</text>
+<rect x="450" y="186" width="16" height="16" rx="3" class="rb"/><text x="472" y="199" class="s">more than 50 mV low: faulty cell</text>
+</svg>
+<figcaption><b>Figure 8.3</b> A cell status matrix. Writing every reading into a grid makes the bad cell obvious at a glance.</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 8.2 — Typical limits used in Chinese battery repair training</caption>
+<thead><tr><th>Check</th><th>Typical limit</th></tr></thead>
+<tbody>
+<tr><td>Cell voltage spread on live data</td><td>Investigate above 50 mV</td></tr>
+<tr><td>Cell temperature spread</td><td>Investigate above 5 °C</td></tr>
+<tr><td>Single cell on the bench</td><td>Abnormal if more than 30 mV from the others, or internal resistance more than 50% above the others</td></tr>
+<tr><td>After balancing</td><td>Spread of 20 mV or less</td></tr>
+<tr><td>Pack insulation resistance</td><td>At least 20 MΩ</td></tr>
+<tr><td>Bolted bus-bar joints</td><td>Tightened with a torque wrench to the specified value</td></tr>
+</tbody></table></div>
+<p>These figures come from training-provider material; the maker's values for a particular pack always take priority.</p>
+<h4>Why cells must be matched</h4>
+<p>A replacement module or cell must match the others in <b>capacity, internal resistance and state of charge</b>. A new, strong cell among old, tired ones does not rescue the pack: the pack is still limited by the weakest cell, and the mismatch makes balancing harder. This is "grading and matching", and it is why a proper repair measures every cell and does not simply swap the one that failed.</p>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>The BMS measures every cell, calculates SOC and SOH, protects, balances and communicates.</li>
+<li>Contactors connect the pack to the car. Pre-charge fills the inverter capacitor gently first.</li>
+<li>A pack is limited by its weakest cell. Check the cell voltage spread.</li>
+<li>Insulation monitoring watches for leakage between HV and the body.</li>
+<li>Thermal runaway is rare but serious. Know the warning signs.</li>
+<li>Heat, extreme SOC and constant fast charging shorten battery life.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 8</h3><p>Choose one answer for each question.</p><ol>
+<li>What is the purpose of the pre-charge circuit?<ul><li>To charge the 12 V battery</li><li>To heat the cells</li><li data-c>To fill the inverter capacitor gently so the main contactors are not damaged</li><li>To balance the cells</li></ul></li>
+<li>In a pack of cells in series, when does discharging have to stop?<ul><li>When the average cell is empty</li><li data-c>When the weakest cell reaches its minimum voltage</li><li>When the strongest cell is empty</li><li>When half the cells are empty</li></ul></li>
+<li>Which of these is NOT a job of the BMS?<ul><li>Measuring cell voltages</li><li>Controlling the contactors</li><li>Calculating SOC</li><li data-c>Converting DC to AC for the motor</li></ul></li>
+<li>What does an "insulation fault" mean?<ul><li>The battery is too cold</li><li data-c>Resistance between the HV system and the car body has fallen too low</li><li>The 12 V battery is flat</li><li>The tyres are worn</li></ul></li>
+<li>Which is a warning sign of thermal runaway?<ul><li>A click when the car is switched on</li><li>A cold battery case</li><li data-c>A sweet chemical smell and hissing from the pack</li><li>Low tyre pressure</li></ul></li>
+<li>What operates the contactors?<ul><li>High voltage from the motor</li><li data-c>12 V signals from the BMS</li><li>The driver's foot</li><li>The charging cable</li></ul></li>
+<li>Which habit is best for the life of an NMC battery in daily use?<ul><li>Always charge to 100% and leave it parked in the sun</li><li>Always run it down to 0%</li><li data-c>Charge to about 80% and park in shade</li><li>Use only DC fast chargers</li></ul></li>
+</ol></div>
+</section>

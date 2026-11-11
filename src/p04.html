@@ -1,0 +1,478 @@
+
+<!-- ===================== MODULE 9 ===================== -->
+<section class="mod" data-part="Part D · The electric drive" data-title="Electric motors">
+<div class="mh"><div class="n">9</div><div><div class="pt">Part D · The electric drive</div><h2>Electric motors</h2><p>How a motor turns electricity into motion, and the types used in cars, bikes and rickshaws.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>The basic principle of every electric motor</li>
+<li>The parts of a traction motor</li>
+<li>The main motor types and where each is used</li>
+<li>The shape of the motor's torque–speed curve</li>
+<li>Common motor faults</li></ul></div>
+
+<h3>9.1 The principle</h3>
+<p>You know that magnets push and pull each other: like poles repel, unlike poles attract. You also know from school that a coil of wire carrying current becomes a magnet (an <b>electromagnet</b>), and that you can reverse its poles by reversing the current.</p>
+<p>A motor uses these two facts. The outer part, the <b>stator</b>, has coils of copper wire. The inner part, the <b>rotor</b>, has magnets. By switching current through the stator coils in the right order, we create a magnetic field that <b>rotates</b> around the stator. The rotor magnets are dragged round with it. That rotation is what turns the wheels.</p>
+<aside class="c pic"><h4>Picture it — the donkey and the carrot</h4><p>Hold a carrot on a stick in front of a donkey and walk in a circle: the donkey follows the carrot round and round. The stator's rotating magnetic field is the carrot. The rotor magnets are the donkey. Move the carrot faster (higher frequency) and the donkey turns faster. That is all a motor is.</p></aside>
+<p>Three-phase AC (Module 2) is perfect for this: three sets of coils, fed by three currents one-third of a cycle apart, naturally produce a smoothly rotating field.</p>
+<figure>
+<svg viewBox="0 0 720 270" role="img" aria-label="Cross-section of a permanent magnet motor showing stator coils, rotor magnets and shaft">
+<circle cx="180" cy="135" r="104" fill="#D5DDE2" stroke="#1B2A33" stroke-width="2"/><circle cx="180" cy="135" r="62" fill="#fff" stroke="#1B2A33" stroke-width="1.5"/>
+<g stroke="#1B2A33" stroke-width="1"><g fill="#E8590C"><circle cx="262" cy="135" r="13"/><circle cx="180" cy="217" r="13"/><circle cx="98" cy="135" r="13"/><circle cx="180" cy="53" r="13"/></g>
+<g fill="#1C6FD0"><circle cx="251" cy="176" r="13"/><circle cx="139" cy="206" r="13"/><circle cx="109" cy="94" r="13"/><circle cx="221" cy="64" r="13"/></g>
+<g fill="#2B8A3E"><circle cx="221" cy="206" r="13"/><circle cx="109" cy="176" r="13"/><circle cx="139" cy="64" r="13"/><circle cx="251" cy="94" r="13"/></g></g>
+<circle cx="180" cy="135" r="56" fill="#AEB8BF" stroke="#1B2A33" stroke-width="1.5"/>
+<rect x="160" y="85" width="40" height="13" fill="#C92A2A"/><rect x="160" y="172" width="40" height="13" fill="#C92A2A"/><rect x="130" y="115" width="13" height="40" fill="#1C6FD0"/><rect x="217" y="115" width="13" height="40" fill="#1C6FD0"/>
+<g class="m s bd w"><text x="180" y="96">N</text><text x="180" y="183">N</text><text x="136.5" y="139">S</text><text x="223.5" y="139">S</text></g>
+<circle cx="180" cy="135" r="15" fill="#1B2A33"/>
+<path d="M255 60 A112 112 0 0 1 292 135" class="gn" marker-end="url(#ag)"/>
+<g class="s"><path d="M262 135 H400" class="ln"/><text x="406" y="130" class="bd">Stator windings</text><text x="406" y="145">copper coils in three groups (U, V, W)</text>
+<path d="M270 80 L400 60" class="ln"/><text x="406" y="56" class="bd">Stator core</text><text x="406" y="71">thin steel sheets stacked together; does not move</text>
+<path d="M225 150 L400 196" class="ln"/><text x="406" y="192" class="bd">Rotor with permanent magnets</text><text x="406" y="207">turns with the rotating field</text>
+<path d="M186 147 L400 246" class="ln"/><text x="406" y="242" class="bd">Shaft</text><text x="406" y="257">connects to the reduction gear</text></g>
+<text x="330" y="100" class="s g bd">rotating field</text>
+</svg>
+<figcaption><b>Figure 9.1</b> A permanent-magnet motor in cross-section. The gap between rotor and stator is less than a millimetre.</figcaption></figure>
+
+<h3>9.2 Parts of a traction motor</h3>
+<div class="tw"><table>
+<thead><tr><th>Part</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><b>Stator</b></td><td>Stack of thin steel sheets with copper windings in slots. Modern motors use flat "hairpin" copper bars instead of round wire.</td></tr>
+<tr><td><b>Rotor</b></td><td>Steel core carrying magnets (or aluminium/copper bars in an induction motor). Mounted on the shaft.</td></tr>
+<tr><td><b>Bearings</b></td><td>Support the shaft at each end. They spin at up to 16,000–20,000 rpm.</td></tr>
+<tr><td><b>Housing and cooling</b></td><td>Aluminium case with a water jacket around the stator, or oil sprayed directly on the windings.</td></tr>
+<tr><td><b>Resolver</b> (position sensor)</td><td>Tells the inverter the exact angle of the rotor so it can switch the coils at the right instant.</td></tr>
+<tr><td><b>Temperature sensors</b></td><td>Buried in the windings. If the motor overheats, power is reduced.</td></tr>
+<tr><td><b>Three-phase terminals</b></td><td>Three thick orange cables or bus bars (U, V, W) from the inverter.</td></tr>
+</tbody></table></div>
+
+<h3>9.3 Motor types</h3>
+<div class="tw"><table>
+<caption>Table 9.1 — Traction motor types</caption>
+<thead><tr><th>Type</th><th>How the rotor works</th><th>Good</th><th>Less good</th><th>Used in</th></tr></thead>
+<tbody>
+<tr><td><b>PMSM</b><br>Permanent-magnet synchronous motor</td><td>Strong rare-earth magnets in the rotor. Rotor turns exactly in step with the field.</td><td>Most efficient (up to 97%), small, powerful</td><td>Magnets are expensive; generates voltage whenever it spins</td><td>Almost all EVs and hybrids: BYD, Deepal, MG, Toyota, Honda, Hyundai</td></tr>
+<tr><td><b>Induction motor</b><br>(asynchronous)</td><td>No magnets. Aluminium or copper bars in the rotor; the stator field <em>induces</em> current in them.</td><td>Simple, robust, cheap, no drag when not powered</td><td>Slightly less efficient, rotor runs hotter</td><td>Some Tesla and Audi motors; second axle of some AWD EVs; many industrial motors</td></tr>
+<tr><td><b>BLDC hub motor</b><br>Brushless DC</td><td>Permanent magnets on a rotor built into the wheel. Simple Hall sensors for position.</td><td>Very simple, no gearbox or chain</td><td>Heavy wheel, lower efficiency, limited power</td><td>E-bikes, scooters, some rickshaws</td></tr>
+<tr><td><b>Wound-rotor synchronous</b> (EESM)</td><td>Rotor is an electromagnet fed through slip rings</td><td>No rare-earth magnets</td><td>Brushes or extra parts wear</td><td>Some BMW and Renault EVs</td></tr>
+</tbody></table></div>
+<aside class="c danger"><h4>Danger — a spinning motor is a generator</h4><p>A permanent-magnet motor produces voltage at its terminals <b>whenever the rotor turns</b>, even with the battery disconnected. If the driven wheels are turned — by towing, pushing fast, or spinning a wheel on a lift — the orange cables can become live. Never turn the wheels of an EV with HV parts exposed.</p></aside>
+
+<h3>9.4 The torque–speed curve</h3>
+<p><b>Torque</b> is turning force, measured in <b>newton-metres (Nm)</b>. This graph is the single most important picture for understanding how an EV drives.</p>
+<figure>
+<svg viewBox="0 0 720 280" role="img" aria-label="Torque and power against speed for an electric motor compared with a petrol engine">
+<path d="M70 20 V220 H690" class="ln"/>
+<path d="M70 60 H250 C320 110 460 165 670 186" class="hv" style="stroke-width:3.5"/>
+<path d="M70 220 L250 84 H670" class="lv" style="stroke-width:3.5"/>
+<path d="M112 170 C190 120 300 108 380 112 S470 140 500 176" stroke="#5A6B76" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+<path d="M250 20 V220" class="ln da"/>
+<text x="160" y="50" class="m bd o">Motor torque</text><text x="560" y="74" class="m bd bl">Motor power</text>
+<text x="262" y="150" class="s mu bd">Petrol engine torque</text>
+<text x="160" y="246" class="m s bd">Constant-torque region</text><text x="160" y="262" class="m s">full torque from 0 rpm</text>
+<text x="470" y="246" class="m s bd">Constant-power region</text><text x="470" y="262" class="m s">torque falls as speed rises</text>
+<text x="250" y="14" class="m s bd">base speed</text>
+<text x="70" y="236" class="m s">0</text><text x="680" y="236" class="e s">16,000 rpm</text>
+<text x="30" y="120" class="s bd" transform="rotate(-90 30 120)" text-anchor="middle">Torque / Power</text>
+</svg>
+<figcaption><b>Figure 9.2</b> An electric motor gives full torque from standstill. A petrol engine must rev up to make torque and needs a multi-speed gearbox to stay in its useful range.</figcaption></figure>
+<ul>
+<li>From 0 rpm up to the <b>base speed</b>, the motor can give its <b>maximum torque</b>. The limit here is the maximum current the inverter and battery can supply. Power rises steadily with speed.</li>
+<li>Above base speed, the motor has reached its <b>maximum power</b>. The limit here is voltage. Power stays roughly level, so torque must fall as speed rises.</li>
+</ul>
+<p>This is why an EV feels so quick away from traffic lights, and why it needs only one gear.</p>
+
+<h3>9.5 Motor ratings on a specification sheet</h3>
+<ul>
+<li><b>Peak power (kW)</b> — the maximum, available for a short time (typically 30 seconds). This is the advertised figure.</li>
+<li><b>Continuous (rated) power (kW)</b> — what it can give all day without overheating. Often about half the peak.</li>
+<li><b>Peak torque (Nm)</b> — maximum turning force.</li>
+<li><b>Maximum speed (rpm)</b> — typically 14,000–20,000.</li>
+</ul>
+
+<h3>9.6 What goes wrong with motors</h3>
+<div class="tw"><table>
+<thead><tr><th>Fault</th><th>Symptom</th><th>Typical cause</th></tr></thead>
+<tbody>
+<tr><td>Bearing wear</td><td>Whine or rumble that changes with road speed</td><td>High mileage; electrical currents through the bearing; water</td></tr>
+<tr><td>Resolver fault</td><td>Jerky drive, no drive, warning light, fault code</td><td>Sensor, connector or wiring problem</td></tr>
+<tr><td>Winding insulation breakdown</td><td>Insulation fault code; car will not go READY</td><td>Overheating, coolant or water inside the motor</td></tr>
+<tr><td>Coolant leak into motor</td><td>Insulation fault, coolant loss with no visible leak</td><td>Internal seal failure</td></tr>
+<tr><td>Oil seal leak</td><td>Gear oil at the drive unit joint</td><td>Seal wear</td></tr>
+<tr><td>Overheating</td><td>Reduced power in hot weather or on hills</td><td>Low coolant, failed pump, blocked radiator</td></tr>
+</tbody></table></div>
+<p>Motor windings are tested (with the HV system safely isolated) in two ways: the <b>resistance between phases</b> should be equal on all three pairs, and the <b>insulation resistance</b> from windings to the case, measured with an insulation tester, should be very high. Module 17 covers the tools.</p>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>A rotating magnetic field in the stator pulls the rotor round.</li>
+<li>PMSM is the standard car motor. Induction motors have no magnets. BLDC hub motors drive bikes.</li>
+<li>Full torque from zero speed up to base speed; constant power above it.</li>
+<li>A resolver tells the inverter the rotor position.</li>
+<li>A turning permanent-magnet motor generates voltage — never spin the wheels with HV parts exposed.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 9</h3><p>Choose one answer for each question.</p><ol>
+<li>Which part of the motor carries the copper windings and does not move?<ul><li>Rotor</li><li data-c>Stator</li><li>Resolver</li><li>Shaft</li></ul></li>
+<li>Which motor type is used in most electric cars today?<ul><li>Brushed DC</li><li>Induction</li><li data-c>Permanent-magnet synchronous (PMSM)</li><li>Stepper</li></ul></li>
+<li>At what speed can an electric motor produce its maximum torque?<ul><li>Only at maximum rpm</li><li>Only above 3,000 rpm</li><li data-c>From 0 rpm up to base speed</li><li>Only at base speed exactly</li></ul></li>
+<li>What does the resolver do?<ul><li>Cools the motor</li><li data-c>Measures the rotor's position</li><li>Converts DC to AC</li><li>Stores energy</li></ul></li>
+<li>Why is it dangerous to spin the driven wheels of an EV with HV cables exposed?<ul><li>The tyres may burst</li><li>The brakes will overheat</li><li data-c>The permanent-magnet motor generates voltage when it turns</li><li>The battery will drain</li></ul></li>
+<li>Which motor type has no permanent magnets in its rotor?<ul><li>PMSM</li><li>BLDC hub motor</li><li data-c>Induction motor</li><li>All of them have magnets</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 10 ===================== -->
+<section class="mod" data-part="Part D · The electric drive" data-title="Power electronics">
+<div class="mh"><div class="n">10</div><div><div class="pt">Part D · The electric drive</div><h2>Power electronics</h2><p>The boxes that convert and control electrical power: inverter, DC-DC converter, on-board charger and PDU.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>How an inverter makes three-phase AC from battery DC</li>
+<li>How the inverter controls motor speed and torque</li>
+<li>What the DC-DC converter, on-board charger and PDU do</li>
+<li>Common faults and simple checks</li></ul></div>
+
+<h3>10.1 The inverter</h3>
+<p>The inverter (also called motor control unit, MCU, or power control unit, PCU) sits between the battery and the motor. Inside are <b>six fast electronic switches</b> arranged in three pairs — one pair for each motor phase.</p>
+<figure>
+<svg viewBox="0 0 720 270" role="img" aria-label="Inverter circuit with six switches between battery and three-phase motor">
+<rect x="30" y="80" width="70" height="100" rx="6" class="hb"/><text x="65" y="126" class="m bd">Battery</text><text x="65" y="144" class="m s">400 V DC</text>
+<path d="M65 80 V50 H540 M65 180 V220 H540" class="hv"/>
+<text x="120" y="42" class="s bd o">DC +</text><text x="120" y="240" class="s bd o">DC −</text>
+<path d="M190 50 V124 M190 146 V220 M170 124 H210 M170 146 H210" class="ln" style="stroke-width:2.5"/><text x="190" y="262" class="m s">DC-link capacitor</text><path d="M190 250 V226" class="ln" marker-end="url(#a)"/>
+<g class="yb"><rect x="280" y="70" width="44" height="40" rx="5"/><rect x="380" y="70" width="44" height="40" rx="5"/><rect x="480" y="70" width="44" height="40" rx="5"/><rect x="280" y="160" width="44" height="40" rx="5"/><rect x="380" y="160" width="44" height="40" rx="5"/><rect x="480" y="160" width="44" height="40" rx="5"/></g>
+<g class="m s bd"><text x="302" y="95">S1</text><text x="402" y="95">S3</text><text x="502" y="95">S5</text><text x="302" y="185">S2</text><text x="402" y="185">S4</text><text x="502" y="185">S6</text></g>
+<path d="M302 50 V70 M302 110 V160 M302 200 V220 M402 50 V70 M402 110 V160 M402 200 V220 M502 50 V70 M502 110 V160 M502 200 V220" class="hv" style="stroke-width:3"/>
+<path d="M302 124 H600" stroke="#E8590C" stroke-width="3" fill="none"/><path d="M402 135 H592" stroke="#1C6FD0" stroke-width="3" fill="none"/><path d="M502 146 H600" stroke="#2B8A3E" stroke-width="3" fill="none"/>
+<circle cx="302" cy="124" r="4.5" fill="#E8590C"/><circle cx="402" cy="135" r="4.5" fill="#1C6FD0"/><circle cx="502" cy="146" r="4.5" fill="#2B8A3E"/>
+<circle cx="640" cy="135" r="48" class="gb"/><text x="640" y="131" class="m bd">Motor</text><text x="640" y="148" class="m s">3-phase</text>
+<text x="566" y="115" class="m s bd">phases U, V, W</text>
+<text x="402" y="26" class="m s mu">Six switches (IGBT or SiC MOSFET), each turned on and off thousands of times per second</text>
+</svg>
+<figcaption><b>Figure 10.1</b> The inverter's power stage. By choosing which switches are on, each motor phase is connected to battery + or battery −.</figcaption></figure>
+
+<h4>How switching makes AC</h4>
+<p>The switches can only be fully on or fully off. To make a smooth AC wave, the inverter turns them on and off very quickly (around 5,000–20,000 times per second) and varies how long each pulse lasts. Wide pulses give a high average voltage; narrow pulses give a low one. This is <b>pulse-width modulation (PWM)</b>. The motor windings smooth the pulses into a near-perfect sine-wave current.</p>
+<figure>
+<svg viewBox="0 0 720 190" role="img" aria-label="Pulse width modulation: pulses of varying width produce a sine wave current">
+<path d="M50 95 H680" class="ln"/>
+<g fill="#FFD8A8" stroke="#E8590C" stroke-width="1"><rect x="72.500" y="40" width="5" height="55"/><rect x="98.500" y="40" width="13" height="55"/><rect x="124.500" y="40" width="21" height="55"/><rect x="151.500" y="40" width="27" height="55"/><rect x="181" y="40" width="28" height="55"/><rect x="211" y="40" width="28" height="55"/><rect x="241.500" y="40" width="27" height="55"/><rect x="274.500" y="40" width="21" height="55"/><rect x="308.500" y="40" width="13" height="55"/><rect x="342.500" y="40" width="5" height="55"/>
+<rect x="372.500" y="95" width="5" height="55"/><rect x="398.500" y="95" width="13" height="55"/><rect x="424.500" y="95" width="21" height="55"/><rect x="451.500" y="95" width="27" height="55"/><rect x="481" y="95" width="28" height="55"/><rect x="511" y="95" width="28" height="55"/><rect x="541.500" y="95" width="27" height="55"/><rect x="574.500" y="95" width="21" height="55"/><rect x="608.500" y="95" width="13" height="55"/><rect x="642.500" y="95" width="5" height="55"/></g>
+<path d="M60 95 C160 -5 260 -5 360 95 S560 195 660 95" class="lv" style="stroke-width:3"/>
+<text x="210" y="130" class="m s bd o">Voltage pulses from the switches</text><text x="510" y="62" class="m s bd bl">Resulting motor current</text>
+<text x="360" y="180" class="m s mu">Narrow pulses → low voltage. Wide pulses → high voltage. Positive half, then negative half.</text>
+</svg>
+<figcaption><b>Figure 10.2</b> Pulse-width modulation (simplified).</figcaption></figure>
+<aside class="c pic"><h4>Picture it — the tap you can only open fully</h4><p>Imagine a tap that can only be fully open or fully shut, filling a bucket with a small hole in it. Open it for long bursts and the water level rises; open it for short bursts and the level falls. By changing only the <b>length of the bursts</b>, you can hold the water at any level you like. The inverter's switches are that tap, and the level in the bucket is the voltage the motor feels.</p></aside>
+<aside class="c"><h4>Key idea — how the driver's foot controls the motor</h4><p>The inverter controls two things:<br>• The <b>frequency</b> of the AC sets the motor <b>speed</b>.<br>• The <b>current</b> (amplitude) sets the motor <b>torque</b>.<br>Press the accelerator → the vehicle computer asks for more torque → the inverter sends more current. To reverse, it simply swaps the order of the phases.</p></aside>
+
+<h4>Inside the inverter</h4>
+<ul>
+<li><b>Power module</b> — the six switches. Older and cheaper designs use <b>IGBTs</b> (silicon). Newer ones use <b>SiC MOSFETs</b> (silicon carbide), which waste less energy as heat and are essential for 800 V systems.</li>
+<li><b>DC-link capacitor</b> — a large capacitor across the DC input that smooths the supply. <b>It stores a dangerous charge.</b></li>
+<li><b>Gate driver and control board</b> — the electronics that decide when to fire each switch.</li>
+<li><b>Current sensors</b> — on the phase outputs.</li>
+<li><b>Cooling plate</b> — coolant flows under the power module.</li>
+</ul>
+<aside class="c danger"><h4>Danger</h4><p>The DC-link capacitor holds battery voltage after switch-off until the discharge circuit drains it. This is the reason for the waiting time in the isolation procedure, and the reason you <b>measure</b> before touching.</p></aside>
+
+<h3>10.2 The DC-DC converter</h3>
+<p>A petrol car has an alternator driven by the engine to charge the 12 V battery. An EV has no alternator. Instead a <b>DC-DC converter</b> takes high voltage from the main battery and steps it down to about <b>13.5–14.8 V</b>. Typical output is 1.5–3 kW (over 100 A).</p>
+<aside class="c tip"><h4>Workshop tip — a simple, safe test</h4><p>Measure the 12 V battery voltage with the car <b>off</b> (expect about 12.4–12.8 V) and again with the car in <b>READY</b> (expect about 13.5–14.8 V). If the voltage does not rise in READY, the DC-DC converter is not charging. This is a low-voltage test you can do without touching any orange cable.</p></aside>
+
+<h3>10.3 The on-board charger (OBC)</h3>
+<p>The battery needs DC. The mains supplies AC. The <b>on-board charger</b> converts one to the other when you plug into an AC socket or wallbox. Its power rating sets the <b>maximum AC charging speed</b>:</p>
+<div class="tw"><table>
+<thead><tr><th>OBC rating</th><th>Supply needed</th><th>Time to add 50 kWh</th></tr></thead>
+<tbody><tr><td>3.3 kW</td><td>Single-phase, 16 A</td><td>about 15 hours</td></tr>
+<tr><td>6.6–7 kW</td><td>Single-phase, 32 A</td><td>about 7.5 hours</td></tr>
+<tr><td>11 kW</td><td>Three-phase, 16 A per phase</td><td>about 4.5 hours</td></tr>
+<tr><td>22 kW</td><td>Three-phase, 32 A per phase</td><td>about 2.5 hours</td></tr></tbody></table></div>
+<p>During <b>DC fast charging</b> the big converter is inside the charging station, and current goes straight to the battery. The on-board charger is bypassed (Module 14).</p>
+<p>Many Chinese EVs have a <b>bidirectional</b> charger that can also work backwards, giving 230 V AC from the car battery through an adapter. This is called <b>V2L</b> (vehicle-to-load).</p>
+<aside class="c pk"><h4>In Pakistan</h4><p>V2L is a real selling point here: during load-shedding an EV can run fans, lights, a fridge or tools for many hours. Customers will ask you about it. They may also damage it by overloading it or using poor-quality adapters, which gives you repair work.</p></aside>
+
+<h3>10.4 The power distribution unit (PDU)</h3>
+<p>The PDU is the HV junction box. From the battery, power is shared out — through fuses and sometimes relays — to the inverter, on-board charger, DC-DC converter, A/C compressor and heater. When one HV consumer stops working (for example the A/C compressor), a blown HV fuse in the PDU is a possible cause. HV fuses are only checked or changed with the system isolated and proven dead.</p>
+
+<h3>10.5 The boost converter in Toyota hybrids</h3>
+<p>Toyota hybrid batteries are only about 150–250 V. To make the motors more powerful and efficient, a <b>boost converter</b> inside the inverter assembly raises this to as much as 600–650 V for the motors. So the voltage inside a Toyota inverter is far higher than the battery voltage written on the label.</p>
+
+<h3>10.6 Cooling and common faults</h3>
+<p>Power electronics are about 95–98% efficient, but 2–5% of 150 kW is still several kilowatts of heat. They share a coolant loop with an electric pump and a radiator.</p>
+<div class="tw"><table>
+<thead><tr><th>Fault</th><th>Symptom</th><th>First checks</th></tr></thead>
+<tbody>
+<tr><td>Inverter overheating</td><td>Power reduced, warning light, worse in summer</td><td>Coolant level, electric coolant pump running, air in system, radiator blocked</td></tr>
+<tr><td>Failed inverter coolant pump</td><td>Same as above; fault code for pump</td><td>12 V supply and fuse to pump; pump noise; coolant movement in the reservoir</td></tr>
+<tr><td>DC-DC failure</td><td>12 V battery goes flat; many warning lights; car dies while driving</td><td>12 V voltage in READY (see tip above)</td></tr>
+<tr><td>OBC failure</td><td>Will not charge on AC but charges on DC</td><td>Try another cable and socket first; read fault codes</td></tr>
+<tr><td>Power module failure</td><td>No drive, HV fuse may blow, fault codes</td><td>Specialist diagnosis; usually unit replacement</td></tr>
+</tbody></table></div>
+<aside class="c tip"><h4>Workshop tip</h4><p>On older Toyota hybrids, a failed <b>inverter coolant pump</b> is a classic fault. It is cheap. If ignored, it destroys the inverter, which is not cheap. Checking that the coolant in the inverter reservoir is moving (with the car in READY) takes ten seconds.</p></aside>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>The inverter uses six switches and PWM to turn DC into three-phase AC.</li>
+<li>Frequency sets speed; current sets torque.</li>
+<li>The DC-DC converter charges the 12 V system: expect 13.5–14.8 V in READY.</li>
+<li>The on-board charger converts mains AC to DC and sets the AC charging speed.</li>
+<li>The PDU distributes and fuses the high voltage.</li>
+<li>Power electronics need liquid cooling. Check coolant and pumps first.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 10</h3><p>Choose one answer for each question.</p><ol>
+<li>How many main power switches does a three-phase inverter have?<ul><li>2</li><li>3</li><li data-c>6</li><li>12</li></ul></li>
+<li>To make the motor produce more torque, the inverter increases the…<ul><li>frequency</li><li data-c>current</li><li>battery capacity</li><li>gear ratio</li></ul></li>
+<li>With the car in READY, the 12 V battery measures 12.1 V and is falling. What is the likely fault?<ul><li>On-board charger</li><li>Resolver</li><li data-c>DC-DC converter not charging</li><li>Tyre pressure sensor</li></ul></li>
+<li>A car charges at a DC fast charger but not from an AC wallbox. Which part is suspect?<ul><li>Inverter</li><li data-c>On-board charger</li><li>Motor</li><li>Reduction gear</li></ul></li>
+<li>Why must you wait after switching off before working on the inverter?<ul><li>To let the motor cool</li><li data-c>The DC-link capacitor holds a dangerous charge until it is discharged</li><li>To let the coolant settle</li><li>To save the 12 V battery</li></ul></li>
+<li>What is V2L?<ul><li>A type of battery cell</li><li>A fast-charging plug</li><li data-c>Using the car's battery to power 230 V AC appliances</li><li>A two-speed gearbox</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 11 ===================== -->
+<section class="mod" data-part="Part D · The electric drive" data-title="Performance: how battery and motor shape the car">
+<div class="mh"><div class="n">11</div><div><div class="pt">Part D · The electric drive</div><h2>Performance: how battery and motor shape the car</h2><p>Acceleration, top speed, range and running cost — and the numbers behind them.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>How torque, power and speed are related</li>
+<li>How motor power and battery power together limit acceleration</li>
+<li>How battery energy and consumption decide range</li>
+<li>Why real range differs from the brochure, and how to explain it to customers</li></ul></div>
+
+<h3>11.1 Torque, speed and power</h3>
+<p>Power is torque multiplied by rotational speed. In workshop units:</p>
+<p style="text-align:center;font-size:1.15em"><span class="f">Power (kW) = Torque (Nm) × Speed (rpm) ÷ 9,550</span></p>
+<aside class="c ex"><h4>Worked example</h4>
+<p>A motor makes 310 Nm at 4,600 rpm. Power = 310 × 4,600 ÷ 9,550 = <b>149 kW</b>.</p>
+<p>The same motor at 12,000 rpm can still make about 150 kW, so its torque there is 150 × 9,550 ÷ 12,000 = <b>119 Nm</b>. Same power, much less torque — the constant-power region from Figure 9.2.</p></aside>
+<ul>
+<li><b>Torque</b> (multiplied by the gear ratio) decides how hard the car pushes off from rest and at low speed.</li>
+<li><b>Power</b> decides how well it keeps accelerating at higher speed, how it climbs long hills, and its top speed.</li>
+</ul>
+
+<h3>11.2 From motor torque to acceleration</h3>
+<aside class="c ex"><h4>Worked example — why EVs launch so hard</h4>
+<p>Motor torque 310 Nm. Reduction gear ratio 10:1. Wheel radius 0.33 m. Car mass 1,750 kg.</p>
+<p>1. Torque at the wheels = 310 × 10 = 3,100 Nm (ignoring small losses)<br>
+2. Driving force = torque ÷ wheel radius = 3,100 ÷ 0.33 ≈ 9,400 N<br>
+3. Acceleration = force ÷ mass = 9,400 ÷ 1,750 ≈ <b>5.4 m/s²</b></p>
+<p>That is more than half of gravity, available instantly from 0 km/h. A typical family petrol car manages about half of this in first gear, and only once the engine has revved up.</p></aside>
+
+<h3>11.3 The weakest link sets the limit</h3>
+<figure>
+<svg viewBox="0 0 720 170" role="img" aria-label="Chain of components that limit performance from battery to tyres">
+<g><rect x="16" y="40" width="120" height="70" rx="8" class="hb"/><text x="76" y="66" class="m bd">Battery</text><text x="76" y="84" class="m s">max current</text><text x="76" y="98" class="m s">× voltage</text></g>
+<g><rect x="158" y="40" width="120" height="70" rx="8" class="yb"/><text x="218" y="66" class="m bd">Inverter</text><text x="218" y="84" class="m s">max phase</text><text x="218" y="98" class="m s">current</text></g>
+<g><rect x="300" y="40" width="120" height="70" rx="8" class="gb"/><text x="360" y="66" class="m bd">Motor</text><text x="360" y="84" class="m s">max torque,</text><text x="360" y="98" class="m s">power, heat</text></g>
+<g><rect x="442" y="40" width="120" height="70" rx="8" class="kb"/><text x="502" y="66" class="m bd">Gearing</text><text x="502" y="84" class="m s">ratio trades</text><text x="502" y="98" class="m s">torque for speed</text></g>
+<g><rect x="584" y="40" width="120" height="70" rx="8" class="db"/><text x="644" y="66" class="m bd w">Tyres</text><text x="644" y="84" class="m s w">grip on</text><text x="644" y="98" class="m s w">the road</text></g>
+<path d="M136 75 H154 M278 75 H296 M420 75 H438 M562 75 H580" class="ln" marker-end="url(#a)"/>
+<text x="360" y="24" class="m s bd">Power flows left to right. The smallest limit in the chain decides what reaches the road.</text>
+<text x="360" y="140" class="m s mu">The BMS and vehicle computer watch all of these and reduce the torque request when any one reaches its limit.</text>
+</svg>
+<figcaption><b>Figure 11.1</b> The performance chain.</figcaption></figure>
+
+<h4>How the battery limits power</h4>
+<p>The motor may be rated at 150 kW, but it can only deliver what the battery can supply.</p>
+<aside class="c ex"><h4>Worked example</h4>
+<p>A 60 kWh pack at 400 V can safely give 400 A. Maximum battery power = 400 × 400 = <b>160 kW</b>. The 150 kW motor can be fully used.</p>
+<p>Now the same motor with a small 20 kWh pack of the same cells: one-third of the cells in parallel, so about 133 A. Maximum = 400 × 133 = <b>53 kW</b>. The motor is still a 150 kW motor, but the car performs like a 53 kW car.</p></aside>
+<p>This explains several things you will see:</p>
+<ul>
+<li><b>Long-range versions are often faster.</b> A bigger battery can supply more current, so the maker fits or unlocks a more powerful motor.</li>
+<li><b>Hybrids need "power cells".</b> An HEV battery of 1.5 kWh giving 40 kW is working at about 27C. These cells are designed for high power, not high energy.</li>
+<li><b>PHEVs feel strongest with charge in the battery.</b> With the battery depleted, less electrical power is available to help the engine.</li>
+<li><b>Power is reduced when the battery is cold, very hot, nearly empty or aged.</b> Internal resistance is higher, so the BMS lowers the current limit. The customer complains of "low power"; the scan tool shows the BMS limit as the reason.</li>
+</ul>
+<aside class="c"><h4>Key idea</h4><p><b>Motor kW</b> is what the car <em>could</em> do. <b>Battery kW</b> (which depends on battery size, chemistry, temperature, charge level and health) is what it is <em>allowed</em> to do right now. Performance is whichever is lower.</p></aside>
+
+<h3>11.4 Power-to-weight</h3>
+<p>A heavy car needs more power for the same acceleration. Dividing power by mass gives a quick comparison.</p>
+<div class="tw"><table>
+<caption>Table 11.1 — Power-to-weight examples (approximate figures)</caption>
+<thead><tr><th>Car</th><th>Power</th><th>Mass</th><th>kW per tonne</th><th>0–100 km/h</th></tr></thead>
+<tbody>
+<tr><td>Toyota Corolla Cross HEV</td><td>90 kW</td><td>1,400 kg</td><td>64</td><td>about 11 s</td></tr>
+<tr><td>BYD Atto 3</td><td>150 kW</td><td>1,750 kg</td><td>86</td><td>7.3 s</td></tr>
+<tr><td>Deepal S07</td><td>190 kW</td><td>2,000 kg</td><td>95</td><td>about 7 s</td></tr>
+<tr><td>BYD Seal AWD (two motors)</td><td>390 kW</td><td>2,185 kg</td><td>178</td><td>3.8 s</td></tr>
+</tbody></table></div>
+<p><b>All-wheel-drive EVs</b> have a motor on each axle. Their powers add together, and four driven tyres can put more force on the road without slipping.</p>
+
+<h3>11.5 Range</h3>
+<p style="text-align:center;font-size:1.15em"><span class="f">Range (km) = Usable battery energy (Wh) ÷ Consumption (Wh per km)</span></p>
+<p>Consumption is the EV's "fuel average". A small city car may use 110–130 Wh/km; a compact SUV 150–180 Wh/km; a large SUV or pickup 200–280 Wh/km. An electric motorcycle uses only 25–40 Wh/km.</p>
+<aside class="c ex"><h4>Worked example</h4>
+<p>Usable battery 60 kWh = 60,000 Wh. Consumption 160 Wh/km.</p>
+<p>Range = 60,000 ÷ 160 = <b>375 km</b></p>
+<p>On the motorway at 120 km/h with A/C, consumption rises to 230 Wh/km: range = 60,000 ÷ 230 = <b>261 km</b>.</p></aside>
+<figure>
+<svg viewBox="0 0 720 230" role="img" aria-label="Bar chart: range falls as cruising speed rises">
+<path d="M90 20 V180 H690" class="ln"/>
+<g class="gb"><rect x="130" y="30" width="90" height="150"/><rect x="270" y="60" width="90" height="120"/><rect x="410" y="85" width="90" height="95"/><rect x="550" y="105" width="90" height="75"/></g>
+<g class="m bd"><text x="175" y="52">500 km</text><text x="315" y="82">400 km</text><text x="455" y="107">316 km</text><text x="595" y="127">250 km</text></g>
+<g class="m s"><text x="175" y="170">120 Wh/km</text><text x="315" y="170">150 Wh/km</text><text x="455" y="170">190 Wh/km</text><text x="595" y="170">240 Wh/km</text></g>
+<g class="m bd"><text x="175" y="200">60 km/h</text><text x="315" y="200">80 km/h</text><text x="455" y="200">100 km/h</text><text x="595" y="200">120 km/h</text></g>
+<text x="390" y="222" class="m s mu">Illustration for a compact electric SUV with 60 kWh usable, steady speed, mild weather</text>
+<text x="40" y="100" class="s bd" transform="rotate(-90 40 100)" text-anchor="middle">Range</text>
+</svg>
+<figcaption><b>Figure 11.2</b> Speed is the biggest factor in range. Air resistance rises with the <em>square</em> of speed.</figcaption></figure>
+
+<h4>What reduces range</h4>
+<div class="tw"><table>
+<thead><tr><th>Factor</th><th>Why</th><th>Typical effect</th></tr></thead>
+<tbody>
+<tr><td>High speed</td><td>Air drag rises with speed squared</td><td>Large: see Figure 11.2</td></tr>
+<tr><td>Air-conditioning in extreme heat</td><td>Compressor uses 1–3 kW; also cools the battery</td><td>5–20%</td></tr>
+<tr><td>Hard acceleration and braking</td><td>Regeneration recovers only part of the energy</td><td>10–20%</td></tr>
+<tr><td>Weight and roof loads</td><td>More rolling resistance and drag</td><td>5–15%</td></tr>
+<tr><td>Under-inflated or wrong tyres</td><td>More rolling resistance</td><td>3–10%</td></tr>
+<tr><td>Battery age (lower SOH)</td><td>Less energy stored</td><td>Equal to the SOH loss</td></tr>
+<tr><td>Dragging brakes, poor alignment</td><td>Wasted energy</td><td>Varies — and it is your job to find it</td></tr>
+</tbody></table></div>
+
+<h4>Brochure range and real range</h4>
+<p>Range is measured on standard laboratory tests. Different tests give different answers for the same car:</p>
+<ul>
+<li><b>NEDC</b> and <b>CLTC</b> — older and Chinese tests. Gentle and optimistic. Often quoted in Pakistani advertising.</li>
+<li><b>WLTP</b> — the current European test. More realistic.</li>
+<li><b>Real mixed driving</b> in Pakistan is usually around <b>70–80% of the NEDC or CLTC figure</b>, and less on the motorway in summer.</li>
+</ul>
+<aside class="c tip"><h4>Workshop tip</h4><p>"My range has dropped" is one of the most common EV complaints. Before blaming the battery, check: tyre pressures, brake drag, wheel alignment, driving speed, A/C use, and the season. Then read the <b>SOH</b> on the scan tool. Most of the time the battery is fine and the cause is one of the simple things.</p></aside>
+
+<h3>11.6 Efficiency and running cost</h3>
+<p>From battery to wheels, an EV is about <b>85–90%</b> efficient. A petrol engine turns only about <b>25–35%</b> of the fuel's energy into motion; the rest is heat. This is the basic reason an EV costs less per kilometre.</p>
+<aside class="c ex"><h4>Worked example — cost per 100 km (put in today's prices)</h4>
+<p><b>EV:</b> 16 kWh per 100 km × Rs 50 per unit = <b>Rs 800</b><br>
+<b>Petrol car:</b> 12 km per litre → 8.3 litres per 100 km × Rs 270 per litre = <b>Rs 2,240</b></p>
+<p>With home solar, the EV figure can be far lower. Prices change, so always redo this sum with current rates.</p></aside>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>Power (kW) = torque (Nm) × rpm ÷ 9,550.</li>
+<li>Torque × gear ratio gives launch; power gives high-speed performance.</li>
+<li>Performance is limited by the weakest of: battery power, inverter current, motor, tyres.</li>
+<li>Battery power depends on size, chemistry, temperature, SOC and health.</li>
+<li>Range = usable energy ÷ consumption. Speed, A/C, tyres and driving style change consumption.</li>
+<li>Expect about 70–80% of NEDC/CLTC range in real use.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 11</h3><p>Choose one answer for each question.</p><ol>
+<li>A motor produces 200 Nm at 9,550 rpm. What is its power?<ul><li>20 kW</li><li>100 kW</li><li data-c>200 kW</li><li>955 kW</li></ul></li>
+<li>A car has 50 kWh usable and uses 200 Wh/km. What is its range?<ul><li>100 km</li><li data-c>250 km</li><li>400 km</li><li>1,000 km</li></ul></li>
+<li>A 150 kW motor is fitted to a car whose battery can supply only 80 kW. What is the maximum drive power?<ul><li>150 kW</li><li>230 kW</li><li data-c>80 kW</li><li>70 kW</li></ul></li>
+<li>Why does a cold or aged battery reduce the car's power?<ul><li>The motor shrinks</li><li data-c>Higher internal resistance makes the BMS lower the current limit</li><li>The tyres lose grip</li><li>The gear ratio changes</li></ul></li>
+<li>Which factor usually has the biggest effect on motorway range?<ul><li>Radio volume</li><li>Headlights</li><li data-c>Speed</li><li>Colour of the car</li></ul></li>
+<li>A car is advertised with 500 km NEDC range. What real mixed-driving range is realistic?<ul><li>600 km</li><li>500 km</li><li data-c>About 350–400 km</li><li>100 km</li></ul></li>
+<li>A customer says range has dropped. What should you check before suspecting the battery?<ul><li>Nothing — replace the battery</li><li data-c>Tyre pressures, brake drag, alignment and driving conditions, then SOH</li><li>The paint</li><li>The wiper motor</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 12 ===================== -->
+<section class="mod" data-part="Part D · The electric drive" data-title="Transmission, regenerative braking and chassis">
+<div class="mh"><div class="n">12</div><div><div class="pt">Part D · The electric drive</div><h2>Transmission, regenerative braking and chassis</h2><p>The mechanical side of an EV: one gear, two kinds of braking, and a heavy car on four tyres.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>Why EVs have a single-speed reduction gear</li>
+<li>How regenerative braking works and when it is limited</li>
+<li>How regenerative and friction brakes are blended</li>
+<li>Brake, tyre and lifting points specific to EVs</li></ul></div>
+
+<h3>12.1 The reduction gear</h3>
+<p>A petrol engine works well only in a narrow speed band, so it needs 5 or more gears. An electric motor gives useful torque from 0 to over 16,000 rpm, so <b>one fixed gear ratio</b> is enough. A typical ratio is between <b>8:1 and 12:1</b>: the motor turns about ten times for each turn of the wheels.</p>
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="Two-stage reduction gear with differential">
+<rect x="80" y="36" width="150" height="70" rx="8" class="gb"/><text x="155" y="68" class="m bd">Motor</text><text x="155" y="86" class="m s">up to 16,000 rpm</text>
+<path d="M230 71 H330" class="mc"/>
+<rect x="300" y="52" width="20" height="38" class="yb"/>
+<rect x="300" y="90" width="20" height="110" class="kb"/>
+<path d="M280 145 H400" class="mc"/>
+<rect x="364" y="126" width="20" height="38" class="yb"/>
+<rect x="364" y="164" width="20" height="120" class="kb"/>
+<rect x="340" y="204" width="68" height="40" rx="6" class="rb"/><text x="374" y="229" class="m s bd">Diff</text>
+<path d="M340 224 H90 M408 224 H640" class="mc"/>
+<rect x="56" y="186" width="34" height="76" rx="8" class="db"/><rect x="640" y="186" width="34" height="76" rx="8" class="db"/>
+<g class="s"><text x="420" y="64" class="bd">Input gear (small)</text><path d="M416 60 H324" class="ln"/>
+<text x="420" y="110" class="bd">Stage 1 — about 3 : 1</text><path d="M416 106 H324" class="ln"/>
+<text x="470" y="150" class="bd">Intermediate shaft</text><path d="M466 146 H404" class="ln"/>
+<text x="470" y="188" class="bd">Stage 2 — about 3.3 : 1</text><path d="M466 184 H388" class="ln"/>
+<text x="480" y="250" class="mu">driveshaft to wheel</text><text x="130" y="250" class="mu">driveshaft to wheel</text></g>
+<text x="620" y="28" class="m bd g">Total ≈ 10 : 1</text><text x="620" y="44" class="m s">speed ÷ 10, torque × 10</text>
+</svg>
+<figcaption><b>Figure 12.1</b> A typical two-stage reduction gear with differential, shown schematically.</figcaption></figure>
+<ul>
+<li><b>Reverse</b> is done by spinning the motor backwards. There is no reverse gear.</li>
+<li><b>Park</b> uses a locking pawl in the gear unit, usually moved by a small electric actuator, plus the electric parking brake.</li>
+<li><b>Neutral</b> simply means the inverter sends no current.</li>
+<li>The unit has its own <b>gear oil</b> (the specific fluid named by the maker). Some are "filled for life"; many specify a change at set intervals. Follow the service schedule.</li>
+</ul>
+<p>Hybrids are different: they have special transmissions that mix engine and motor power. See Module 13.</p>
+
+<h3>12.2 Regenerative braking</h3>
+<p>When the driver lifts off the accelerator or presses the brake, the inverter makes the motor work as a <b>generator</b>. The wheels drive the motor; the motor resists; the car slows; and electricity flows back into the battery. Energy that a normal car throws away as brake heat is recovered.</p>
+<aside class="c pic"><h4>Picture it — the bicycle dynamo</h4><p>Switch on a bicycle's dynamo lamp and pedalling becomes harder. The dynamo is taking energy from your legs and turning it into electricity. Regenerative braking is the same thing on purpose: the motor becomes the dynamo, the "harder to pedal" feeling is what slows the car, and the electricity goes back into the battery instead of a lamp.</p></aside>
+<ul>
+<li>In city driving, regeneration can recover roughly 15–25% of the energy used.</li>
+<li>Most cars let the driver choose the strength (low / standard / high). Strong regeneration allows <b>one-pedal driving</b>.</li>
+<li>Brake lights come on automatically when regeneration is slowing the car firmly.</li>
+</ul>
+<h4>When regeneration is reduced or switched off</h4>
+<div class="tw"><table>
+<thead><tr><th>Situation</th><th>Reason</th></tr></thead>
+<tbody>
+<tr><td>Battery at or near 100%</td><td>There is nowhere to put the energy</td></tr>
+<tr><td>Battery very cold or very hot</td><td>Cells cannot accept high charge current safely</td></tr>
+<tr><td>Very low speed (below about 5–10 km/h)</td><td>The motor generates too little</td></tr>
+<tr><td>Emergency stop or ABS/ESC active</td><td>Friction brakes give faster, more controllable braking at each wheel</td></tr>
+<tr><td>Fault in the HV system</td><td>Regeneration disabled for safety</td></tr>
+</tbody></table></div>
+<aside class="c tip"><h4>Workshop tip</h4><p>A customer who charges to 100% at the top of a hill station and then drives down will find the car "does not slow like before". That is normal: a full battery cannot take regeneration, so the friction brakes do all the work. Explain it; do not go looking for a fault.</p></aside>
+
+<h3>12.3 Brake blending</h3>
+<p>Every EV and hybrid still has normal hydraulic <b>friction brakes</b> with discs and pads. The car's brake computer decides, moment by moment, how much braking comes from the motor and how much from the pads. The driver should feel one smooth pedal.</p>
+<figure>
+<svg viewBox="0 0 720 220" role="img" aria-label="Brake blending: regenerative braking does most of the work until low speed, then friction brakes take over">
+<path d="M80 20 V170 H680" class="ln"/>
+<path d="M80 170 V60 H520 L620 170z" fill="#B2E0C0" stroke="#2B8A3E" stroke-width="2"/>
+<path d="M520 60 H650 V170 H620z" fill="#FFC9C9" stroke="#C92A2A" stroke-width="2"/>
+<text x="300" y="120" class="m l bd">Regenerative braking</text><text x="300" y="140" class="m s">energy returned to the battery</text>
+<text x="650" y="34" class="e s bd r">Friction brakes</text><text x="650" y="48" class="e s r">take over as the car stops</text>
+<text x="80" y="190" class="s bd">100 km/h</text><text x="650" y="190" class="e s bd">0 km/h</text><text x="365" y="208" class="m s mu">Car slowing down at a steady, moderate rate →</text>
+<text x="40" y="100" class="s bd" transform="rotate(-90 40 100)" text-anchor="middle">Braking force</text>
+</svg>
+<figcaption><b>Figure 12.2</b> Blending during a normal, gentle stop. In a hard stop, friction brakes are added on top from the start.</figcaption></figure>
+<p>To make blending possible, and because there is no engine vacuum for a normal brake servo, EVs use an <b>electric brake booster</b> or a full <b>brake-by-wire</b> unit. The pedal is connected to a sensor and a "pedal feel simulator"; an electric motor or pump creates the hydraulic pressure.</p>
+
+<h3>12.4 Brake service on EVs</h3>
+<p>Because the motor does most of the braking, pads and discs last a very long time. The problem is the opposite of wear: <b>lack of use</b>.</p>
+<ul>
+<li>Discs rust, especially at the rear, and after the monsoon.</li>
+<li>Caliper slide pins seize; pads stick in their carriers; brakes drag and waste range.</li>
+<li><b>Service:</b> at least once a year, remove the pads, clean and lubricate the slide pins and pad contact points, and check the discs.</li>
+<li><b>Brake fluid</b> still absorbs moisture. Change it every 2 years or as specified.</li>
+<li>Electric parking brakes need the scan tool's <b>service mode</b> to wind back the rear calipers before changing pads.</li>
+<li>Bleeding a brake-by-wire system often needs a scan-tool procedure.</li>
+</ul>
+
+<h3>12.5 Tyres, suspension and lifting</h3>
+<ul>
+<li>EVs are <b>300–500 kg heavier</b> than similar petrol cars and have instant torque. Tyres wear faster. Fit tyres with the correct <b>load index</b>; many are marked for EV use (lower rolling resistance, lower noise).</li>
+<li>Rotate tyres regularly and check alignment. Poor alignment costs range as well as rubber.</li>
+<li>Suspension bushes, ball joints and dampers carry more weight; on rough roads they wear sooner.</li>
+</ul>
+<aside class="c danger"><h4>Danger — lifting and jacking</h4><ul>
+<li><b>Never place a jack or lift pad under the battery pack.</b> You can crush cells and cause an internal short. Use only the lifting points shown in the manual, usually on the sills.</li>
+<li>Watch for speed breakers and stones: check the battery under-tray for dents and scrapes at every service.</li>
+<li>Removing a battery pack (300–600 kg) needs a proper battery lifting table. It also changes the car's balance on the lift.</li>
+<li>Most EVs must be transported on a flatbed, not towed with driven wheels on the ground.</li></ul></aside>
+<aside class="c pk"><h4>In Pakistan</h4><p>High speed breakers, broken roads and flooded underpasses are a real threat to under-floor batteries. An under-body inspection — looking for dents, torn covers, damaged coolant pipes and water marks — is a valuable service you can offer at every visit.</p></aside>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>One fixed reduction gear of about 10:1; reverse by spinning the motor backwards.</li>
+<li>Regenerative braking turns motion back into battery energy.</li>
+<li>Regeneration is limited when the battery is full, cold or hot, at very low speed, and in emergency stops.</li>
+<li>Friction brakes last long but seize from lack of use: clean and lubricate yearly; change fluid every 2 years.</li>
+<li>EVs are heavy: correct tyres, correct lifting points, never jack under the battery.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 12</h3><p>Choose one answer for each question.</p><ol>
+<li>Why does an EV need only one gear?<ul><li>Gears are too expensive</li><li data-c>The motor gives useful torque over a very wide speed range, from 0 rpm</li><li>EVs are slow</li><li>The battery cannot power a gearbox</li></ul></li>
+<li>How does an EV reverse?<ul><li>A reverse gear is engaged</li><li>The wheels are disconnected</li><li data-c>The motor spins in the opposite direction</li><li>The battery polarity is swapped</li></ul></li>
+<li>When is regenerative braking reduced?<ul><li>When the battery is at 50%</li><li data-c>When the battery is fully charged</li><li>When the A/C is on</li><li>When the headlights are on</li></ul></li>
+<li>What is the most common brake problem on EVs?<ul><li>Pads wearing out very fast</li><li data-c>Rust and seized sliders from lack of use</li><li>Boiling brake fluid</li><li>Broken brake pedal</li></ul></li>
+<li>Where must you never place a jack?<ul><li>Under the sill lifting points</li><li>Under the subframe point shown in the manual</li><li data-c>Under the battery pack</li><li>On a level floor</li></ul></li>
+<li>Why do EVs use an electric brake booster?<ul><li>To charge the battery</li><li data-c>There is no engine vacuum, and it allows blending with regenerative braking</li><li>To make the pedal harder</li><li>To cool the brakes</li></ul></li>
+</ol></div>
+</section>

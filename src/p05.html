@@ -1,0 +1,769 @@
+
+<!-- ===================== MODULE 13 ===================== -->
+<section class="mod" data-part="Part E · Hybrids" data-title="Hybrid systems in detail">
+<div class="mh"><div class="n">13</div><div><div class="pt">Part E · Hybrids</div><h2>Hybrid systems in detail</h2><p>Toyota, Honda, Hyundai/Kia and the Chinese plug-in systems: same goal, different engineering.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>How a hybrid saves fuel</li>
+<li>How the Toyota power-split system works</li>
+<li>How Honda, Hyundai/Kia and Chinese DHT plug-in hybrids differ</li>
+<li>Typical hybrid faults and service points</li></ul></div>
+
+<h3>13.1 How a hybrid saves fuel</h3>
+<ol>
+<li><b>Engine off when not needed</b> — at traffic lights, in slow traffic, when coasting.</li>
+<li><b>Electric drive at low speed</b>, where a petrol engine is least efficient.</li>
+<li><b>Regenerative braking</b> — recovering energy that brakes would waste.</li>
+<li><b>Engine kept at its most efficient load.</b> If the engine makes more power than needed, the extra charges the battery; if it makes less, the motor adds the rest.</li>
+<li><b>Efficient engine design.</b> Hybrid engines usually use the <em>Atkinson cycle</em> (late-closing intake valves): less power but better economy. The motor covers the missing power.</li>
+</ol>
+<p>These gains are biggest in stop-start city traffic — exactly the conditions of Karachi, Lahore and Rawalpindi.</p>
+
+<h3>13.2 Toyota Hybrid System (power split)</h3>
+<p>Used in the Prius, Aqua, Yaris, Corolla Cross, Camry and Lexus hybrids. There is no clutch, no stepped gearbox, no starter motor and no alternator. One <b>planetary gear set</b> joins three things:</p>
+<figure>
+<svg viewBox="0 0 720 290" role="img" aria-label="Toyota power split planetary gear: sun gear to generator, carrier to engine, ring gear to motor and wheels">
+<circle cx="170" cy="145" r="104" fill="#D7EFEC" stroke="#0B6E69" stroke-width="2"/><circle cx="170" cy="145" r="90" fill="#fff" stroke="#0B6E69" stroke-width="2"/>
+<path d="M170 85 L230 145 L170 205 L110 145z" fill="none" stroke="#5A6B76" stroke-width="7" stroke-linejoin="round"/>
+<g class="kb"><circle cx="230" cy="145" r="29"/><circle cx="110" cy="145" r="29"/><circle cx="170" cy="85" r="29"/><circle cx="170" cy="205" r="29"/></g>
+<circle cx="170" cy="145" r="30" class="hb"/><text x="170" y="150" class="m s bd">Sun</text>
+<g class="s"><path d="M196 152 L390 232" class="ln"/><text x="396" y="228" class="bd o">Sun gear → MG1 (generator)</text><text x="396" y="244">Starts the engine. Generates electricity.</text><text x="396" y="258">Its speed controls the "gear ratio".</text>
+<path d="M214 100 L390 130" class="ln"/><text x="396" y="126" class="bd">Planet carrier → ENGINE</text><text x="396" y="142">Engine power enters here and is split two ways:</text><text x="396" y="156">part to the wheels, part to MG1.</text>
+<path d="M250 78 L390 40" class="ln"/><text x="396" y="36" class="bd g">Ring gear → MG2 (drive motor) → WHEELS</text><text x="396" y="52">MG2 drives the car and does the regenerative braking.</text><text x="396" y="66">Turns whenever the wheels turn.</text></g>
+<text x="170" y="278" class="m s mu">Four planet gears on a carrier, between sun and ring</text>
+</svg>
+<figcaption><b>Figure 13.1</b> The power-split device. Because the electronics control MG1's speed, the engine can run at any speed for any road speed — an "electronic CVT" (e-CVT) with no belts.</figcaption></figure>
+<div class="tw"><table>
+<thead><tr><th>Driving situation</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td>Pulling away gently</td><td>Engine off. Battery → MG2 → wheels.</td></tr>
+<tr><td>Normal acceleration</td><td>MG1 spins the engine to start it. Engine power splits: part to wheels, part through MG1 → MG2.</td></tr>
+<tr><td>Hard acceleration</td><td>Engine plus battery power through MG2.</td></tr>
+<tr><td>Cruising</td><td>Mostly engine; surplus charges the battery.</td></tr>
+<tr><td>Braking</td><td>MG2 generates and charges the battery. Engine off.</td></tr>
+</tbody></table></div>
+<p><b>Battery:</b> NiMH or lithium-ion, about 1–1.5 kWh. Aqua: 144 V (120 cells × 1.2 V). Prius (third generation): 201.6 V (168 cells). A boost converter raises this to as much as 650 V for the motors. The battery is air-cooled by a fan drawing cabin air.</p>
+
+<h3>13.3 Honda e:HEV (two-motor system)</h3>
+<p>Used in the HR-V e:HEV and other recent Honda hybrids. It has a generator motor, a drive motor, and a single clutch.</p>
+<ul>
+<li><b>City driving — series mode.</b> The engine turns the generator; the drive motor turns the wheels. Engine speed is not tied to road speed.</li>
+<li><b>Steady cruising — engine drive.</b> A clutch connects the engine straight to the wheels through one fixed gear, like top gear.</li>
+<li><b>Low load — EV mode.</b> Battery → drive motor.</li>
+</ul>
+<aside class="c tip"><h4>Workshop tip — do not confuse the two Honda systems</h4><p>Older imported Honda <b>Vezel and Fit hybrids</b> (2013–2020) use a different system called <b>i-DCD</b>: one motor inside a 7-speed dual-clutch gearbox. These are known for clutch judder and gearbox actuator faults. The newer <b>e:HEV</b> has no such gearbox. Always identify which system you have before diagnosing.</p></aside>
+
+<h3>13.4 Hyundai / Kia parallel hybrid</h3>
+<p>Used in the Tucson, Santa Fe and Sportage hybrids. The layout looks familiar to any mechanic:</p>
+<p style="text-align:center"><b>Turbo petrol engine → engine clutch → electric motor → 6-speed automatic gearbox → wheels</b></p>
+<ul>
+<li>The motor (about 44 kW) sits where the torque converter would be.</li>
+<li>With the clutch open, the motor alone drives through the gearbox (EV mode). With it closed, engine and motor work together.</li>
+<li>A second small motor, the <b>HSG</b> (hybrid starter-generator), is belt-driven on the engine to start it smoothly and to generate.</li>
+<li>Battery: lithium-ion polymer, about 1.5 kWh, 270 V.</li>
+</ul>
+
+<h3>13.5 Chinese plug-in hybrids (DHT systems)</h3>
+<p>BYD (<b>DM-i</b>), GWM Haval (<b>Hi4 / DHT</b>), and Chery / Jaecoo (<b>CSH / SHS</b>) all use a <b>dedicated hybrid transmission (DHT)</b>: a compact unit containing a generator, a drive motor, a clutch, and one to three gears for the engine. They behave mainly like an electric car, with the engine helping when needed.</p>
+<figure>
+<svg viewBox="0 0 720 350" role="img" aria-label="Three operating modes of a DHT plug-in hybrid: EV, series and parallel">
+<!-- EV -->
+<g><text x="20" y="14" class="bd">1 · EV mode — battery has charge, normal driving</text>
+<rect x="300" y="74" width="120" height="26" rx="5" class="hb"/><text x="360" y="92" class="m s bd">Battery</text>
+<rect x="610" y="24" width="80" height="40" rx="6" class="db"/><text x="650" y="49" class="m s bd w">Wheels</text>
+<rect x="450" y="24" width="100" height="40" rx="6" class="gb"/><text x="500" y="49" class="m s bd">Drive motor</text>
+<path d="M550 44 H610" class="mc"/>
+<g opacity=".3"><rect x="30" y="24" width="90" height="40" rx="6" class="kb"/><text x="75" y="49" class="m s bd">Engine</text><rect x="150" y="24" width="100" height="40" rx="6" class="gb"/><text x="200" y="49" class="m s bd">Generator</text><rect x="290" y="24" width="60" height="40" rx="6" class="yb"/><text x="320" y="49" class="m s bd">Clutch</text><path d="M120 44 H150 M250 44 H290 M350 44 H450" class="ln da"/><path d="M200 64 V87 H300" class="ln da"/></g>
+<path d="M420 87 H500 V68" class="hv" marker-end="url(#ao)"/><text x="400" y="37" class="m s mu">clutch open</text></g>
+<!-- Series -->
+<g transform="translate(0 118)"><text x="20" y="14" class="bd">2 · Series mode — engine generates, motor drives (city, low battery)</text>
+<rect x="300" y="74" width="120" height="26" rx="5" class="hb"/><text x="360" y="92" class="m s bd">Battery</text>
+<rect x="610" y="24" width="80" height="40" rx="6" class="db"/><text x="650" y="49" class="m s bd w">Wheels</text>
+<rect x="450" y="24" width="100" height="40" rx="6" class="gb"/><text x="500" y="49" class="m s bd">Drive motor</text>
+<path d="M550 44 H610" class="mc"/>
+<rect x="30" y="24" width="90" height="40" rx="6" class="kb"/><text x="75" y="49" class="m s bd">Engine</text><rect x="150" y="24" width="100" height="40" rx="6" class="gb"/><text x="200" y="49" class="m s bd">Generator</text><path d="M120 44 H150" class="mc"/>
+<g opacity=".3"><rect x="290" y="24" width="60" height="40" rx="6" class="yb"/><text x="320" y="49" class="m s bd">Clutch</text><path d="M250 44 H290 M350 44 H450" class="ln da"/></g>
+<path d="M200 64 V87 H296" class="hv" marker-end="url(#ao)"/><path d="M420 87 H500 V68" class="hv" marker-end="url(#ao)"/><text x="400" y="37" class="m s mu">clutch open</text></g>
+<!-- Parallel -->
+<g transform="translate(0 236)"><text x="20" y="14" class="bd">3 · Parallel mode — engine drives the wheels directly, motor assists (motorway, hard acceleration)</text>
+<rect x="300" y="74" width="120" height="26" rx="5" class="hb"/><text x="360" y="92" class="m s bd">Battery</text>
+<rect x="610" y="24" width="80" height="40" rx="6" class="db"/><text x="650" y="49" class="m s bd w">Wheels</text>
+<rect x="450" y="24" width="100" height="40" rx="6" class="gb"/><text x="500" y="49" class="m s bd">Drive motor</text>
+<path d="M550 44 H610" class="mc"/>
+<rect x="30" y="24" width="90" height="40" rx="6" class="kb"/><text x="75" y="49" class="m s bd">Engine</text><rect x="150" y="24" width="100" height="40" rx="6" class="gb"/><text x="200" y="49" class="m s bd">Generator</text><rect x="290" y="24" width="60" height="40" rx="6" class="yb"/><text x="320" y="49" class="m s bd">Clutch</text>
+<path d="M120 44 H150 M250 44 H290 M350 44 H450" class="mc"/><path d="M420 87 H500 V68" class="hv" marker-end="url(#ao)"/><text x="400" y="37" class="m s g bd">clutch closed</text></g>
+</svg>
+<figcaption><b>Figure 13.2</b> The three main modes of a DHT plug-in hybrid. The car's computer switches between them automatically.</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 13.1 — Plug-in hybrids sold in Pakistan (approximate data)</caption>
+<thead><tr><th>Model</th><th>Engine</th><th>Battery</th><th>Electric range (test figure)</th></tr></thead>
+<tbody>
+<tr><td>BYD Sealion 6</td><td>1.5 L</td><td>18.3 kWh LFP Blade</td><td>about 70–80 km</td></tr>
+<tr><td>BYD Shark 6 pickup</td><td>1.5 L turbo</td><td>about 30 kWh LFP Blade</td><td>about 100 km</td></tr>
+<tr><td>Haval H6 PHEV</td><td>1.5 L turbo</td><td>about 19 kWh</td><td>about 70–100 km</td></tr>
+<tr><td>Jaecoo J7 PHEV</td><td>1.5 L turbo</td><td>about 18 kWh</td><td>about 80–90 km</td></tr>
+<tr><td>Chery Tiggo 8 PHEV</td><td>1.5 L turbo</td><td>about 18 kWh</td><td>about 75–90 km</td></tr>
+</tbody></table></div>
+<p>A <b>range-extender EV</b> (such as the Deepal S05 REEV, about 27 kWh) is a DHT hybrid with mode 3 removed: the engine can only generate.</p>
+
+<h3>13.6 What is extra on a plug-in hybrid</h3>
+<ul>
+<li>A much bigger battery, on-board charger and charge port — everything from the EV modules applies.</li>
+<li><b>Driver modes:</b> EV (electric first), HEV (automatic), and often "save" or "charge" (use the engine to hold or raise the battery level).</li>
+<li><b>Engine that rarely runs.</b> If the owner drives mostly on electricity, petrol can sit in the tank for months and go stale; oil can collect moisture because the engine never fully warms up. Many PHEVs force the engine to run occasionally for this reason. Oil changes are still needed by <em>time</em>, even if the engine hours are low.</li>
+<li><b>Sealed, pressurised fuel tank</b> on many PHEVs: the fuel flap must be released by a button and may take a few seconds.</li>
+</ul>
+
+<h3>13.7 Hybrid faults and service</h3>
+<p>A hybrid needs <b>all the service of a petrol car</b> (oil, filters, plugs, coolant) <b>plus</b> care of the high-voltage system.</p>
+<div class="tw"><table>
+<caption>Table 13.2 — Common faults on hybrids</caption>
+<thead><tr><th>Fault</th><th>Symptoms</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>HV battery worn (older Toyota, Honda)</td><td>Warning triangle, fault code P0A80, engine runs constantly, poor fuel economy, charge gauge swings rapidly up and down</td><td>Use scan tool to compare block voltages. One or more weak modules.</td></tr>
+<tr><td>Blocked battery cooling fan</td><td>Battery overheats; fan noisy; early battery failure</td><td>Clean fan and ducts at every service</td></tr>
+<tr><td>Inverter coolant pump failure</td><td>Overheat warning, power cut</td><td>Check flow in reservoir</td></tr>
+<tr><td>Weak 12 V battery</td><td>Will not go to READY; strange warning lights</td><td>The most common "hybrid fault" of all</td></tr>
+<tr><td>Brake actuator / accumulator</td><td>Brake warning, buzzing pump, hard pedal</td><td>Safety-critical; follow manual</td></tr>
+<tr><td>Engine issues from stop-start use</td><td>Rough running at start, blocked EGR, oil sludge</td><td>Engine runs cold more often</td></tr>
+<tr><td>Dual-clutch gearbox (Honda i-DCD)</td><td>Judder, no drive, gearbox warning</td><td>Clutch and actuator learning via scan tool</td></tr>
+</tbody></table></div>
+<aside class="c pk"><h4>In Pakistan — hybrid battery "repair"</h4><p>Many shops replace one or two weak modules in an old Aqua or Prius battery. It is cheap and gets the car moving. But the remaining modules are just as old, and new modules that do not match the old ones go out of balance quickly, so the fault often returns within months. A good technician tests <b>all</b> modules, matches replacements by capacity, cleans the bus bars and fan, and is <b>honest with the customer</b> about how long the repair may last compared with a new or fully reconditioned pack.</p></aside>
+<aside class="c danger"><h4>Danger</h4><p>A hybrid in READY mode is silent but <b>on</b>. The engine can start at any moment without warning. Before working in the engine bay, switch fully off and keep the key away. And remember: a "small" hybrid battery at 144–270 V is every bit as deadly as a big EV pack.</p></aside>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>Hybrids save fuel by stopping the engine, driving electrically at low speed, regenerating, and running the engine efficiently.</li>
+<li>Toyota: planetary power split, two motor-generators, e-CVT.</li>
+<li>Honda e:HEV: mostly series, with a direct-drive clutch for cruising. Older Vezel/Fit i-DCD is different.</li>
+<li>Hyundai/Kia: parallel, motor between engine and 6-speed automatic.</li>
+<li>Chinese PHEVs: DHT with EV, series and parallel modes, 18–30 kWh batteries.</li>
+<li>Hybrids need petrol-car servicing plus HV care. Check the 12 V battery first.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 13</h3><p>Choose one answer for each question.</p><ol>
+<li>In the Toyota power-split device, what is connected to the planet carrier?<ul><li>MG1</li><li>MG2</li><li data-c>The engine</li><li>The battery</li></ul></li>
+<li>Which component starts the engine in a Toyota hybrid?<ul><li>A normal 12 V starter motor</li><li data-c>MG1</li><li>The driver's foot</li><li>The DC-DC converter</li></ul></li>
+<li>In series mode on a DHT plug-in hybrid, what drives the wheels?<ul><li>The engine through the clutch</li><li data-c>The drive motor only</li><li>The generator</li><li>The 12 V battery</li></ul></li>
+<li>Which layout do Hyundai and Kia hybrids use?<ul><li>Series only</li><li>Power split</li><li data-c>Parallel, with the motor between engine and automatic gearbox</li><li>Hub motors</li></ul></li>
+<li>A hybrid will not go to READY and shows many warning lights. What do you check first?<ul><li>HV battery modules</li><li>Inverter</li><li data-c>The 12 V battery</li><li>The planetary gear</li></ul></li>
+<li>Why do PHEV engines still need oil changes by time, even with few engine hours?<ul><li>The oil evaporates</li><li data-c>Short, cold engine runs let moisture and fuel collect in the oil</li><li>The battery heats the oil</li><li>They do not need oil changes</li></ul></li>
+<li>Why is a hybrid in READY mode dangerous to work on?<ul><li>The radio may come on</li><li data-c>The engine can start by itself without warning</li><li>The tyres may deflate</li><li>It uses more fuel</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 14 ===================== -->
+<section class="mod" data-part="Part F · Supporting systems" data-title="Charging">
+<div class="mh"><div class="n">14</div><div><div class="pt">Part F · Supporting systems</div><h2>Charging</h2><p>AC and DC charging, plugs and sockets, how the car and charger talk, and home charging on Pakistani wiring.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>The difference between AC and DC charging</li>
+<li>The connector types used in Pakistan</li>
+<li>How to estimate charging time</li>
+<li>What a safe home charging installation needs</li>
+<li>Common charging faults</li></ul></div>
+
+<h3>14.1 AC charging and DC charging</h3>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="AC charging uses the on-board charger; DC charging bypasses it">
+<text x="20" y="22" class="bd">AC charging (home, office) — slow to medium</text>
+<rect x="20" y="36" width="90" height="46" rx="6" class="lb"/><text x="65" y="56" class="m s bd">Mains</text><text x="65" y="71" class="m s">230 V AC</text>
+<rect x="150" y="36" width="110" height="46" rx="6" class="kb"/><text x="205" y="56" class="m s bd">Wallbox (EVSE)</text><text x="205" y="71" class="m s">safety switch only</text>
+<rect x="330" y="26" width="370" height="68" rx="10" fill="none" stroke="#1B2A33" stroke-width="1.5" stroke-dasharray="6 4"/><text x="690" y="20" class="e s mu">inside the car</text>
+<rect x="350" y="42" width="130" height="40" rx="6" class="yb"/><text x="415" y="59" class="m s bd">On-board charger</text><text x="415" y="74" class="m s">AC → DC, 3–22 kW</text>
+<rect x="560" y="42" width="110" height="40" rx="6" class="hb"/><text x="615" y="67" class="m s bd">Battery</text>
+<path d="M110 59 H146 M260 59 H346" class="lv" marker-end="url(#ab)"/><path d="M480 62 H556" class="hv" marker-end="url(#ao)"/>
+<text x="300" y="52" class="m s bl">AC</text><text x="518" y="54" class="m s o">DC</text>
+<text x="20" y="142" class="bd">DC fast charging (public stations) — fast</text>
+<rect x="20" y="156" width="90" height="46" rx="6" class="lb"/><text x="65" y="176" class="m s bd">Grid</text><text x="65" y="191" class="m s">3-phase AC</text>
+<rect x="150" y="150" width="150" height="58" rx="6" class="yb"/><text x="225" y="172" class="m s bd">DC charging station</text><text x="225" y="187" class="m s">large AC → DC converter</text><text x="225" y="201" class="m s">30–350 kW</text>
+<rect x="330" y="146" width="370" height="68" rx="10" fill="none" stroke="#1B2A33" stroke-width="1.5" stroke-dasharray="6 4"/>
+<rect x="350" y="162" width="130" height="40" rx="6" class="kb" opacity=".4"/><text x="415" y="187" class="m s mu">on-board charger not used</text>
+<rect x="560" y="162" width="110" height="40" rx="6" class="hb"/><text x="615" y="187" class="m s bd">Battery</text>
+<path d="M110 179 H146" class="lv" marker-end="url(#ab)"/><path d="M300 179 H320 V226 H615 V206" class="hv" marker-end="url(#ao)"/>
+<text x="470" y="242" class="m s o">High-current DC goes straight to the battery</text>
+</svg>
+<figcaption><b>Figure 14.1</b> In AC charging the conversion happens in the car. In DC charging it happens in the station.</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 14.1 — Ways to charge</caption>
+<thead><tr><th>Method</th><th>Power</th><th>Typical use</th><th>Adds per hour (approx.)</th></tr></thead>
+<tbody>
+<tr><td><b>Portable charger</b> in a 3-pin socket ("granny cable")</td><td>1.8–3 kW</td><td>Overnight top-up, emergencies, PHEVs</td><td>10–18 km</td></tr>
+<tr><td><b>AC wallbox</b>, single-phase</td><td>7 kW</td><td>Home, overnight</td><td>40–45 km</td></tr>
+<tr><td><b>AC wallbox</b>, three-phase</td><td>11–22 kW</td><td>Offices, malls, homes with 3-phase</td><td>60–130 km</td></tr>
+<tr><td><b>DC fast charger</b></td><td>30–60 kW</td><td>City stations</td><td>180–350 km</td></tr>
+<tr><td><b>DC rapid charger</b></td><td>120–350 kW</td><td>Motorway service areas</td><td>10–80% in 20–40 minutes</td></tr>
+</tbody></table></div>
+<p>The actual speed is always the <b>lowest</b> of: what the charger can give, what the cable can carry, and what the car can accept. A car with a 7 kW on-board charger takes only 7 kW from a 22 kW wallbox.</p>
+
+<h3>14.2 Connectors</h3>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="Type 2 and CCS2 connector faces with pin names">
+<g transform="translate(130 110)"><path d="M-58 -36 H58 A68 68 0 0 1 0 66 A68 68 0 0 1 -58 -36z" class="kb"/>
+<g class="bx"><circle cx="-18" cy="-17" r="10"/><circle cx="18" cy="-17" r="10"/><circle cx="-36" cy="10" r="11"/><circle cx="0" cy="10" r="11"/><circle cx="36" cy="10" r="11"/><circle cx="-18" cy="38" r="11"/><circle cx="18" cy="38" r="11"/></g>
+<g class="m s bd" style="font-size:9px"><text x="-18" y="-13">PP</text><text x="18" y="-13">CP</text><text x="-36" y="13">N</text><text x="0" y="13">PE</text><text x="36" y="13">L1</text><text x="-18" y="41">L3</text><text x="18" y="41">L2</text></g></g>
+<text x="130" y="206" class="m bd">Type 2 (AC)</text><text x="130" y="222" class="m s">single- or three-phase AC</text><text x="130" y="238" class="m s mu">Pakistan's official AC standard</text>
+<g transform="translate(370 82)"><path d="M-58 -36 H58 A68 68 0 0 1 0 66 A68 68 0 0 1 -58 -36z" class="kb"/><rect x="-62" y="62" width="124" height="52" rx="26" class="kb"/>
+<g class="bx"><circle cx="-18" cy="-17" r="10"/><circle cx="18" cy="-17" r="10"/><circle cx="0" cy="10" r="11"/></g><g class="hb"><circle cx="-30" cy="88" r="17"/><circle cx="30" cy="88" r="17"/></g>
+<g class="m s bd" style="font-size:9px"><text x="-18" y="-13">PP</text><text x="18" y="-13">CP</text><text x="0" y="13">PE</text></g><g class="m s bd"><text x="-30" y="92">DC+</text><text x="30" y="92">DC−</text></g></g>
+<text x="370" y="222" class="m bd">CCS2 (DC fast)</text><text x="370" y="238" class="m s mu">Type 2 shape plus two large DC pins</text>
+<g class="s"><text x="500" y="40" class="bd">Pin functions</text>
+<text x="500" y="62"><tspan class="bd">L1, L2, L3</tspan> — AC live phases</text>
+<text x="500" y="80"><tspan class="bd">N</tspan> — neutral</text>
+<text x="500" y="98"><tspan class="bd">PE</tspan> — protective earth</text>
+<text x="500" y="116"><tspan class="bd">CP</tspan> — control pilot: car and</text><text x="500" y="130">charger agree on current</text>
+<text x="500" y="148"><tspan class="bd">PP</tspan> — proximity: plug is in;</text><text x="500" y="162">cable rating</text>
+<text x="500" y="180"><tspan class="bd">DC+, DC−</tspan> — fast-charge current</text><text x="500" y="194">direct to the battery</text></g>
+</svg>
+<figcaption><b>Figure 14.2</b> The vehicle inlets you will see most on officially imported and locally assembled cars.</figcaption></figure>
+<div class="tw"><table>
+<thead><tr><th>Connector</th><th>Type</th><th>Where you will see it</th></tr></thead>
+<tbody>
+<tr><td><b>Type 2</b></td><td>AC</td><td>Official Pakistan-market cars (BYD, MG, Deepal and others); all AC wallboxes sold here</td></tr>
+<tr><td><b>CCS2</b></td><td>DC</td><td>Official Pakistan-market cars; public fast chargers</td></tr>
+<tr><td><b>GB/T AC and GB/T DC</b></td><td>AC / DC</td><td>The Chinese domestic standard. Found on <b>grey-import</b> cars brought directly from China. The AC plug looks like Type 2 but does <b>not</b> fit. Needs a GB/T charger or a quality adapter.</td></tr>
+<tr><td><b>CHAdeMO</b></td><td>DC</td><td>Older Japanese EVs (Nissan Leaf imports)</td></tr>
+</tbody></table></div>
+<aside class="c pk"><h4>In Pakistan</h4><p>NEPRA's rules for public charging specify Type 2 for AC and CCS2 for DC. Many public DC stations also carry a GB/T gun because so many cars come from China. Before advising a customer on a home charger, <b>look at the car's inlet</b>. Cheap, unbranded GB/T-to-CCS2 or Type 2 adapters are a common cause of overheated, melted charge ports.</p></aside>
+
+<h4>The Chinese GB/T connectors</h4>
+<p>Training in China is done on GB/T equipment, and cars imported directly from China have GB/T inlets, so you must know these as well.</p>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="GB/T AC and GB/T DC connector faces with pin names">
+<g transform="translate(130 104)"><path d="M-58 -36 H58 A68 68 0 0 1 0 66 A68 68 0 0 1 -58 -36z" class="kb"/>
+<g class="bx"><circle cx="-18" cy="-17" r="10"/><circle cx="18" cy="-17" r="10"/><circle cx="-36" cy="10" r="11"/><circle cx="0" cy="10" r="11"/><circle cx="36" cy="10" r="11"/><circle cx="-18" cy="38" r="11"/><circle cx="18" cy="38" r="11"/></g>
+<g class="m s bd" style="font-size:9px"><text x="-18" y="-14">CC</text><text x="18" y="-14">CP</text><text x="-36" y="13">N</text><text x="0" y="13">PE</text><text x="36" y="13">L1</text><text x="-18" y="41">L3</text><text x="18" y="41">L2</text></g></g>
+<text x="130" y="200" class="m bd">GB/T AC (7 pins)</text><text x="130" y="216" class="m s">up to 7 kW single-phase,</text><text x="130" y="230" class="m s">more on three-phase</text>
+<g transform="translate(370 100)"><circle r="76" class="kb"/>
+<g class="bx"><circle cx="-22" cy="-48" r="9"/><circle cx="22" cy="-48" r="9"/><circle cx="0" cy="-22" r="8"/><circle cx="0" cy="2" r="8"/><circle cx="-30" cy="42" r="9"/><circle cx="30" cy="42" r="9"/><circle cx="0" cy="40" r="12"/></g>
+<g class="hb"><circle cx="-40" cy="-6" r="18"/><circle cx="40" cy="-6" r="18"/></g>
+<g class="m s bd" style="font-size:8.5px"><text x="-22" y="-45">S+</text><text x="22" y="-45">S−</text><text x="0" y="-19">CC1</text><text x="0" y="5">CC2</text><text x="-30" y="45">A+</text><text x="30" y="45">A−</text><text x="0" y="43">PE</text></g>
+<g class="m s bd"><text x="-40" y="-2">DC+</text><text x="40" y="-2">DC−</text></g></g>
+<text x="370" y="200" class="m bd">GB/T DC (9 pins)</text><text x="370" y="216" class="m s">fast charging</text><text x="370" y="230" class="m s mu">pin positions simplified</text>
+<g class="s"><text x="490" y="30" class="bd">GB/T pin names</text>
+<text x="490" y="52"><tspan class="bd">CC</tspan> — connection confirm (the same</text><text x="490" y="66">job as PP on Type 2)</text>
+<text x="490" y="86"><tspan class="bd">CP</tspan> — control pilot</text>
+<text x="490" y="106"><tspan class="bd">CC1, CC2</tspan> — connection confirm for</text><text x="490" y="120">the station and for the car</text>
+<text x="490" y="140"><tspan class="bd">S+, S−</tspan> — CAN data between the</text><text x="490" y="154">station and the BMS</text>
+<text x="490" y="174"><tspan class="bd">A+, A−</tspan> — 12 V auxiliary supply</text><text x="490" y="188">from the station to wake the BMS</text>
+<text x="490" y="208"><tspan class="bd">DC+, DC−</tspan> — charging current</text></g>
+</svg>
+<figcaption><b>Figure 14.3</b> The Chinese-standard connectors. The AC plug resembles Type 2 but the two do not fit each other.</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 14.2 — Which plug, where</caption>
+<thead><tr><th>Region</th><th>AC</th><th>DC</th></tr></thead>
+<tbody>
+<tr><td>China</td><td>GB/T AC</td><td>GB/T DC</td></tr>
+<tr><td>Europe and most export markets, including Pakistan</td><td>Type 2</td><td>CCS2</td></tr>
+<tr><td>North America</td><td>Type 1 or NACS</td><td>CCS1 or NACS</td></tr>
+<tr><td>Japan</td><td>Type 1</td><td>CHAdeMO</td></tr>
+</tbody></table></div>
+
+<h3>14.3 How the car and charger talk</h3>
+<aside class="c pic"><h4>Picture it — knocking on the door</h4><p>A polite visitor knocks, waits to hear "who is it?", answers, and only walks in when invited. A charger does the same. It "knocks" with a small signal, the car answers, they agree how much current is allowed, the plug locks — and only then does the power come on. Pull the plug and the conversation ends instantly, so the pins are never live in your hand.</p></aside>
+<p>No power flows the moment you plug in. First there is a <b>handshake</b> on the control pilot (CP) wire:</p>
+<ol>
+<li>Charger puts +12 V on CP. Not connected.</li>
+<li>Plug in: a resistor in the car pulls CP down to <b>9 V</b>. Charger knows a car is present and starts a 1 kHz signal whose pulse width says "you may take up to X amps".</li>
+<li>Car is ready: it pulls CP down to <b>6 V</b>. The plug is locked.</li>
+<li>Only now does the charger close its relay and switch on the power.</li>
+<li>If anything is wrong — earth missing, plug pulled, fault — CP changes and the power is cut in milliseconds.</li>
+</ol>
+<p>For <b>DC charging</b> the car's BMS and the station exchange digital messages continuously: battery voltage, maximum current, temperature. <b>The BMS is in charge</b>; the station supplies exactly the voltage and current the BMS requests.</p>
+
+<h4>Measuring the charging signals</h4>
+<p>When a car will not charge, measuring these low-voltage signals at the inlet tells you whether car and charger are "talking". They are safe, low-voltage tests.</p>
+<div class="tw"><table>
+<thead><tr><th>Signal</th><th>What to expect</th></tr></thead>
+<tbody>
+<tr><td><b>CP</b> to PE (AC charging, Type 2 and GB/T)</td><td>+12 V with nothing connected → 9 V when plugged in → 6 V when the car is ready. During charging it is a 1 kHz square wave; the wider the pulse, the more current is allowed.</td></tr>
+<tr><td><b>PP</b> (Type 2) or <b>CC</b> (GB/T AC) to PE</td><td>A fixed resistor in the plug that tells the car the cable's rating. Roughly: 1.5 kΩ = light-duty cable, 680 Ω = 16–20 A, 220 Ω = 32 A, 100 Ω = 63 A.</td></tr>
+<tr><td><b>CC1</b> (GB/T DC)</td><td>The station watches this point: about 12 V unplugged, 6 V while the latch button is pressed, 4 V when fully connected.</td></tr>
+<tr><td><b>S+ / S−</b> (GB/T DC)</td><td>A CAN bus: about 60 Ω between them with power off; messages visible with a CAN tool.</td></tr>
+</tbody></table></div>
+
+<h3>14.4 The charging curve</h3>
+<figure>
+<svg viewBox="0 0 720 240" role="img" aria-label="DC fast charging power against state of charge">
+<rect x="140" y="20" width="420" height="170" fill="#E9F7EC"/>
+<path d="M80 20 V190 H690" class="ln"/>
+<path d="M80 150 L104 50 H410 L560 112 L620 162 L680 176" class="hv" style="stroke-width:3.5"/>
+<g class="m s"><text x="80" y="208">0%</text><text x="140" y="208">10%</text><text x="380" y="208">50%</text><text x="560" y="208">80%</text><text x="680" y="208">100%</text></g>
+<text x="380" y="230" class="m s bd">State of charge</text><text x="40" y="105" class="s bd" transform="rotate(-90 40 105)" text-anchor="middle">Charging power</text>
+<text x="260" y="42" class="m s bd o">Peak power</text><text x="520" y="84" class="s bd o">Taper begins</text><text x="640" y="150" class="m s bd o">Very slow</text>
+<text x="350" y="140" class="m bd g">Fast-charge window: 10% to 80%</text>
+</svg>
+<figcaption><b>Figure 14.4</b> A typical DC charging curve. Above about 80% the BMS reduces current to protect the cells.</figcaption></figure>
+<p>Like filling a glass of water, you pour fast at first and slow down near the top. Charging from 80% to 100% can take as long as 10% to 80%. Heat and cold also slow charging: a battery at 45 °C or 5 °C will be limited by the BMS.</p>
+<aside class="c ex"><h4>Worked example — charging time</h4>
+<p><span class="f">Time (h) ≈ Energy needed (kWh) ÷ Charger power (kW)</span>, plus about 10% for losses.</p>
+<p>A 60 kWh battery from 20% to 80% needs 60% × 60 = 36 kWh.<br>
+On a 7 kW wallbox: 36 ÷ 7 × 1.1 ≈ <b>5.7 hours</b>.<br>
+On a 60 kW DC charger: 36 ÷ 60 × 1.1 ≈ <b>40 minutes</b>.</p></aside>
+
+<h3>14.5 Home charging in Pakistan</h3>
+<p>An EV wallbox is the biggest continuous electrical load most houses will ever have: <b>32 A for many hours</b>. Wiring that copes with an air-conditioner cycling on and off may overheat under this.</p>
+<div class="tw"><table>
+<caption>Table 14.3 — Requirements for a 7 kW (32 A) home charger</caption>
+<thead><tr><th>Item</th><th>Requirement</th></tr></thead>
+<tbody>
+<tr><td><b>Sanctioned load</b></td><td>The house connection must support the extra 7 kW. Many single-phase connections do not; a load extension or three-phase meter may be needed.</td></tr>
+<tr><td><b>Dedicated circuit</b></td><td>Its own cable direct from the distribution board. Nothing else on it.</td></tr>
+<tr><td><b>Cable</b></td><td>Copper, at least 6 mm²; 10 mm² for long runs. Good-quality branded cable.</td></tr>
+<tr><td><b>Breaker</b></td><td>40 A MCB for a 32 A charger</td></tr>
+<tr><td><b>Earth-leakage protection</b></td><td>RCD (Type A with 6 mA DC detection in the charger, or Type B)</td></tr>
+<tr><td><b>Earthing</b></td><td>A real, tested earth connection. <b>Essential.</b></td></tr>
+<tr><td><b>Location</b></td><td>Protected from rain and direct sun; cable not lying in water</td></tr>
+</tbody></table></div>
+<aside class="c danger"><h4>Danger — earthing</h4><p>Many Pakistani houses have a poor earth or none at all. A proper EV charger checks the earth and <b>refuses to charge</b> without it. Never bypass this check, and never fit a "no-earth" cheat adapter. Without earth, a fault can make the whole car body live. Fix the earth instead.</p></aside>
+<ul>
+<li><b>3-pin sockets:</b> a portable charger draws 8–13 A for hours. Worn sockets and thin extension leads overheat and burn. Use a good 16 A socket on its own circuit; never a multi-plug extension.</li>
+<li><b>Voltage swings and load-shedding:</b> chargers pause when voltage is too low or too high and restart when power returns. Frequent trips point to supply problems, not always the car.</li>
+<li><b>Solar:</b> charging in daylight from rooftop solar is the cheapest energy available. Some wallboxes can follow the solar output.</li>
+<li><b>UPS and small generators:</b> a domestic UPS cannot charge a car. Generators often have poor earthing and unstable voltage; most chargers will reject them.</li>
+</ul>
+
+<h3>14.6 Charging faults</h3>
+<div class="tw"><table>
+<thead><tr><th>Complaint</th><th>Check, in this order</th></tr></thead>
+<tbody>
+<tr><td>Will not start charging</td><td>Charging timer or schedule set in the car? Plug fully in and locked? Try another charger and cable. Earth at the socket. Charger error light. Fault codes.</td></tr>
+<tr><td>Charges slowly on AC</td><td>Current limit set in car or on portable charger. Single-phase supply. Car's on-board charger rating. Hot battery.</td></tr>
+<tr><td>Charging stops by itself</td><td>Supply voltage dips. Overheating plug or socket (look for brown marks). Battery over-temperature. Charge limit reached.</td></tr>
+<tr><td>AC works, DC does not (or the reverse)</td><td>AC only → DC contactors or communication. DC only → on-board charger.</td></tr>
+<tr><td>Plug stuck in the car</td><td>Unlock the car; use the manual release cable (location in the handbook).</td></tr>
+<tr><td>Burnt or melted pins</td><td>Poor contact, cheap adapter, water or dirt. Replace the inlet <b>and</b> the cable; a damaged plug will destroy a new inlet.</td></tr>
+</tbody></table></div>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>AC charging: conversion in the car's on-board charger, 2–22 kW. DC charging: conversion in the station, 30–350 kW.</li>
+<li>Pakistan standard: Type 2 (AC) and CCS2 (DC). Grey imports from China use GB/T.</li>
+<li>No power flows until the CP handshake is complete. In DC charging the BMS controls the station.</li>
+<li>Fast-charge from 10% to 80%; it slows sharply after that.</li>
+<li>Home charging needs a dedicated circuit, correct cable and breaker, RCD and a real earth.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 14</h3><p>Choose one answer for each question.</p><ol>
+<li>During AC charging, where is AC converted to DC?<ul><li>In the wallbox</li><li data-c>In the car's on-board charger</li><li>In the cable</li><li>In the motor</li></ul></li>
+<li>Which DC fast-charging connector is the official standard in Pakistan?<ul><li>CHAdeMO</li><li>Type 1</li><li data-c>CCS2</li><li>3-pin plug</li></ul></li>
+<li>A car with a 7 kW on-board charger is plugged into a 22 kW AC wallbox. How fast does it charge?<ul><li>22 kW</li><li>15 kW</li><li data-c>7 kW</li><li>29 kW</li></ul></li>
+<li>How long does a 7 kW charger take to add 35 kWh (ignoring losses)?<ul><li>2 hours</li><li data-c>5 hours</li><li>7 hours</li><li>35 hours</li></ul></li>
+<li>Why does DC charging slow down above about 80%?<ul><li>The station runs out of power</li><li>The cable gets too long</li><li data-c>The BMS reduces current to protect the cells as they near full</li><li>The motor needs to cool</li></ul></li>
+<li>A home charger refuses to charge and shows an earth fault. What is the correct action?<ul><li>Use an adapter that bypasses the earth check</li><li data-c>Have the house earthing tested and repaired</li><li>Use a thinner cable</li><li>Charge from a UPS instead</li></ul></li>
+<li>What does the control pilot (CP) wire do?<ul><li>Carries the main charging current</li><li>Earths the car body</li><li data-c>Lets car and charger confirm connection and agree the maximum current</li><li>Locks the steering</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 15 ===================== -->
+<section class="mod" data-part="Part F · Supporting systems" data-title="Cooling, heating and air-conditioning">
+<div class="mh"><div class="n">15</div><div><div class="pt">Part F · Supporting systems</div><h2>Cooling, heating and air-conditioning</h2><p>Thermal management and A/C in detail: one of the most common sources of EV workshop jobs.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>The three things an EV must keep at the right temperature</li>
+<li>How the refrigeration cycle makes cold, stage by stage</li>
+<li>How the electric compressor works and what it needs before it will run</li>
+<li>How to read system pressures and what each pattern means</li>
+<li>The correct way to recover, evacuate and charge refrigerant</li>
+<li>How heat pumps and PTC heaters work</li>
+<li>A step-by-step method for A/C faults</li></ul></div>
+
+<h3>15.1 Why this module matters so much</h3>
+<p>In a petrol car the A/C is a comfort item. In an EV it is part of the <b>drive system</b>, because the same A/C circuit usually cools the battery. That is why A/C work is among the most frequent jobs on electric cars:</p>
+<ul>
+<li>It runs far more hours: while driving, while parked with the cabin pre-cooled, and during fast charging.</li>
+<li>The compressor contains high-voltage electronics that are damaged by moisture and wrong oil.</li>
+<li>There are more valves, sensors and pipes than in a petrol car, so more places to leak or stick.</li>
+<li>When it is weak, the customer notices twice: a warm cabin <em>and</em> slow charging or reduced power.</li>
+</ul>
+<div class="tw"><table>
+<thead><tr><th>What must be kept at temperature</th><th>Ideal range</th><th>If too hot</th></tr></thead>
+<tbody>
+<tr><td>Battery</td><td>15–35 °C</td><td>Faster ageing, reduced power, slow charging, safety risk</td></tr>
+<tr><td>Motor and power electronics</td><td>Coolant below about 65 °C</td><td>Power reduced; electronics fail</td></tr>
+<tr><td>Cabin</td><td>Comfortable for people</td><td>Unhappy customer, and the A/C uses range</td></tr>
+</tbody></table></div>
+
+<h3>15.2 The loops</h3>
+<figure>
+<svg viewBox="0 0 720 280" role="img" aria-label="Three thermal loops: drive unit coolant, battery coolant and air-conditioning refrigerant, linked by the chiller">
+<rect x="46" y="70" width="190" height="140" rx="10" class="lv" style="stroke-width:4"/>
+<rect x="300" y="70" width="135" height="140" rx="10" class="gn" style="stroke-width:4"/>
+<rect x="455" y="70" width="225" height="140" rx="10" class="rd" style="stroke-width:4"/>
+<rect x="86" y="54" width="110" height="32" rx="6" class="lb"/><text x="141" y="75" class="m s bd">Radiator + fan</text>
+<rect x="72" y="194" width="138" height="32" rx="6" class="gb"/><text x="141" y="215" class="m s bd">Motor + inverter</text>
+<rect x="10" y="124" width="76" height="32" rx="6" class="yb"/><text x="48" y="145" class="m s bd">OBC, DC-DC</text>
+<rect x="204" y="124" width="64" height="32" rx="6" class="kb"/><text x="236" y="145" class="m s bd">Pump</text>
+<rect x="308" y="194" width="118" height="32" rx="6" class="hb"/><text x="367" y="215" class="m s bd">Battery pack</text>
+<rect x="270" y="88" width="60" height="28" rx="6" class="kb"/><text x="300" y="107" class="m s bd">Pump</text>
+<rect x="408" y="110" width="76" height="60" rx="6" class="rb"/><text x="446" y="136" class="m s bd">Chiller</text><text x="446" y="152" class="m s">heat swap</text>
+<rect x="510" y="54" width="120" height="32" rx="6" class="lb"/><text x="570" y="75" class="m s bd">Condenser + fan</text>
+<rect x="500" y="194" width="140" height="32" rx="6" class="yb"/><text x="570" y="215" class="m s bd">Electric compressor</text>
+<rect x="640" y="118" width="74" height="44" rx="6" class="gb"/><text x="677" y="137" class="m s bd">Evaporator</text><text x="677" y="152" class="m s">(cabin)</text>
+<text x="141" y="30" class="m bd bl">1 · Drive coolant loop</text><text x="367" y="30" class="m bd g">2 · Battery coolant loop</text><text x="580" y="30" class="m bd r">3 · A/C refrigerant loop</text>
+<text x="360" y="262" class="m s mu">The chiller lets cold refrigerant take heat out of the battery coolant. One A/C system cools both people and battery.</text>
+</svg>
+<figcaption><b>Figure 15.1</b> A typical three-loop layout. Many cars add valves so that loops can be joined or separated as needed.</figcaption></figure>
+<ul>
+<li><b>Loop 1</b> cools the motor, inverter, charger and DC-DC converter through a radiator at the front.</li>
+<li><b>Loop 2</b> circulates coolant through the battery's cold plate. In mild weather it may use a radiator; in hot weather it goes through the <b>chiller</b>.</li>
+<li><b>Loop 3</b> is the air-conditioning. A second branch feeds the chiller (or, on direct-cooled packs such as BYD, plates inside the battery).</li>
+</ul>
+<p>Each coolant loop has its own <b>electric pump</b>. There is no engine-driven water pump and often no thermostat; instead there are electric <b>multi-way valves</b>.</p>
+
+<h3>15.3 How A/C makes cold: the refrigeration cycle</h3>
+<aside class="c pic"><h4>Picture it — sweat</h4><p>When sweat dries on your skin, you feel cool. The liquid takes heat from your body to turn into vapour. An A/C system does exactly this, on purpose and in a closed loop: a liquid <b>evaporates</b> inside the cabin unit and takes heat from the air, then is squeezed and <b>condensed</b> back to liquid outside, giving that heat away. A/C does not "make cold". It <b>carries heat</b> from inside to outside.</p></aside>
+<figure>
+<svg viewBox="0 0 720 350" role="img" aria-label="The refrigeration cycle: compressor, condenser, expansion valve, evaporator, with high and low pressure sides">
+<path d="M150 150 V80 H290 M430 80 H590 V150" stroke="#C92A2A" stroke-width="6" fill="none"/>
+<path d="M590 200 V280 H430 M290 280 H150 V200" stroke="#1C6FD0" stroke-width="6" fill="none"/>
+<g fill="#C92A2A"><path d="M142 124 L150 108 L158 124z"/><path d="M214 72 L230 80 L214 88z"/><path d="M504 72 L520 80 L504 88z"/><path d="M582 112 L590 128 L598 112z"/></g>
+<g fill="#1C6FD0"><path d="M582 232 L590 248 L598 232z"/><path d="M516 272 L500 280 L516 288z"/><path d="M226 272 L210 280 L226 288z"/><path d="M142 240 L150 224 L158 240z"/></g>
+<rect x="90" y="150" width="120" height="50" rx="8" class="yb"/><text x="150" y="172" class="m bd">Compressor</text><text x="150" y="188" class="m s">squeezes the gas</text>
+<rect x="290" y="56" width="140" height="48" rx="8" class="rb"/><text x="360" y="77" class="m bd">Condenser</text><text x="360" y="93" class="m s">front of car: gas → liquid</text>
+<rect x="530" y="150" width="120" height="50" rx="8" class="kb"/><text x="590" y="172" class="m bd">Expansion valve</text><text x="590" y="188" class="m s">sudden pressure drop</text>
+<rect x="290" y="256" width="140" height="48" rx="8" class="lb"/><text x="360" y="277" class="m bd">Evaporator</text><text x="360" y="293" class="m s">in cabin: liquid → gas</text>
+<g class="s bd"><text x="166" y="118" class="r">1 · HOT high-pressure GAS</text><text x="166" y="132" class="r" style="font-weight:400">about 70–90 °C</text>
+<text x="574" y="118" class="e r">2 · WARM high-pressure LIQUID</text>
+<text x="574" y="232" class="e bl">3 · COLD low-pressure MIST</text><text x="574" y="246" class="e bl" style="font-weight:400">about 0–5 °C</text>
+<text x="166" y="232" class="bl">4 · COOL low-pressure GAS</text></g>
+<g class="m s bd"><text x="360" y="20" class="r">▲ ▲ ▲  heat OUT to the outside air  ▲ ▲ ▲</text><text x="360" y="38" class="mu" style="font-weight:400">fan blows outside air through the condenser</text>
+<text x="360" y="324" class="bl">▲ ▲ ▲  heat IN from the cabin air  ▲ ▲ ▲</text><text x="360" y="342" class="mu" style="font-weight:400">blower pushes cabin air through the cold evaporator</text></g>
+<text x="360" y="162" class="m bd r">HIGH side: 14–22 bar</text><text x="360" y="184" class="m s mu">— the compressor and the valve divide the system —</text><text x="360" y="206" class="m bd bl">LOW side: 1.5–3 bar</text>
+</svg>
+<figcaption><b>Figure 15.2</b> The refrigeration cycle. Red is the high-pressure side; blue is the low-pressure side. Pressures shown are typical for R134a on a warm day.</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 15.1 — The four stages</caption>
+<thead><tr><th>Stage</th><th>What happens</th><th>Refrigerant leaves as</th></tr></thead>
+<tbody>
+<tr><td><b>1 · Compression</b></td><td>The compressor sucks in cool gas and squeezes it. Squeezing a gas makes it hot (feel a bicycle pump).</td><td>Hot, high-pressure gas</td></tr>
+<tr><td><b>2 · Condensation</b></td><td>In the condenser, outside air takes the heat away. The gas turns to liquid.</td><td>Warm, high-pressure liquid</td></tr>
+<tr><td><b>3 · Expansion</b></td><td>The liquid is forced through a tiny opening. Pressure falls suddenly and it becomes very cold.</td><td>Cold, low-pressure mist</td></tr>
+<tr><td><b>4 · Evaporation</b></td><td>In the evaporator, the cold mist boils to gas by taking heat from the cabin air. The air leaves cold and dry.</td><td>Cool, low-pressure gas</td></tr>
+</tbody></table></div>
+<aside class="c"><h4>Key idea — remember "C-C-E-E"</h4><p><b>C</b>ompress → <b>C</b>ondense → <b>E</b>xpand → <b>E</b>vaporate. Hot and high pressure from the compressor to the valve; cold and low pressure from the valve back to the compressor. If you can draw Figure 15.2 from memory, you can diagnose most A/C faults.</p></aside>
+
+<h3>15.4 The parts and what goes wrong with each</h3>
+<div class="tw"><table>
+<caption>Table 15.2 — A/C components</caption>
+<thead><tr><th>Part</th><th>Job</th><th>Typical faults</th></tr></thead>
+<tbody>
+<tr><td><b>Electric compressor</b></td><td>Pumps the refrigerant. Scroll type, with built-in motor and inverter.</td><td>Insulation fault, control board failure, seized scroll, noise</td></tr>
+<tr><td><b>Condenser + fan</b></td><td>Gives heat to outside air</td><td>Blocked by dust, insects, plastic bags; stone damage and leaks; failed fan</td></tr>
+<tr><td><b>Receiver-drier / desiccant</b></td><td>Stores liquid; a drying bag removes moisture</td><td>Saturated after the system has been open; must be renewed after major repairs</td></tr>
+<tr><td><b>Expansion valve</b> (thermal TXV, or electronic EXV)</td><td>Meters refrigerant into the evaporator. EVs often have several EXVs: cabin, battery chiller, heat pump.</td><td>Blocked by debris or ice; EXV motor sticking</td></tr>
+<tr><td><b>Evaporator + blower</b></td><td>Cools and dries cabin air</td><td>Leaks (hard to see), bad smell from mould, blocked water drain, blocked cabin filter</td></tr>
+<tr><td><b>Chiller</b></td><td>Second "evaporator" that cools battery coolant</td><td>Internal leak; its EXV sticking</td></tr>
+<tr><td><b>Pressure and temperature sensors</b></td><td>Tell the controller the system state</td><td>Wrong reading stops the compressor</td></tr>
+<tr><td><b>Pipes, hoses, O-rings, service ports</b></td><td>Carry refrigerant</td><td>The most common leak points</td></tr>
+</tbody></table></div>
+
+<h3>15.5 The electric compressor</h3>
+<p>Inside one sealed aluminium housing are three things:</p>
+<ol>
+<li><b>The scroll pump</b> — two spiral plates, one fixed and one moving in a small circle. Gas is trapped between the spirals and squeezed towards the centre. Smooth, quiet, few moving parts.</li>
+<li><b>A three-phase motor</b> — a small version of the drive motor, cooled by the refrigerant flowing over it.</li>
+<li><b>An inverter and control board</b> — a small version of the drive inverter, bolted to the housing.</li>
+</ol>
+<p>It has two electrical connections: an <b>orange high-voltage connector</b> (300–400 V DC, or more), and a <b>low-voltage connector</b> carrying 12 V, earth, and a <b>LIN or CAN</b> data line. The A/C controller does not switch the compressor on and off like a clutch; it sends a <b>speed command</b> (for example 800 to 8,000 rpm) and the compressor reports back its speed, current and any fault.</p>
+<h4>What the compressor needs before it will run</h4>
+<ul>
+<li>A cooling request (cabin A/C on, or the battery asking for cooling)</li>
+<li>High voltage present: car in READY or charging, pre-charge complete, HV fuse good</li>
+<li>HVIL loop closed and no insulation fault</li>
+<li>12 V supply, earth and LIN/CAN communication good</li>
+<li>Refrigerant pressure inside limits (not empty, not too high)</li>
+<li>Evaporator not near freezing; battery state of charge not too low</li>
+</ul>
+<p>If any one is missing, the compressor stays off. So "compressor not running" is usually a missing condition, not a dead compressor.</p>
+<aside class="c danger"><h4>Danger — compressor oil</h4><p>In an electric compressor, the oil touches the motor windings. It must be a special <b>insulating oil</b> (POE type, such as ND-11 — check the label under the bonnet). Normal <b>PAG oil</b> from petrol-car systems conducts electricity. Even a small amount of PAG oil — from a shared A/C machine, hose or oil injector — can cause an <b>insulation fault</b> that stops the whole car, and can make the compressor casing live.</p><p>Use dedicated or properly flushed A/C equipment for EVs and hybrids, only the specified oil and refrigerant, and only leak-detection dye that is approved for electric compressors.</p></aside>
+
+<h3>15.6 Pressures and what they tell you</h3>
+<p>Pressure units: <span class="f">1 MPa = 10 bar ≈ 145 psi</span>. Chinese equipment and manuals use MPa; many gauges show bar and psi.</p>
+<div class="tw"><table>
+<caption>Table 15.3 — Typical healthy values (R134a, compressor running, warm day)</caption>
+<thead><tr><th>Reading</th><th>Typical value</th></tr></thead>
+<tbody>
+<tr><td>Low-side pressure</td><td>1.5–3 bar (0.15–0.30 MPa)</td></tr>
+<tr><td>High-side pressure</td><td>14–22 bar (1.4–2.2 MPa); higher in very hot weather</td></tr>
+<tr><td>Evaporator outlet temperature</td><td>1–5 °C</td></tr>
+<tr><td>Air from the centre vent</td><td>about 4–10 °C</td></tr>
+<tr><td>Both sides, system off and settled</td><td>Equal, and matching the outside temperature (about 6–7 bar at 30 °C)</td></tr>
+</tbody></table></div>
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="An air-conditioning manifold gauge set: blue low-pressure gauge, red high-pressure gauge and three hoses">
+<path d="M300 20 C300 4 420 4 420 20" fill="none" stroke="#5A6B76" stroke-width="6"/><path d="M360 6 V30" stroke="#5A6B76" stroke-width="6"/>
+<rect x="232" y="118" width="256" height="40" rx="8" fill="#AEB8BF" stroke="#1B2A33" stroke-width="1.5"/>
+<circle cx="290" cy="82" r="52" fill="#fff" stroke="#1C6FD0" stroke-width="9"/><circle cx="430" cy="82" r="52" fill="#fff" stroke="#C92A2A" stroke-width="9"/>
+<g stroke="#1B2A33" stroke-width="1.5"><path d="M254 104 L260 100 M250 76 H257 M262 50 L267 56 M290 40 V47 M318 50 L313 56 M330 76 H323 M326 104 L320 100"/><path d="M394 104 L400 100 M390 76 H397 M402 50 L407 56 M430 40 V47 M458 50 L453 56 M470 76 H463 M466 104 L460 100"/></g>
+<path d="M290 82 L266 62" stroke="#1B2A33" stroke-width="3" stroke-linecap="round"/><circle cx="290" cy="82" r="5" fill="#1B2A33"/>
+<path d="M430 82 L446 54" stroke="#1B2A33" stroke-width="3" stroke-linecap="round"/><circle cx="430" cy="82" r="5" fill="#1B2A33"/>
+<text x="290" y="112" class="m s bd bl">LOW</text><text x="430" y="112" class="m s bd r">HIGH</text>
+<circle cx="214" cy="138" r="18" fill="#1C6FD0" stroke="#1B2A33" stroke-width="1.5"/><circle cx="506" cy="138" r="18" fill="#C92A2A" stroke="#1B2A33" stroke-width="1.5"/>
+<path d="M280 158 C280 230 180 210 150 270" stroke="#1C6FD0" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M360 158 V270" stroke="#F5B700" stroke-width="8" fill="none" stroke-linecap="round"/>
+<path d="M440 158 C440 230 540 210 570 270" stroke="#C92A2A" stroke-width="8" fill="none" stroke-linecap="round"/>
+<g fill="#5A6B76" stroke="#1B2A33"><rect x="138" y="266" width="24" height="18" rx="3"/><rect x="348" y="266" width="24" height="18" rx="3"/><rect x="558" y="266" width="24" height="18" rx="3"/></g>
+<g class="s"><text x="180" y="60" class="e bd bl">Blue gauge: low side</text><text x="180" y="76" class="e">reads about 1.5–3 bar</text><text x="180" y="92" class="e">when cooling normally</text>
+<text x="540" y="60" class="bd r">Red gauge: high side</text><text x="540" y="76">reads about 14–22 bar</text><text x="540" y="92">when cooling normally</text>
+<text x="186" y="144" class="e">blue hand valve</text><text x="534" y="144">red hand valve</text>
+<text x="130" y="262" class="e bd bl">Blue hose</text><text x="130" y="278" class="e">to the low-side port</text>
+<text x="590" y="262" class="bd r">Red hose</text><text x="590" y="278">to the high-side port</text>
+<text x="360" y="298" class="m"><tspan class="bd" style="fill:#B7791F">Yellow hose:</tspan> to the recovery machine, vacuum pump or cylinder</text></g>
+</svg>
+<figcaption><b>Know your tools</b> A manifold gauge set. Blue is always the low side and red the high side; the two service ports on the car are different sizes so the hoses cannot be swapped.</figcaption></figure>
+<p>Most EVs have pressure sensors, so you can read these on the scan tool's live data before connecting any gauges. Always compare with the maker's values for the car and the day's temperature.</p>
+<div class="tw"><table>
+<caption>Table 15.4 — Reading the pattern</caption>
+<thead><tr><th>Low side</th><th>High side</th><th>Likely cause</th><th>Think of Figure 15.2</th></tr></thead>
+<tbody>
+<tr><td style="color:#1C6FD0"><b>▼ low</b></td><td style="color:#1C6FD0"><b>▼ low</b></td><td>Low refrigerant charge (a leak)</td><td>Not enough refrigerant anywhere</td></tr>
+<tr><td style="color:#C92A2A"><b>▲ high</b></td><td style="color:#C92A2A"><b>▲ high</b></td><td>Condenser blocked or fan not working; system overcharged; air in the system</td><td>Heat cannot get out at the condenser</td></tr>
+<tr><td style="color:#C92A2A"><b>▲ high</b></td><td style="color:#1C6FD0"><b>▼ low</b></td><td>Compressor weak, or running too slowly</td><td>The pump is not creating a pressure difference</td></tr>
+<tr><td style="color:#1C6FD0"><b>▼ very low</b> (may go to vacuum)</td><td>normal or high</td><td>Expansion valve blocked or stuck closed; moisture freezing in the valve; blocked drier</td><td>Refrigerant is stuck behind the valve</td></tr>
+<tr><td>equal</td><td>equal</td><td>Compressor not running at all</td><td>Go to the electrical checks</td></tr>
+</tbody></table></div>
+
+<h3>15.7 Refrigerant service: recover, evacuate, charge</h3>
+<div class="tw"><table>
+<thead><tr><th>Refrigerant</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><b>R134a</b></td><td>Common on existing cars. Not flammable. A strong greenhouse gas.</td></tr>
+<tr><td><b>R1234yf</b></td><td>Newer cars. Mildly flammable. Different service ports and its own service machine.</td></tr>
+</tbody></table></div>
+<p>The type and the exact <b>charge weight in grams</b> are printed on a label under the bonnet. Never mix types. Never release refrigerant to the air: recover it with a machine.</p>
+<ol class="steps">
+<li><b>Recover.</b> The machine draws out the old refrigerant and measures how much came out. Compare with the label: a low amount confirms a leak.</li>
+<li><b>Repair</b> the fault. Fit new O-rings with the correct oil. Renew the drier or desiccant if the system has been open for long or the compressor failed.</li>
+<li><b>Evacuate.</b> Pull a deep vacuum for at least 30 minutes. This boils away moisture and removes air.</li>
+<li><b>Vacuum hold test.</b> Close the valves and watch for 10–15 minutes. If the vacuum is lost, there is still a leak. Do not charge.</li>
+<li><b>Charge by weight.</b> Put in exactly the amount on the label. EV systems are very sensitive: too little and too much both cause faults.</li>
+<li><b>Verify.</b> Run the A/C: check pressures, vent temperature, compressor current and fault codes.</li>
+</ol>
+<h4>Finding leaks</h4>
+<ul>
+<li><b>Look first:</b> oily, dusty patches at pipe joints, the condenser and service ports.</li>
+<li><b>Electronic leak detector:</b> a "sniffer" moved slowly under each joint (refrigerant is heavier than air).</li>
+<li><b>Nitrogen pressure test:</b> fill the empty system with dry nitrogen, watch the gauge and use soapy water on joints. Good for larger leaks.</li>
+<li><b>UV dye:</b> only a dye approved for electric compressors.</li>
+</ul>
+<aside class="c tip"><h4>Workshop tip</h4><p>"Just top it up" is poor practice on any car and worse on an EV. You cannot know how much is in the system without recovering and weighing it, and every top-up through a contaminated machine risks the compressor. Recover, fix the leak, evacuate, charge by weight.</p></aside>
+
+<h3>15.8 Heating: heat pump and PTC</h3>
+<p>There is no hot engine to warm the cabin, so EVs use one or both of these.</p>
+<ul>
+<li>A <b>PTC heater</b> — an electric heating element running on high voltage (3–6 kW). Simple, but it takes 1 kW of battery energy to make 1 kW of heat.</li>
+<li>A <b>heat pump</b> — the A/C system running in reverse.</li>
+</ul>
+<figure class="pic">
+<svg viewBox="0 0 720 220" role="img" aria-label="Heat pump: in cooling mode heat is carried out of the cabin; in heating mode heat is carried into the cabin">
+<text x="180" y="20" class="m bd">Cooling mode</text>
+<rect x="30" y="40" width="130" height="90" rx="10" class="lb"/><text x="95" y="76" class="m bd">Cabin</text><text x="95" y="94" class="m s">gets colder</text>
+<rect x="210" y="40" width="130" height="90" rx="10" class="rb"/><text x="275" y="76" class="m bd">Outside air</text><text x="275" y="94" class="m s">takes the heat</text>
+<path d="M164 85 H202" class="rd" style="stroke-width:3.5" marker-end="url(#ar)"/><text x="185" y="64" class="m s bd r">heat</text>
+<text x="180" y="156" class="m s">Refrigerant carries heat out of the cabin.</text>
+<path d="M360 10 V200" class="ln da"/>
+<text x="545" y="20" class="m bd">Heating mode (heat pump)</text>
+<rect x="395" y="40" width="130" height="90" rx="10" class="rb"/><text x="460" y="76" class="m bd">Cabin</text><text x="460" y="94" class="m s">gets warmer</text>
+<rect x="575" y="40" width="130" height="90" rx="10" class="lb"/><text x="640" y="76" class="m bd">Outside air</text><text x="640" y="94" class="m s">gives up heat</text>
+<path d="M571 85 H533" class="rd" style="stroke-width:3.5" marker-end="url(#ar)"/><text x="550" y="64" class="m s bd r">heat</text>
+<text x="545" y="156" class="m s">A valve reverses the flow: the same machine now carries heat in.</text>
+<text x="545" y="176" class="m s bd g">1 kW of electricity moves 2–3 kW of heat.</text>
+<text x="360" y="212" class="m s mu">A heat pump is an A/C that can run in both directions. A home "inverter A/C" with heating does the same.</text>
+</svg>
+<figcaption><b>Picture it</b> A heat pump does not make heat. It moves heat, which is why it uses so much less energy than a PTC heater.</figcaption></figure>
+<p>Extra parts in a heat pump system: a <b>reversing valve</b> (or a set of shut-off valves) to change the direction of flow, several <b>electronic expansion valves</b>, an inside condenser for heating, and an <b>accumulator</b> that protects the compressor from sucking in liquid. Typical faults: stuck in one mode, an EXV sticking, valve fault codes, refrigerant charge slightly wrong.</p>
+<p><b>PTC heater checks</b> (system isolated): HV fuse, resistance of the element compared with the manual, insulation resistance to the case, and its control signal. A PTC heater that has let coolant inside is a classic cause of insulation faults.</p>
+
+<h3>15.9 Coolant</h3>
+<ul>
+<li>Use only the <b>specified coolant</b>. Battery loops need low-conductivity coolant because it flows close to high-voltage parts.</li>
+<li>Never top up with tap water. Minerals raise conductivity and cause corrosion and scale.</li>
+<li>These systems trap air easily. Many need a <b>vacuum filling tool</b> and a <b>scan-tool bleed routine</b> that runs the pumps and opens the valves.</li>
+<li>A falling coolant level with no visible leak is serious: coolant may be going <b>into</b> the battery pack, motor or chiller.</li>
+</ul>
+
+<h3>15.10 Finding A/C and thermal faults</h3>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="Six-step method for an A/C no-cooling fault">
+<g class="gb"><rect x="20" y="20" width="210" height="86" rx="8"/><rect x="255" y="20" width="210" height="86" rx="8"/><rect x="490" y="20" width="210" height="86" rx="8"/></g>
+<g class="yb"><rect x="490" y="144" width="210" height="86" rx="8"/><rect x="255" y="144" width="210" height="86" rx="8"/><rect x="20" y="144" width="210" height="86" rx="8"/></g>
+<g class="m bd"><text x="125" y="44">1 · Simple things</text><text x="360" y="44">2 · Scan</text><text x="595" y="44">3 · Is the compressor running?</text>
+<text x="595" y="168">4 · If NO: electrical</text><text x="360" y="168">5 · If YES: pressures</text><text x="125" y="168">6 · Repair and verify</text></g>
+<g class="m s"><text x="125" y="62">A/C switched on? Settings?</text><text x="125" y="76">Cabin filter, blower, fans,</text><text x="125" y="90">condenser clean?</text>
+<text x="360" y="62">Fault codes in A/C, BMS, VCU.</text><text x="360" y="76">Live data: pressures, evaporator</text><text x="360" y="90">temperature, speed asked vs actual</text>
+<text x="595" y="62">Listen and feel the pipes:</text><text x="595" y="76">one hot, one cold = running.</text><text x="595" y="90">Check its current on live data.</text>
+<text x="595" y="186">HV fuse, HVIL, 12 V supply, earth,</text><text x="595" y="200">LIN/CAN signal, pressure sensor,</text><text x="595" y="214">insulation resistance</text>
+<text x="360" y="186">Use Table 15.4: low gas,</text><text x="360" y="200">blocked condenser, weak pump</text><text x="360" y="214">or blocked valve</text>
+<text x="125" y="186">Fix the cause. Recover, evacuate,</text><text x="125" y="200">charge by weight. Check vent</text><text x="125" y="214">temperature and re-scan.</text></g>
+<path d="M230 63 H251 M465 63 H486 M595 106 V140 M490 187 H469 M255 187 H234" class="ln" marker-end="url(#a)"/>
+</svg>
+<figcaption><b>Figure 15.3</b> A method for "A/C not cooling". The key question is step 3: is the compressor actually running?</figcaption></figure>
+<div class="tw"><table>
+<caption>Table 15.5 — Thermal symptoms and causes</caption>
+<thead><tr><th>Symptom</th><th>Possible causes</th></tr></thead>
+<tbody>
+<tr><td>A/C not cold at all</td><td>Compressor not running (see step 4); refrigerant lost; blend-door fault sending air through the heater</td></tr>
+<tr><td>A/C weak, worse in traffic</td><td>Condenser blocked or fan failed; low charge; blocked cabin filter</td></tr>
+<tr><td>Cold at first, then warm</td><td>Evaporator icing (sensor fault); moisture freezing in the expansion valve</td></tr>
+<tr><td>Slow DC charging in summer; reduced power; battery temperature warning</td><td>Weak A/C; battery coolant pump; air in the battery loop; chiller valve stuck</td></tr>
+<tr><td>"Motor/inverter overheating"</td><td>Low coolant; drive-loop pump; radiator blocked; radiator fan</td></tr>
+<tr><td>Insulation fault that appears when A/C or heater is switched on</td><td>Compressor contaminated with wrong oil or failing internally; PTC heater leaking</td></tr>
+<tr><td>Noise from the compressor</td><td>Internal wear; loose mounting; liquid refrigerant returning (overcharge)</td></tr>
+<tr><td>Bad smell; water on the cabin floor</td><td>Mould on the evaporator; blocked evaporator drain; old cabin filter</td></tr>
+<tr><td>Coolant loss, no external leak</td><td>Internal leak in chiller, battery cold plate or motor — stop and investigate</td></tr>
+</tbody></table></div>
+
+<h3>15.11 When the compressor itself has failed</h3>
+<div class="tw"><table>
+<thead><tr><th>Failure</th><th>How you find it</th></tr></thead>
+<tbody>
+<tr><td>Motor winding insulation breakdown</td><td>Insulation tester from the HV pins and the three motor terminals to the housing; low reading</td></tr>
+<tr><td>Control board fault (water, burnt parts)</td><td>No communication on LIN/CAN with supplies good; visible corrosion or burning</td></tr>
+<tr><td>Scroll seized or worn</td><td>High current then shut-down; noise; metal particles in the oil</td></tr>
+</tbody></table></div>
+<p><b>Replacing a compressor properly:</b></p>
+<ol>
+<li>Isolate the HV system and prove dead. Recover the refrigerant.</li>
+<li>Inspect the old oil and the drier. If there are metal particles, the debris has travelled through the system.</li>
+<li><b>Flush</b> the pipes and heat exchangers if contaminated; replace the expansion valve and the drier or desiccant.</li>
+<li>Fit the new compressor with the <b>correct type and quantity of oil</b> (new units are often pre-filled; follow the instructions).</li>
+<li>New O-rings, correct torque. Evacuate, vacuum hold test, charge by weight.</li>
+<li>Check insulation resistance, clear codes, and verify performance.</li>
+</ol>
+<p>Skipping the flush and drier is the usual reason a new compressor fails again within weeks.</p>
+<aside class="c pk"><h4>In Pakistan</h4><p>Dust, insects and plastic bags block condensers and radiators quickly here. Washing the front heat exchangers gently with water (from the back towards the front, low pressure) and changing the cabin filter are cheap services that directly protect the battery. Many roadside A/C shops share one machine and one oil between all cars; on an EV that can destroy the compressor. In our climate, <b>an EV with a weak A/C is an EV with a battery problem coming.</b></p></aside>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>In an EV the A/C cools the battery as well as the cabin, so A/C faults affect charging and power.</li>
+<li>Compress → condense → expand → evaporate. High side hot, low side cold.</li>
+<li>The electric compressor has a scroll pump, motor and inverter; it is speed-controlled over LIN/CAN and needs many conditions before it runs.</li>
+<li>Only insulating POE oil. PAG oil causes insulation faults.</li>
+<li>Read both pressures and match the pattern to the cause.</li>
+<li>Recover, repair, evacuate, hold, charge by weight, verify. Never "top up".</li>
+<li>A heat pump moves heat and is 2–3 times more efficient than a PTC heater.</li>
+<li>Use only specified coolant and bleed with the proper procedure.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 15</h3><p>Choose one answer for each question.</p><ol>
+<li>What is the ideal working temperature range for a lithium battery?<ul><li>−10 to 5 °C</li><li data-c>15 to 35 °C</li><li>50 to 70 °C</li><li>80 to 100 °C</li></ul></li>
+<li>What is the correct order of the refrigeration cycle?<ul><li>Evaporate, expand, compress, condense</li><li data-c>Compress, condense, expand, evaporate</li><li>Condense, compress, evaporate, expand</li><li>Expand, compress, condense, evaporate</li></ul></li>
+<li>In which part does the refrigerant take heat from the cabin air?<ul><li>Condenser</li><li>Compressor</li><li data-c>Evaporator</li><li>Receiver-drier</li></ul></li>
+<li>Why must normal PAG oil never enter an electric A/C compressor?<ul><li>It is too expensive</li><li>It freezes</li><li data-c>It conducts electricity and causes insulation faults</li><li>It smells bad</li></ul></li>
+<li>Both the low-side and high-side pressures are low with the compressor running. What is the most likely cause?<ul><li>Blocked condenser</li><li data-c>Low refrigerant charge</li><li>Overcharged system</li><li>Failed radiator fan</li></ul></li>
+<li>Both pressures are too high. What should you check first?<ul><li>Cabin filter</li><li>Tyre pressure</li><li data-c>Condenser blockage and condenser fan</li><li>The 12 V battery</li></ul></li>
+<li>How should refrigerant be put into the system?<ul><li>Top up until the pipe feels cold</li><li data-c>After evacuation, by exact weight from the label</li><li>Until the gauge reaches maximum</li><li>Any amount; the system adjusts</li></ul></li>
+<li>The compressor is not running. Which is a possible reason other than a failed compressor?<ul><li>Worn brake pads</li><li data-c>Open HVIL, blown HV fuse, lost LIN/CAN signal or low refrigerant pressure</li><li>Low washer fluid</li><li>Tyre wear</li></ul></li>
+<li>Why is a heat pump more efficient than a PTC heater?<ul><li>It uses petrol</li><li>It runs at 12 V</li><li data-c>It moves heat instead of making it: 1 kW of electricity moves 2–3 kW of heat</li><li>It has no moving parts</li></ul></li>
+<li>An EV fast-charges very slowly on hot days and the A/C is weak. What is the likely link?<ul><li>No link</li><li data-c>The battery cannot be cooled properly, so the BMS limits charging</li><li>The tyres are too soft</li><li>The 12 V battery is overcharged</li></ul></li>
+<li>After a compressor has failed with metal particles in the oil, what must be done before fitting the new one?<ul><li>Nothing extra</li><li>Add more refrigerant</li><li data-c>Flush the system and renew the drier and expansion valve</li><li>Change the cabin filter only</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 16 ===================== -->
+<section class="mod" data-part="Part F · Supporting systems" data-title="The 12 V system, networks and software">
+<div class="mh"><div class="n">16</div><div><div class="pt">Part F · Supporting systems</div><h2>The 12 V system, networks and software</h2><p>The low-voltage side: small battery, many computers, and the wires that let them talk.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>Why the 12 V battery is critical in an EV</li>
+<li>What the main control units do</li>
+<li>How CAN bus works and how to check it</li>
+<li>Why software and calibration are part of modern repair</li></ul></div>
+
+<h3>16.1 The 12 V battery</h3>
+<p>Every EV and hybrid still has a 12 V battery. It powers the computers, lights, locks, wipers and — most importantly — the <b>contactors</b>. If the 12 V battery is flat, the computers cannot wake up and the contactors cannot close. The car is dead, even with a full high-voltage battery.</p>
+<aside class="c"><h4>Key idea</h4><p><b>The most common reason an EV or hybrid "will not start" is a weak 12 V battery.</b> Check it first, every time. It is the cheapest and easiest fix in the whole car.</p></aside>
+<ul>
+<li>The 12 V battery in an EV is small because it never has to crank an engine. It is usually AGM lead-acid; some cars (BYD) use a small 12 V lithium battery.</li>
+<li>It is charged by the DC-DC converter only when the car is in READY or charging.</li>
+<li>Typical life is 3–5 years; less in heat.</li>
+<li><b>Jump-starting:</b> you can normally boost an EV's 12 V battery from another car or a jump pack to wake it up. Do not use an EV to jump-start a petrol car unless the handbook allows it; the starter current can damage the DC-DC converter.</li>
+</ul>
+<aside class="c pk"><h4>In Pakistan</h4><p>Aftermarket <b>trackers, alarms, dash cameras and LED accessories</b> are fitted to almost every car here. Wired badly, they drain the small 12 V battery while the car is parked, or disturb the data network. When you see a repeated flat 12 V battery or strange electrical faults, look for added wiring first.</p></aside>
+<h4>Finding a parked drain</h4>
+<p>Connect an ammeter in series with the 12 V negative lead (or use a DC clamp meter). Lock the car and wait 20–30 minutes for the computers to go to sleep. A healthy car draws less than about <b>30–50 mA</b>. If it is higher, pull fuses one at a time until the current drops to find the circuit responsible.</p>
+
+<h3>16.2 Control units</h3>
+<div class="tw"><table>
+<thead><tr><th>Unit</th><th>Role</th></tr></thead>
+<tbody>
+<tr><td><b>VCU</b> — vehicle control unit</td><td>The manager. Reads accelerator, brake and gear selector; decides torque; coordinates all the others.</td></tr>
+<tr><td><b>BMS</b></td><td>Battery state, limits and protection.</td></tr>
+<tr><td><b>MCU</b> — motor control unit (inverter)</td><td>Delivers the torque the VCU asks for.</td></tr>
+<tr><td><b>OBC / DC-DC controller</b></td><td>Charging and 12 V supply.</td></tr>
+<tr><td><b>TMS / HVAC controller</b></td><td>Pumps, valves, compressor, fans.</td></tr>
+<tr><td><b>ABS / ESC / brake controller</b></td><td>Braking, stability, brake blending.</td></tr>
+<tr><td><b>EPS</b></td><td>Electric power steering.</td></tr>
+<tr><td><b>BCM</b> — body control module</td><td>Lights, locks, windows, wipers.</td></tr>
+<tr><td><b>Gateway</b></td><td>Connects the different networks and the diagnostic socket.</td></tr>
+</tbody></table></div>
+
+<h3>16.3 CAN bus</h3>
+<p>Instead of a separate wire for every signal, control units share a pair of wires called a <b>CAN bus</b> and send each other short digital messages, thousands per second.</p>
+<aside class="c pic"><h4>Picture it — the group chat</h4><p>A CAN bus works like a group chat. Every member sees every message. Each message starts with a label saying what it is about ("battery temperature", "wheel speed"), and each control unit simply ignores the ones it does not need. If one member goes silent, the others notice and complain: that is a "lost communication" fault code. If someone shouts nonsense continuously (a short circuit on the wires), nobody can talk at all.</p></aside>
+<figure>
+<svg viewBox="0 0 720 260" role="img" aria-label="Two CAN networks joined by a gateway with the diagnostic socket">
+<text x="400" y="18" class="m s bd">Powertrain CAN</text>
+<path d="M150 104 H690" class="hv" style="stroke-width:2.5"/><path d="M150 112 H690" class="lv"/>
+<g class="yb"><rect x="170" y="34" width="80" height="40" rx="6"/><rect x="270" y="34" width="80" height="40" rx="6"/><rect x="370" y="34" width="80" height="40" rx="6"/><rect x="470" y="34" width="80" height="40" rx="6"/><rect x="570" y="34" width="80" height="40" rx="6"/></g>
+<g class="m s bd"><text x="210" y="59">VCU</text><text x="310" y="59">BMS</text><text x="410" y="59">Inverter</text><text x="510" y="59">OBC</text><text x="610" y="59">DC-DC</text></g>
+<path d="M210 74 V104 M310 74 V104 M410 74 V104 M510 74 V104 M610 74 V104" class="ln"/>
+<path d="M150 156 H690" class="hv" style="stroke-width:2.5"/><path d="M150 164 H690" class="lv"/>
+<g class="gb"><rect x="170" y="194" width="80" height="40" rx="6"/><rect x="270" y="194" width="80" height="40" rx="6"/><rect x="370" y="194" width="80" height="40" rx="6"/><rect x="470" y="194" width="80" height="40" rx="6"/><rect x="570" y="194" width="80" height="40" rx="6"/></g>
+<g class="m s bd"><text x="210" y="219">ABS/ESC</text><text x="310" y="219">Steering</text><text x="410" y="219">Airbag</text><text x="510" y="219">BCM</text><text x="610" y="219">Dash</text></g>
+<path d="M210 194 V164 M310 194 V164 M410 194 V164 M510 194 V164 M610 194 V164" class="ln"/>
+<text x="400" y="252" class="m s bd">Chassis / body CAN</text>
+<rect x="60" y="90" width="90" height="90" rx="8" class="db"/><text x="105" y="131" class="m bd w">Gateway</text><text x="105" y="149" class="m s w">joins networks</text>
+<rect x="8" y="40" width="80" height="30" rx="6" class="rb"/><text x="48" y="60" class="m s bd">OBD socket</text><path d="M48 70 V110 H60" class="ln"/>
+<rect x="690" y="98" width="24" height="20" class="kb"/><rect x="690" y="150" width="24" height="20" class="kb"/><text x="702" y="140" class="m s mu">120 Ω</text>
+<text x="100" y="212" class="m s o">CAN-High</text><text x="100" y="228" class="m s bl">CAN-Low</text>
+</svg>
+<figcaption><b>Figure 16.1</b> A simplified network. Real cars have several CAN buses plus LIN (single-wire, for simple devices) and sometimes Ethernet (for cameras and screens).</figcaption></figure>
+<h4>Basic CAN checks with a multimeter</h4>
+<div class="tw"><table>
+<thead><tr><th>Test</th><th>Good result</th><th>Meaning if wrong</th></tr></thead>
+<tbody>
+<tr><td>Resistance between CAN-H and CAN-L, 12 V battery disconnected</td><td>About <b>60 Ω</b></td><td>120 Ω → one terminating resistor or part of the bus is open. Near 0 Ω → wires shorted together.</td></tr>
+<tr><td>Voltage CAN-H to earth, ignition on</td><td>About 2.5–3.5 V</td><td>0 V or 12 V → short to earth or to supply</td></tr>
+<tr><td>Voltage CAN-L to earth, ignition on</td><td>About 1.5–2.5 V</td><td>As above</td></tr>
+</tbody></table></div>
+<p>At the <b>OBD socket</b> (16 pins, under the dashboard): pin 16 is battery positive, pins 4 and 5 are earth, pins 6 and 14 are CAN-High and CAN-Low. This is where the scan tool connects.</p>
+<p>A fault code beginning with <b>U</b> (for example U0100, "lost communication with…") means a control unit is not being heard on the network. Check its power supply, earth and connectors before condemning the unit itself.</p>
+
+<h3>16.4 Software, coding and calibration</h3>
+<ul>
+<li><b>Software updates.</b> Makers fix faults and add features by updating software, at the dealer or "over the air" (OTA). Some customer complaints are cured only by an update.</li>
+<li><b>Coding and pairing.</b> Many replacement parts (BMS, inverter, charger, even 12 V batteries on some cars) must be registered to the car with a scan tool before they will work.</li>
+<li><b>Calibration.</b> After replacing or disturbing certain parts you must run a learning routine: resolver angle offset after motor work, steering angle sensor after alignment, brake pedal sensor, and so on.</li>
+<li><b>Driver assistance (ADAS).</b> Front cameras and radars for automatic braking and lane keeping need re-calibration after windscreen replacement, bumper repair, suspension or alignment work.</li>
+</ul>
+<aside class="c tip"><h4>Workshop tip</h4><p>Learn to read <b>wiring diagrams</b>. They are the map for every electrical fault. Start by tracing simple circuits (a horn, a brake light) until the symbols for fuses, relays, earths, connectors and splices are familiar. This one skill separates a diagnostician from a parts-changer.</p></aside>
+
+<h3>16.5 Reading the instrument panel</h3>
+<p>The dashboard is the car's first report. Always ask the customer which lights and messages appeared, or look for yourself, before connecting the scan tool. Symbols differ a little between makers, but the <b>colours</b> follow one rule everywhere.</p>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="Eight common EV dashboard indicators grouped by colour: green information, amber caution, red stop">
+<g transform="translate(14 8)"><rect width="164" height="70" rx="10" fill="#E9F7EC" stroke="#2B8A3E" stroke-width="2"/><g transform="translate(82 35)" stroke="#2B8A3E" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><text x="0" y="8" text-anchor="middle" stroke="none" fill="#2B8A3E" style="font-size:24px;font-weight:700">READY</text></g><text x="82" y="88" class="m s bd">READY</text><text x="82" y="103" class="m s">on and able to drive (silent)</text></g>
+<g transform="translate(190 8)"><rect width="164" height="70" rx="10" fill="#E9F7EC" stroke="#2B8A3E" stroke-width="2"/><g transform="translate(82 35)" stroke="#2B8A3E" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-30 0 H-6 M-30 -8 H-18 M-30 8 H-18"/><rect x="-6" y="-12" width="22" height="24" rx="4"/><path d="M16 -5 H28 M16 5 H28"/></g><text x="82" y="88" class="m s bd">Charging cable connected</text><text x="82" y="103" class="m s">car will not drive away</text></g>
+<g transform="translate(366 8)"><rect width="164" height="70" rx="10" fill="#FFF6DD" stroke="#E67700" stroke-width="2"/><g transform="translate(82 35)" stroke="#E67700" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-22 6 A22 16 0 0 1 22 6 Z"/><circle cx="30" cy="0" r="6"/><path d="M-14 6 V14 M14 6 V14 M-22 6 L-30 10"/></g><text x="82" y="88" class="m s bd">Limited power ("tortoise")</text><text x="82" y="103" class="m s">BMS or drive has cut power</text></g>
+<g transform="translate(542 8)"><rect width="164" height="70" rx="10" fill="#FFF6DD" stroke="#E67700" stroke-width="2"/><g transform="translate(82 35)" stroke="#E67700" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-30 6 L-22 -6 H-6 L2 -14 H18 L26 -6 H30 V8 H-30z"/><text x="48" y="10" text-anchor="middle" stroke="none" fill="#E67700" style="font-size:28px;font-weight:700">!</text></g><text x="82" y="88" class="m s bd">Electric system fault</text><text x="82" y="103" class="m s">drive with care; scan soon</text></g>
+<g transform="translate(14 134)"><rect width="164" height="70" rx="10" fill="#FDECEC" stroke="#C92A2A" stroke-width="2"/><g transform="translate(82 35)" stroke="#C92A2A" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-12" width="44" height="26" rx="3"/><rect x="20" y="-5" width="5" height="12" fill="#C92A2A" stroke="none"/><text x="-2" y="9" text-anchor="middle" stroke="none" fill="#C92A2A" style="font-size:22px;font-weight:700">!</text></g><text x="82" y="88" class="m s bd">HV battery fault</text><text x="82" y="103" class="m s">stop safely; do not charge</text></g>
+<g transform="translate(190 134)"><rect width="164" height="70" rx="10" fill="#FDECEC" stroke="#C92A2A" stroke-width="2"/><g transform="translate(82 35)" stroke="#C92A2A" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-12" width="44" height="26" rx="3"/><rect x="20" y="-5" width="5" height="12" fill="#C92A2A" stroke="none"/><path d="M38 -16 V6"/><circle cx="38" cy="12" r="6" fill="#C92A2A"/></g><text x="82" y="88" class="m s bd">Battery overheating</text><text x="82" y="103" class="m s">stop, get out, keep away</text></g>
+<g transform="translate(366 134)"><rect width="164" height="70" rx="10" fill="#FDECEC" stroke="#C92A2A" stroke-width="2"/><g transform="translate(82 35)" stroke="#C92A2A" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="-8" cy="0" r="16"/><text x="-8" y="7" text-anchor="middle" stroke="none" fill="#C92A2A" style="font-size:18px;font-weight:700">M</text><path d="M26 -16 V6"/><circle cx="26" cy="12" r="6" fill="#C92A2A"/></g><text x="82" y="88" class="m s bd">Motor or inverter hot</text><text x="82" y="103" class="m s">stop and let it cool; check coolant</text></g>
+<g transform="translate(542 134)"><rect width="164" height="70" rx="10" fill="#FDECEC" stroke="#C92A2A" stroke-width="2"/><g transform="translate(82 35)" stroke="#C92A2A" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><rect x="-24" y="-10" width="48" height="24" rx="3"/><path d="M-16 -10 V-16 M16 -10 V-16"/><text x="-12" y="9" text-anchor="middle" stroke="none" fill="#C92A2A" style="font-size:18px;font-weight:700">−</text><text x="12" y="9" text-anchor="middle" stroke="none" fill="#C92A2A" style="font-size:18px;font-weight:700">+</text></g><text x="82" y="88" class="m s bd">12 V battery not charging</text><text x="82" y="103" class="m s">DC-DC fault; car may shut down</text></g>
+</svg>
+<figcaption><b>Figure 16.2</b> Common EV indicators (simplified drawings). <b>Green</b> = information. <b>Amber</b> = caution, have it checked. <b>Red</b> = stop safely now.</figcaption></figure>
+<ul>
+<li><b>READY</b> replaces engine noise. A car showing READY will move if the accelerator is touched.</li>
+<li>The <b>power gauge</b> replaces the rev counter: it swings one way for power used and the other way for regeneration.</li>
+<li>Many cars show <b>SOC in %</b>, estimated range, and average consumption in kWh per 100 km. Note these on the job card.</li>
+<li>A red light together with a <b>text message</b> ("Stop safely", "Check EV system") is the car's own summary of the fault. Write it down word for word.</li>
+</ul>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>The 12 V battery wakes the car and closes the contactors. Check it first.</li>
+<li>Added accessories often cause drains and network faults.</li>
+<li>Control units share data on CAN bus: two wires, about 60 Ω between them.</li>
+<li>"U" codes are communication faults: check power, earth and wiring first.</li>
+<li>Modern repair includes software updates, coding and calibration.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 16</h3><p>Choose one answer for each question.</p><ol>
+<li>An EV with a fully charged HV battery is completely dead. What is the most likely cause?<ul><li>Failed motor</li><li>Worn tyres</li><li data-c>Flat 12 V battery</li><li>Low brake fluid</li></ul></li>
+<li>What charges the 12 V battery in an EV?<ul><li>An alternator</li><li data-c>The DC-DC converter</li><li>The inverter</li><li>Regenerative braking directly</li></ul></li>
+<li>What resistance should you measure between CAN-H and CAN-L with the battery disconnected?<ul><li>0 Ω</li><li data-c>About 60 Ω</li><li>120 Ω</li><li>1 MΩ</li></ul></li>
+<li>Which control unit decides how much torque to request from the motor?<ul><li>BCM</li><li>BMS</li><li data-c>VCU</li><li>EPS</li></ul></li>
+<li>A fault code U0100 "lost communication" is stored. What do you check first?<ul><li>Replace the control unit immediately</li><li data-c>The unit's power supply, earth and connectors</li><li>Tyre pressures</li><li>The motor windings</li></ul></li>
+<li>What is an acceptable parked current drain on the 12 V battery after the car has gone to sleep?<ul><li>5 A</li><li>1 A</li><li data-c>Less than about 50 mA</li><li>500 mA</li></ul></li>
+</ol></div>
+</section>

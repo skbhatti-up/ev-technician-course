@@ -1,0 +1,227 @@
+
+<!-- ===================== MODULE 4 ===================== -->
+<section class="mod" data-part="Part B · The vehicles" data-title="Types of electrified vehicle">
+<div class="mh"><div class="n">4</div><div><div class="pt">Part B · The vehicles</div><h2>Types of electrified vehicle</h2><p>MHEV, HEV, PHEV, REEV, BEV — what the letters mean and how each one is built.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>The five main types of electrified vehicle</li>
+<li>The difference between series, parallel and series-parallel hybrids</li>
+<li>How to recognise each type from its specification</li></ul></div>
+
+<h3>4.1 The electrification ladder</h3>
+<p>"Electrified" means the car uses an electric motor for at least part of its driving. The more electric it is, the bigger its battery and the higher its voltage.</p>
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="Ladder from mild hybrid to battery electric vehicle showing battery size growing">
+<g class="m bd"><text x="80" y="24">MHEV</text><text x="220" y="24">HEV</text><text x="360" y="24">PHEV</text><text x="500" y="24">REEV</text><text x="640" y="24">BEV</text></g>
+<g class="m s mu"><text x="80" y="40">Mild hybrid</text><text x="220" y="40">Full hybrid</text><text x="360" y="40">Plug-in hybrid</text><text x="500" y="40">Range extender</text><text x="640" y="40">Battery electric</text></g>
+<g class="hb"><rect x="60" y="150" width="40" height="8"/><rect x="195" y="140" width="50" height="18"/><rect x="325" y="100" width="70" height="58"/><rect x="460" y="76" width="80" height="82"/><rect x="590" y="52" width="100" height="106"/></g>
+<path d="M20 158 H700" class="ln"/>
+<g class="m s bd o"><text x="80" y="144">0.5 kWh</text><text x="220" y="134">1–2 kWh</text><text x="360" y="94">10–30 kWh</text><text x="500" y="70">20–45 kWh</text><text x="640" y="134">45–100 kWh</text></g>
+<g class="m s"><text x="80" y="176">48 V</text><text x="220" y="176">150–350 V</text><text x="360" y="176">300–400 V</text><text x="500" y="176">350–400 V</text><text x="640" y="176">350–800 V</text></g>
+<g class="m s"><text x="80" y="196">Engine drives</text><text x="220" y="196">Engine + motor</text><text x="360" y="196">Engine + motor</text><text x="500" y="196">Motor drives;</text><text x="640" y="196">Motor only</text>
+<text x="80" y="210">Motor helps</text><text x="220" y="210">share the work</text><text x="360" y="210">+ plug</text><text x="500" y="210">engine charges</text><text x="640" y="210">No engine</text></g>
+<g class="m s bd"><text x="80" y="234" class="mu">No plug</text><text x="220" y="234" class="mu">No plug</text><text x="360" y="234" class="g">Plug</text><text x="500" y="234" class="g">Plug</text><text x="640" y="234" class="g">Plug</text></g>
+</svg>
+<figcaption><b>Figure 4.1</b> The electrification ladder. Orange bars show typical battery size (not to scale).</figcaption></figure>
+
+<div class="tw"><table>
+<caption>Table 4.1 — The five types</caption>
+<thead><tr><th>Type</th><th>How it works</th><th>Electric-only driving</th><th>Examples in Pakistan</th></tr></thead>
+<tbody>
+<tr><td><b>MHEV</b><br>Mild hybrid</td><td>A small 48 V motor-generator helps the engine and restarts it smoothly. Cannot drive the car alone.</td><td>None</td><td>Some European and Korean imports</td></tr>
+<tr><td><b>HEV</b><br>Full ("self-charging") hybrid</td><td>Engine plus one or two motors and a small HV battery. Charged only by the engine and by braking.</td><td>1–2 km at low speed</td><td>Toyota Corolla Cross, Aqua, Prius; Honda HR-V e:HEV, Vezel; Haval H6 HEV; Hyundai Tucson; Kia Sportage</td></tr>
+<tr><td><b>PHEV</b><br>Plug-in hybrid</td><td>Like an HEV but with a much bigger battery that can be charged from a socket. Runs as an EV for daily trips, as a hybrid for long ones.</td><td>50–120 km</td><td>BYD Sealion 6, Shark 6; Haval H6 PHEV; Jaecoo J7; Chery Tiggo 7/8/9; MG HS</td></tr>
+<tr><td><b>REEV / EREV</b><br>Range-extender EV</td><td>The wheels are always driven by the electric motor. A small engine only turns a generator to make electricity.</td><td>100–200 km</td><td>Deepal S05 REEV</td></tr>
+<tr><td><b>BEV</b><br>Battery electric</td><td>Battery and motor only. No engine, no fuel tank, no exhaust.</td><td>All (250–600 km)</td><td>BYD Atto 2/3, Seal; Deepal S07/L07; MG ZS EV, MG4</td></tr>
+</tbody></table></div>
+<p>You may also hear <b>FCEV</b> (fuel-cell electric vehicle). It makes electricity on board from hydrogen gas. There are none in normal use in Pakistan, so this course does not cover them.</p>
+<aside class="c pk"><h4>In Pakistan</h4><p>PHEVs suit our conditions well. Most daily city driving is under 50 km, which a PHEV can do on cheap electricity. For Lahore–Islamabad or Karachi–Hyderabad, where chargers are still rare, the petrol engine removes the worry. This is why Chinese PHEV SUVs have sold strongly. Expect to see a lot of them in your workshop.</p></aside>
+
+<h3>4.2 Three ways to arrange a hybrid</h3>
+<p>Every hybrid is one of three basic layouts, or a mixture that can switch between them.</p>
+<figure>
+<svg viewBox="0 0 720 420" role="img" aria-label="Block diagrams of series, parallel and series-parallel hybrid layouts">
+<!-- series -->
+<text x="20" y="22" class="bd">SERIES — the engine never drives the wheels</text>
+<rect x="20" y="40" width="90" height="46" rx="6" class="kb"/><text x="65" y="68" class="m bd">Engine</text>
+<rect x="150" y="40" width="100" height="46" rx="6" class="gb"/><text x="200" y="68" class="m bd">Generator</text>
+<rect x="300" y="40" width="100" height="46" rx="6" class="hb"/><text x="350" y="68" class="m bd">Battery</text>
+<rect x="450" y="40" width="100" height="46" rx="6" class="gb"/><text x="500" y="68" class="m bd">Motor</text>
+<rect x="600" y="40" width="100" height="46" rx="6" class="db"/><text x="650" y="68" class="m bd w">Wheels</text>
+<path d="M110 63 H150" class="mc"/><path d="M250 63 H300 M400 63 H450" class="hv"/><path d="M550 63 H600" class="mc"/>
+<path d="M200 40 V26 H500 V40" class="hv" style="stroke-width:2.5"/>
+<text x="360" y="108" class="m s mu">Range-extender EVs. Also one of the modes of BYD DM-i and Honda e:HEV.</text>
+<!-- parallel -->
+<text x="20" y="150" class="bd">PARALLEL — engine and motor both drive the wheels through the gearbox</text>
+<rect x="20" y="168" width="90" height="46" rx="6" class="kb"/><text x="65" y="196" class="m bd">Engine</text>
+<rect x="150" y="168" width="70" height="46" rx="6" class="yb"/><text x="185" y="196" class="m bd">Clutch</text>
+<rect x="260" y="168" width="90" height="46" rx="6" class="gb"/><text x="305" y="196" class="m bd">Motor</text>
+<rect x="400" y="168" width="110" height="46" rx="6" class="kb"/><text x="455" y="196" class="m bd">Gearbox</text>
+<rect x="600" y="168" width="100" height="46" rx="6" class="db"/><text x="650" y="196" class="m bd w">Wheels</text>
+<rect x="260" y="236" width="90" height="34" rx="6" class="hb"/><text x="305" y="258" class="m bd">Battery</text>
+<path d="M110 191 H150 M220 191 H260 M350 191 H400 M510 191 H600" class="mc"/><path d="M305 214 V236" class="hv"/>
+<text x="530" y="258" class="m s mu">Hyundai Tucson and Kia Sportage hybrids.</text>
+<!-- series-parallel -->
+<text x="20" y="306" class="bd">SERIES-PARALLEL (power split) — can do both at once</text>
+<rect x="20" y="324" width="90" height="46" rx="6" class="kb"/><text x="65" y="352" class="m bd">Engine</text>
+<rect x="160" y="324" width="130" height="46" rx="6" class="yb"/><text x="225" y="344" class="m bd">Power-split</text><text x="225" y="360" class="m s">planetary gear</text>
+<rect x="160" y="384" width="130" height="30" rx="6" class="gb"/><text x="225" y="404" class="m bd">Generator (MG1)</text>
+<rect x="340" y="324" width="110" height="46" rx="6" class="gb"/><text x="395" y="352" class="m bd">Motor (MG2)</text>
+<rect x="340" y="384" width="110" height="30" rx="6" class="hb"/><text x="395" y="404" class="m bd">Battery</text>
+<rect x="600" y="324" width="100" height="46" rx="6" class="db"/><text x="650" y="352" class="m bd w">Wheels</text>
+<path d="M110 347 H160 M290 347 H340 M450 347 H600 M225 370 V384" class="mc"/><path d="M290 399 H340 M395 370 V384" class="hv"/>
+<text x="560" y="404" class="m s mu">Toyota hybrids (Module 13).</text>
+</svg>
+<figcaption><b>Figure 4.2</b> Hybrid layouts. Grey = mechanical drive. Orange = high-voltage electrical power.</figcaption></figure>
+
+<h3>4.3 Reading a specification sheet</h3>
+<p>When a customer or a parts supplier describes a car, these clues tell you its type:</p>
+<ul>
+<li><b>Battery in kWh.</b> About 1–2 kWh → HEV. 10–30 kWh → PHEV. Over 40 kWh → BEV.</li>
+<li><b>A charging port</b> → PHEV, REEV or BEV. HEVs and MHEVs have none.</li>
+<li><b>An exhaust pipe</b> → it has an engine, so not a BEV.</li>
+<li><b>"EV range" and "combined range"</b> quoted together → PHEV or REEV.</li>
+</ul>
+
+<h3>4.4 Buses, coaches and trucks</h3>
+<p>Electric commercial vehicles use the same principles as cars, on a larger scale. Chinese training courses often include a day on them, because China runs the world's largest fleets of electric buses.</p>
+<div class="tw"><table>
+<caption>Table 4.2 — Passenger car and electric bus compared</caption>
+<thead><tr><th></th><th>Passenger EV</th><th>Electric bus or coach</th></tr></thead>
+<tbody>
+<tr><td>System voltage</td><td>300–450 V (some 800 V)</td><td>Typically 500–750 V</td></tr>
+<tr><td>Battery energy</td><td>40–100 kWh</td><td>200–450 kWh, in several packs (roof, floor or rear)</td></tr>
+<tr><td>Chemistry</td><td>LFP or NMC</td><td>Almost always LFP</td></tr>
+<tr><td>Drive</td><td>One or two motors, 100–400 kW</td><td>Large central motor or motors in the axle</td></tr>
+<tr><td>Extra high-voltage consumers</td><td>A/C compressor, heater</td><td>Also an electric <b>air compressor</b> (brakes, doors, suspension) and electric <b>power-steering pump</b>, fed from a "multi-in-one" controller</td></tr>
+<tr><td>Low-voltage system</td><td>12 V</td><td>24 V</td></tr>
+<tr><td>Charging</td><td>AC and DC</td><td>Mostly high-power DC, sometimes two guns at once</td></tr>
+</tbody></table></div>
+<p>Everything in Module 3 applies with more force: higher voltage, far more stored energy, components mounted on the roof (working at height), and a much heavier vehicle.</p>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>MHEV → HEV → PHEV → REEV → BEV: battery and voltage grow at each step.</li>
+<li>HEVs do not plug in. PHEVs, REEVs and BEVs do.</li>
+<li>Series: engine makes electricity only. Parallel: engine and motor both drive. Series-parallel: both.</li>
+<li>Battery size in kWh is the quickest clue to the type of car.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 4</h3><p>Choose one answer for each question.</p><ol>
+<li>Which type of vehicle has no engine at all?<ul><li>HEV</li><li>PHEV</li><li>REEV</li><li data-c>BEV</li></ul></li>
+<li>A car has a 1.5-litre engine, an 18 kWh battery and a charging port. What is it?<ul><li>MHEV</li><li>HEV</li><li data-c>PHEV</li><li>BEV</li></ul></li>
+<li>In a series hybrid, what does the engine do?<ul><li>Drives the wheels directly</li><li data-c>Turns a generator to make electricity</li><li>Charges the 12 V battery only</li><li>Cools the battery</li></ul></li>
+<li>Which of these cannot be charged from a wall socket?<ul><li data-c>Toyota Corolla Cross HEV</li><li>BYD Sealion 6</li><li>Deepal S07</li><li>Haval H6 PHEV</li></ul></li>
+<li>What voltage does a mild hybrid (MHEV) system usually use?<ul><li>12 V</li><li data-c>48 V</li><li>400 V</li><li>800 V</li></ul></li>
+</ol></div>
+</section>
+
+<!-- ===================== MODULE 5 ===================== -->
+<section class="mod" data-part="Part B · The vehicles" data-title="Main components: a map of the car">
+<div class="mh"><div class="n">5</div><div><div class="pt">Part B · The vehicles</div><h2>Main components: a map of the car</h2><p>Every major part of an electric car, what it does, and how energy flows between them.</p></div></div>
+<div class="learn"><h4>You will learn</h4><ul>
+<li>The names and jobs of the main high-voltage components</li>
+<li>Where they are usually found in the car</li>
+<li>How energy flows when charging, driving and braking</li></ul></div>
+
+<h3>5.1 The big picture</h3>
+<p>Most modern EVs use a "<b>skateboard</b>" layout. The battery is a flat slab under the floor between the axles. The motor and its electronics sit at one or both axles. This keeps the weight low and leaves the cabin free.</p>
+<figure>
+<svg viewBox="0 0 720 360" role="img" aria-label="Top view of a battery electric car showing all main components and cable types">
+<rect x="40" y="50" width="640" height="230" rx="46" fill="#F6F8F9" stroke="#1B2A33" stroke-width="2"/>
+<g class="db"><rect x="110" y="34" width="76" height="24" rx="6"/><rect x="110" y="272" width="76" height="24" rx="6"/><rect x="540" y="34" width="76" height="24" rx="6"/><rect x="540" y="272" width="76" height="24" rx="6"/></g>
+<text x="62" y="170" class="s mu" transform="rotate(-90 62 170)" text-anchor="middle">FRONT</text>
+<rect x="230" y="96" width="280" height="138" rx="8" class="hb"/><text x="370" y="150" class="m l bd">HV battery pack</text><text x="370" y="170" class="m s">cells + BMS + contactors</text><text x="370" y="186" class="m s">under the floor</text>
+<rect x="84" y="78" width="74" height="40" rx="6" class="yb"/><text x="121" y="96" class="m s bd">On-board</text><text x="121" y="110" class="m s bd">charger</text>
+<rect x="84" y="128" width="74" height="40" rx="6" class="yb"/><text x="121" y="146" class="m s bd">DC-DC</text><text x="121" y="160" class="m s">400→12 V</text>
+<rect x="84" y="178" width="74" height="34" rx="6" class="lb"/><text x="121" y="199" class="m s bd">12 V battery</text>
+<rect x="84" y="222" width="74" height="40" rx="6" class="gb"/><text x="121" y="240" class="m s bd">A/C</text><text x="121" y="254" class="m s">compressor</text>
+<rect x="172" y="128" width="46" height="74" rx="6" class="yb"/><text x="195" y="162" class="m s bd">PDU</text><text x="195" y="176" class="m s">fuses</text>
+<rect x="540" y="96" width="76" height="40" rx="6" class="yb"/><text x="578" y="120" class="m s bd">Inverter</text>
+<rect x="540" y="146" width="76" height="46" rx="6" class="gb"/><text x="578" y="173" class="m s bd">Motor</text>
+<rect x="540" y="202" width="76" height="34" rx="6" class="kb"/><text x="578" y="223" class="m s bd">Reduction gear</text>
+<path d="M578 236 V272 M578 96 V58" class="mc" style="stroke-width:4"/>
+<path d="M510 116 H540 M578 136 V146" class="hv"/>
+<path d="M230 165 H218 M172 150 H158 M172 140 H164 V98 H158 M172 190 H164 V242 H158" class="hv"/>
+<path d="M121 168 V178" class="lv"/>
+<rect x="640" y="150" width="34" height="30" rx="5" class="rb"/><text x="657" y="170" class="m s bd">Port</text>
+<path d="M640 165 H628 V84 H195 V128" class="hv" style="stroke-width:2.5"/>
+<text x="400" y="78" class="m s o">charge port to charger and battery</text>
+<path d="M60 322 H100" class="hv"/><text x="108" y="326" class="s">High voltage (orange cables)</text>
+<path d="M300 322 H340" class="lv"/><text x="348" y="326" class="s">12 V</text>
+<path d="M410 322 H450" class="mc" style="stroke-width:4"/><text x="458" y="326" class="s">Mechanical drive</text>
+<text x="360" y="350" class="m s mu">This example is rear-wheel drive. Front-wheel-drive EVs have the motor at the front. AWD cars have one at each axle.</text>
+</svg>
+<figcaption><b>Figure 5.1</b> Top view of a typical battery electric car. Positions vary by model, but the same parts are always there.</figcaption></figure>
+
+<h3>5.2 What each component does</h3>
+<div class="tw"><table>
+<caption>Table 5.1 — Main components of an electric car</caption>
+<thead><tr><th>Component</th><th>Job</th><th>Module</th></tr></thead>
+<tbody>
+<tr><td><b>HV battery pack</b></td><td>Stores the energy (DC, 300–800 V). Contains the cells, the BMS, contactors, fuses and sensors.</td><td>6–8</td></tr>
+<tr><td><b>BMS</b> (battery management system)</td><td>The battery's brain. Measures every cell, controls contactors, protects the pack.</td><td>8</td></tr>
+<tr><td><b>Inverter</b> (motor controller, MCU)</td><td>Changes battery DC into three-phase AC to drive the motor, and back again during braking.</td><td>10</td></tr>
+<tr><td><b>Traction motor</b></td><td>Turns electrical power into rotation. Also works as a generator when braking.</td><td>9</td></tr>
+<tr><td><b>Reduction gear</b></td><td>A single-speed gearbox with differential. Reduces motor speed and multiplies torque.</td><td>12</td></tr>
+<tr><td><b>On-board charger</b> (OBC)</td><td>Changes AC from the mains into DC to charge the battery.</td><td>10, 14</td></tr>
+<tr><td><b>DC-DC converter</b></td><td>Steps HV down to about 14 V to run the 12 V system and charge the 12 V battery. It replaces the alternator.</td><td>10, 16</td></tr>
+<tr><td><b>PDU</b> (power distribution unit)</td><td>The high-voltage junction box with fuses and relays for each HV consumer.</td><td>10</td></tr>
+<tr><td><b>Charge port</b></td><td>Where the charging cable plugs in. AC and DC pins.</td><td>14</td></tr>
+<tr><td><b>Electric A/C compressor</b></td><td>Runs on high voltage, so the air-conditioning works with no engine. Also cools the battery on many cars.</td><td>15</td></tr>
+<tr><td><b>PTC heater / heat pump</b></td><td>Heats the cabin and sometimes the battery.</td><td>15</td></tr>
+<tr><td><b>12 V battery</b></td><td>Powers computers, lights, locks — and wakes the car up. Without it, the HV system cannot start.</td><td>16</td></tr>
+<tr><td><b>VCU</b> (vehicle control unit)</td><td>The master computer. Reads the pedals and decides how much torque to ask from the motor.</td><td>16</td></tr>
+</tbody></table></div>
+
+<aside class="c tip"><h4>Workshop tip — "x-in-1" units</h4><p>To save space and cost, makers combine parts into one housing. A "3-in-1" drive unit is motor + inverter + reduction gear. BYD's "8-in-1" adds the charger, DC-DC, PDU, VCU and BMS controller. For a technician this means fewer cables to check — but if one part fails, the whole expensive unit may need to come out.</p></aside>
+
+<aside class="c"><h4>Key idea — the "three-electric" system</h4><p>Chinese trainers, manuals and parts suppliers group the main parts under one name: the <b>three-electric system</b> (三电, <em>sān diàn</em>).</p>
+<ul><li><b>The "big three":</b> battery (电池), motor (电机) and electronic control (电控: the inverter and vehicle controller).</li>
+<li><b>The "small three":</b> on-board charger (OBC), DC-DC converter and power distribution unit (PDU).</li></ul>
+<p>You will hear this phrase on the first day of any course in China. It simply means the parts in Table 5.1.</p></aside>
+
+<h3>5.3 How energy flows</h3>
+<figure>
+<svg viewBox="0 0 720 240" role="img" aria-label="Energy flow during charging, driving and braking">
+<text x="20" y="28" class="bd">Charging</text>
+<g><rect x="110" y="8" width="90" height="34" rx="6" class="lb"/><text x="155" y="30" class="m s bd">Mains AC</text>
+<rect x="240" y="8" width="110" height="34" rx="6" class="yb"/><text x="295" y="30" class="m s bd">On-board charger</text>
+<rect x="390" y="8" width="90" height="34" rx="6" class="hb"/><text x="435" y="30" class="m s bd">Battery</text>
+<path d="M200 25 H238" class="lv" marker-end="url(#ab)"/><path d="M350 25 H384" class="hv" style="stroke-width:2.5" marker-end="url(#ao)"/>
+<text x="219" y="17" class="m s bl">AC</text><text x="366" y="17" class="m s o">DC</text></g>
+<text x="20" y="108" class="bd">Driving</text>
+<g><rect x="110" y="88" width="90" height="34" rx="6" class="hb"/><text x="155" y="110" class="m s bd">Battery</text>
+<rect x="240" y="88" width="110" height="34" rx="6" class="yb"/><text x="295" y="110" class="m s bd">Inverter</text>
+<rect x="390" y="88" width="90" height="34" rx="6" class="gb"/><text x="435" y="110" class="m s bd">Motor</text>
+<rect x="520" y="88" width="80" height="34" rx="6" class="kb"/><text x="560" y="110" class="m s bd">Gear</text>
+<rect x="630" y="88" width="70" height="34" rx="6" class="db"/><text x="665" y="110" class="m s bd w">Wheels</text>
+<path d="M200 105 H234 M350 105 H384" class="hv" style="stroke-width:2.5" marker-end="url(#ao)"/><path d="M480 105 H516 M600 105 H626" class="ln" marker-end="url(#a)"/>
+<text x="217" y="97" class="m s o">DC</text><text x="366" y="97" class="m s o">3~AC</text></g>
+<text x="20" y="188" class="bd">Braking</text>
+<g><rect x="110" y="168" width="90" height="34" rx="6" class="hb"/><text x="155" y="190" class="m s bd">Battery</text>
+<rect x="240" y="168" width="110" height="34" rx="6" class="yb"/><text x="295" y="190" class="m s bd">Inverter</text>
+<rect x="390" y="168" width="90" height="34" rx="6" class="gb"/><text x="435" y="184" class="m s bd">Motor as</text><text x="435" y="197" class="m s bd">generator</text>
+<rect x="520" y="168" width="80" height="34" rx="6" class="kb"/><text x="560" y="190" class="m s bd">Gear</text>
+<rect x="630" y="168" width="70" height="34" rx="6" class="db"/><text x="665" y="190" class="m s bd w">Wheels</text>
+<path d="M240 185 H204 M390 185 H354" class="gn" marker-end="url(#ag)"/><path d="M520 185 H484 M630 185 H604" class="ln" marker-end="url(#a)"/>
+<text x="368" y="226" class="m s g">Regenerative braking: the car's motion is turned back into stored energy.</text></g>
+</svg>
+<figcaption><b>Figure 5.2</b> The three energy paths. Notice that the inverter and motor work in both directions.</figcaption></figure>
+
+<h3>5.4 How a hybrid differs</h3>
+<p>A hybrid has all of the above (with a smaller battery in an HEV), <b>plus</b> a complete petrol engine with its fuel, exhaust, cooling and lubrication systems, and a special transmission that combines engine and motor. A hybrid is therefore <b>more</b> complicated than either a petrol car or a pure EV. Module 13 explains hybrids in detail.</p>
+
+<aside class="c sum"><h4>Summary</h4><ul>
+<li>Battery under the floor, drive unit at the axle: the "skateboard".</li>
+<li>Battery (DC) → inverter → motor (3-phase AC) → reduction gear → wheels.</li>
+<li>Mains AC → on-board charger → battery.</li>
+<li>The DC-DC converter replaces the alternator and keeps the 12 V battery charged.</li>
+<li>Braking sends energy back to the battery through the same motor and inverter.</li></ul></aside>
+
+<div class="quiz"><h3>Quiz 5</h3><p>Choose one answer for each question.</p><ol>
+<li>Which component changes battery DC into three-phase AC for the motor?<ul><li>On-board charger</li><li>DC-DC converter</li><li data-c>Inverter</li><li>PDU</li></ul></li>
+<li>What replaces the alternator in an electric car?<ul><li>The inverter</li><li data-c>The DC-DC converter</li><li>The on-board charger</li><li>The BMS</li></ul></li>
+<li>What is the job of the on-board charger?<ul><li data-c>Convert AC from the mains to DC for the battery</li><li>Convert DC to AC for the motor</li><li>Cool the battery</li><li>Charge the 12 V battery from the HV battery</li></ul></li>
+<li>Where is the battery pack in most modern EVs?<ul><li>Under the bonnet</li><li>In the boot</li><li data-c>Under the floor between the axles</li><li>On the roof</li></ul></li>
+<li>During regenerative braking, the motor works as a…<ul><li>heater</li><li>charger for the mains</li><li data-c>generator</li><li>brake pad</li></ul></li>
+<li>What is a "3-in-1" drive unit?<ul><li>Three motors in one housing</li><li data-c>Motor, inverter and reduction gear in one housing</li><li>Three batteries joined together</li><li>A charger with three plugs</li></ul></li>
+</ol></div>
+</section>

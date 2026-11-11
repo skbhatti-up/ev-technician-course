@@ -1,0 +1,55 @@
+/* App shell styles (the course's own styles are injected separately) */
+html,body{height:100%}
+body{background:#F4F7F8;padding-bottom:76px}
+.bar{position:sticky;top:0;z-index:20;background:#0B6E69;color:#fff;display:flex;align-items:center;gap:10px;padding:10px 16px;box-shadow:0 1px 6px rgba(0,0,0,.2)}
+.bar b{font-size:1.02em;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .back{background:none;border:0;color:#fff;font-size:1.5em;line-height:1;padding:0 6px 2px 0;cursor:pointer;display:none}
+.bar .sync{font-size:.72em;opacity:.9;white-space:nowrap}
+.tabs{position:fixed;bottom:0;left:0;right:0;z-index:20;background:#fff;border-top:1px solid #D5DDE2;display:flex;padding-bottom:env(safe-area-inset-bottom)}
+.tabs a{flex:1;text-align:center;padding:9px 4px 8px;text-decoration:none;color:#5A6B76;font-size:.74em;font-weight:600}
+.tabs a svg{display:block;margin:0 auto 2px;width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tabs a.on{color:#0B6E69}
+#view{max-width:860px;margin:0 auto;padding:14px 16px 24px;background:transparent}
+#view.reader{background:#fff;padding:0 16px 40px}
+#view.reader section.mod{padding-top:18px}
+.card{background:#fff;border:1px solid #D5DDE2;border-radius:14px;padding:14px 16px;margin:0 0 12px}
+.card h3{border:0;margin:0 0 .4em;padding:0;color:#1B2A33;font-size:1.05em}
+.card p{margin:.3em 0}
+.muted{color:#5A6B76;font-size:.9em}
+.big{font-size:1.9em;font-weight:700;line-height:1.1}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>.card{flex:1;min-width:130px;margin-bottom:12px}
+.btn{display:inline-block;background:#0B6E69;color:#fff;border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:650;text-decoration:none;cursor:pointer;text-align:center}
+.btn.alt{background:#fff;color:#0B6E69;border:2px solid #0B6E69}
+.btn.warn{background:#C92A2A}
+.btn.wide{display:block;width:100%;margin:8px 0}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chip{display:inline-block;font-size:.72em;font-weight:700;border-radius:20px;padding:2px 9px;margin-left:4px;white-space:nowrap}
+.chip.ok{background:#E9F7EC;color:#2B8A3E}.chip.no{background:#FDECEC;color:#C92A2A}.chip.wait{background:#EEF2F4;color:#5A6B76}.chip.part{background:#FFF6DD;color:#B7791F}
+.list{list-style:none;padding:0;margin:0}
+.list li{margin:0}
+.list a{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid #E6ECEF;text-decoration:none;color:#1B2A33}
+.list .num{flex:none;width:34px;height:34px;border-radius:9px;background:#E3F3F1;color:#0B6E69;font-weight:700;display:flex;align-items:center;justify-content:center}
+.list .t{flex:1;min-width:0}
+.list .t small{display:block;color:#5A6B76}
+.parthead{font-size:.74em;letter-spacing:.12em;text-transform:uppercase;color:#0B6E69;font-weight:700;margin:16px 0 2px}
+.meter{height:10px;background:#E6ECEF;border-radius:6px;overflow:hidden;margin:8px 0}
+.meter i{display:block;height:100%;background:#0B6E69;border-radius:6px}
+.check{list-style:none;padding:0;margin:.4em 0}
+.check li{padding:4px 0 4px 30px;position:relative}
+.check li::before{content:"";position:absolute;left:2px;top:7px;width:18px;height:18px;border-radius:50%;border:2px solid #AEB8BF}
+.check li.ok::before{background:#2B8A3E;border-color:#2B8A3E;box-shadow:inset 0 0 0 3px #fff}
+input.txt{width:100%;font:inherit;padding:11px 12px;border:2px solid #D5DDE2;border-radius:10px;margin:6px 0}
+/* quiz runner */
+.qhead{display:flex;justify-content:space-between;align-items:center;font-size:.85em;color:#5A6B76;font-weight:600}
+.qtext{font-size:1.1em;font-weight:650;margin:12px 0}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{border:2px solid #D5DDE2;border-radius:12px;padding:12px 14px;margin:8px 0;cursor:pointer;background:#fff}
+.opts li.sel{border-color:#0B6E69;background:#E3F3F1}
+.opts li.ok{border-color:#2B8A3E;background:#E9F7EC}
+.opts li.no{border-color:#C92A2A;background:#FDECEC}
+.nextmod{display:flex;gap:10px;margin:22px 0 0}
+.nextmod .btn{flex:1}
+.readmark{text-align:center;margin:18px 0 0;font-weight:650}
+pre.report{white-space:pre-wrap;background:#F3F5F6;border-radius:10px;padding:12px;font-family:inherit;font-size:.92em;margin:8px 0}
+@media print{.bar,.tabs{display:none}body{padding:0}}
