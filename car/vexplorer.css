@@ -1,0 +1,101 @@
+/* Styles for the vehicle explorer (vexplorer.js). It reuses the colours and the
+   .card / .stage / .state / .legend styles already defined in car.css. */
+.carx{--fuel:#9C6B30;--sig:#B58900}
+
+/* the row of vehicle buttons at the top of the Car tab */
+.carx .vx-bar{display:flex;gap:6px;overflow-x:auto;padding:10px 16px 2px;max-width:1040px;margin:0 auto;scrollbar-width:none}
+.carx .vx-bar::-webkit-scrollbar{display:none}
+.carx .vx-bar button{flex:none;font:inherit;font-size:.86em;font-weight:650;padding:8px 13px;border-radius:20px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;white-space:nowrap}
+.carx .vx-bar button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+
+.carx .vx-wrap{max-width:1040px;margin:0 auto;padding:10px 16px 40px;display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+@media (min-width:820px){.carx .vx-wrap{grid-template-columns:minmax(0,420px) minmax(0,1fr);align-items:start}}
+.carx #vxSvg{display:block;width:100%;max-height:74vh;margin:0 auto;touch-action:manipulation}
+.carx .vx-map{text-align:center;font-size:.78em;margin:.4em 0 0}
+
+/* the vehicle outline */
+.carx .vx-body rect{fill:#F7FAFB;stroke:#AEB8BF;stroke-width:2}
+.carx .vx-body .vx-wheel{fill:#2D3A42;stroke:none}
+.carx .vx-zone{stroke:#C6D0D6;stroke-width:1.2;stroke-dasharray:5 5}
+.carx .vx-zlbl{font-size:9px;letter-spacing:.16em;fill:#8A99A3;font-weight:700;text-anchor:middle}
+.carx .vx-tyre{fill:#F1F3F4;stroke:#2D3A42;stroke-width:9}
+.carx .vx-frame{fill:none;stroke:#AEB8BF;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.carx .vx-seat{fill:#DCE3E7;stroke:#AEB8BF;stroke-width:2}
+
+/* cables and pipes: faint when idle, bold moving dashes when they carry power */
+.carx .vx-ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:.3}
+.carx .vx-ln.lt-hv{stroke:var(--hv)}
+.carx .vx-ln.lt-ac{stroke:var(--ac)}
+.carx .vx-ln.lt-lv{stroke:var(--lv)}
+.carx .vx-ln.lt-cool{stroke:var(--cool)}
+.carx .vx-ln.lt-mech{stroke:var(--mech);stroke-width:6}
+.carx .vx-ln.lt-fuel{stroke:var(--fuel)}
+.carx .vx-ln.lt-sig{stroke:var(--sig);stroke-width:2}
+.carx .vx-ln.live{opacity:1;stroke-width:4.5;stroke-dasharray:9 6;animation:vxflow .75s linear infinite}
+.carx .vx-ln.lt-mech.live{stroke-width:7}
+.carx .vx-ln.lt-sig.live{stroke-width:2.5;stroke-dasharray:3 5;animation-duration:.5s}
+.carx .vx-ln.live.rev{animation-direction:reverse}
+@keyframes vxflow{to{stroke-dashoffset:-15}}
+@media (prefers-reduced-motion:reduce){.carx .vx-ln.live{animation:none}}
+
+/* part boxes */
+.carx .vx-part{cursor:pointer;outline:none}
+.carx .vx-box{fill:#fff;stroke-width:2}
+.carx .vx-part.pk-hv .vx-box{stroke:var(--hv);fill:#FFF4EC}
+.carx .vx-part.pk-lv .vx-box{stroke:var(--lv);fill:#EEF6FD}
+.carx .vx-part.pk-cool .vx-box{stroke:var(--cool);fill:#E6F7F8}
+.carx .vx-part.pk-mech .vx-box{stroke:var(--mech);fill:#F1F3F4}
+.carx .vx-part.pk-fuel .vx-box{stroke:var(--fuel);fill:#FAF3E8}
+.carx .vx-part.live .vx-box{stroke-width:3.2;filter:drop-shadow(0 0 5px rgba(232,89,12,.55))}
+.carx .vx-part.pk-lv.live .vx-box{filter:drop-shadow(0 0 5px rgba(28,126,214,.55))}
+.carx .vx-part.pk-mech.live .vx-box,.carx .vx-part.pk-fuel.live .vx-box,.carx .vx-part.pk-cool.live .vx-box{filter:drop-shadow(0 0 5px rgba(90,107,118,.6))}
+.carx .vx-part.sel .vx-box{stroke:var(--ink);stroke-width:3.2}
+.carx .vx-part:focus-visible .vx-box{stroke:var(--ink);stroke-width:3.2}
+.carx .vx-lbl{stroke:none;font-size:11px;font-weight:650;fill:var(--ink);pointer-events:none}
+.carx .vx-lbl.sm{font-size:9.2px}
+.carx .vx-lbl.sub{font-weight:500;fill:var(--mute)}
+.carx .vx-q{display:none;font-size:15px;font-weight:700;fill:var(--mute);pointer-events:none}
+/* during the quiz the names are hidden and every box looks the same */
+.carx #vxSvg.quiz .vx-lbl{display:none}
+.carx #vxSvg.quiz .vx-q{display:block}
+.carx #vxSvg.quiz .vx-box{fill:#fff;stroke:#8A99A3}
+.carx #vxSvg.quiz .vx-part.inner .vx-q{font-size:11px}
+
+.carx .vx-key{display:inline-block;width:18px;height:4px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.carx .vx-key.lt-hv{background:var(--hv)}.carx .vx-key.lt-ac{background:var(--ac)}.carx .vx-key.lt-lv{background:var(--lv)}
+.carx .vx-key.lt-cool{background:var(--cool)}.carx .vx-key.lt-mech{background:var(--mech)}.carx .vx-key.lt-fuel{background:var(--fuel)}.carx .vx-key.lt-sig{background:var(--sig)}
+.carx #vxLegend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8em;color:var(--mute);padding:6px 4px 0}
+
+/* mode buttons, tabs and panels */
+.carx .vx-modes{display:flex;flex-wrap:wrap;gap:6px}
+.carx .vx-modes button{flex:1 1 auto;font:inherit;font-size:.86em;font-weight:650;padding:10px 10px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.carx .vx-modes button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.carx .vx-note{margin:.7em 0 0;font-size:.92em}
+.carx .vx-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:0 0 8px;background:#E6ECEF;border-radius:12px;padding:4px}
+.carx .vx-tabs button{font:inherit;font-size:.84em;font-weight:650;padding:9px 2px;border:0;border-radius:9px;background:none;color:var(--mute);cursor:pointer}
+.carx .vx-tabs button.on{background:#fff;color:var(--teal);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.carx #vxPanel h3{color:var(--teal)}
+.carx #vxPanel p{margin:.5em 0}
+.carx #vxPanel .safety{background:#FDECEC;border-left:4px solid #C92A2A;padding:7px 10px;border-radius:6px}
+.carx #vxPanel .livep{background:#E9F7EC;padding:6px 10px;border-radius:6px;font-size:.92em}
+.carx .vx-where{background:var(--teal-l);padding:7px 10px;border-radius:6px}
+.carx .vx-kind{font-size:.72em;font-weight:700;background:#EEF2F4;color:var(--mute);border-radius:20px;padding:2px 9px;margin-left:4px;vertical-align:middle;white-space:nowrap}
+.carx .vx-b{display:inline-block;font-size:.7em;font-weight:700;border-radius:20px;padding:1px 8px;vertical-align:middle;white-space:nowrap}
+.carx .vx-b.ok{background:#E9F7EC;color:#2B8A3E}
+.carx .vx-b.ver{background:#FFF6DD;color:#8A5A00}
+.carx .vx-src{font-size:.8em}
+.carx .vx-src a{color:var(--teal)}
+.carx .vx-ask{font-size:1.1em}
+.carx .vx-ok{color:#2B8A3E;font-weight:700}
+.carx .vx-no{color:#C92A2A;font-weight:700}
+.carx .vx-big{font-size:2em;font-weight:700;color:var(--teal)}
+.carx .vx-steps button{display:block;width:100%;text-align:left;margin:6px 0;font:inherit;font-size:.92em;padding:10px 12px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.carx .vx-done{padding-left:1.3em;margin:.4em 0}
+.carx .vx-done li{margin:6px 0;color:#2B8A3E;font-weight:650}
+.carx .vx-done small{display:block;color:var(--mute);font-weight:400}
+.carx .vx-facts{border-collapse:collapse;width:100%;font-size:.92em}
+.carx .vx-facts th{text-align:left;vertical-align:top;padding:7px 8px 7px 0;width:34%;font-weight:650;border-bottom:1px solid var(--line)}
+.carx .vx-facts td{padding:7px 0;border-bottom:1px solid var(--line)}
+.carx .vx-h{margin-top:1.1em}
+.carx .vx-list{padding-left:1.2em;margin:.4em 0}
+.carx .vx-list li{margin:5px 0}

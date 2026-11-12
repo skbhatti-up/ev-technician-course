@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>EV Car Explorer</title>
 <link rel="stylesheet" href="car.css">
+<link rel="stylesheet" href="vexplorer.css">
 <style>
 /* standalone page only; inside the app the app shell provides these */
 *{box-sizing:border-box}
@@ -19,6 +20,9 @@ body{margin:0;background:#F4F7F8;color:#1B2A33;font:16px/1.45 system-ui,-apple-s
 
 <div class="carx" id="carView">
 <!--CAR-->
+<!-- vehicle chooser: "Generic EV" is the original simulator below; the others are drawn by vexplorer.js -->
+<div class="vx-bar" id="vxBar" role="group" aria-label="Choose a vehicle"></div>
+<div id="genericCar">
 <main class="wrap">
   <section class="stage">
     <div class="statebar">
@@ -222,11 +226,15 @@ body{margin:0;background:#F4F7F8;color:#1B2A33;font:16px/1.45 system-ui,-apple-s
     <p class="muted explored" id="explored"></p>
   </section>
 </main>
+</div>
+<div id="vx" hidden></div>
 <!--/CAR-->
 </div>
 
 <script src="parts.js"></script>
 <script src="faults.js"></script>
 <script src="car.js"></script>
+<script src="vehicles.js"></script>
+<script src="vexplorer.js"></script>
 </body>
 </html>

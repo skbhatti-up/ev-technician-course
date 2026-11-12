@@ -68,7 +68,7 @@ open(os.path.join(docs, 'index.html'), 'w', encoding='utf-8').write(out)
 open(os.path.join(docs, 'bank.js'), 'w', encoding='utf-8').write('window.BANK=' + json.dumps(bank, ensure_ascii=False, separators=(',', ':')) + ';')
 for f in ('app.js', 'app.css', 'manifest.webmanifest'):
     shutil.copyfile(os.path.join(here, f), os.path.join(docs, f))
-for f in ('car.js', 'car.css', 'parts.js', 'faults.js'):   # the car explorer (Car tab)
+for f in ('car.js', 'car.css', 'parts.js', 'faults.js', 'vehicles.js', 'vexplorer.js', 'vexplorer.css'):   # the car explorer (Car tab)
     shutil.copyfile(os.path.join(cardir, f), os.path.join(docs, f))
 sw = open(os.path.join(here, 'sw.js'), encoding='utf-8').read().replace('__VERSION__', version)
 open(os.path.join(docs, 'sw.js'), 'w', encoding='utf-8').write(sw)
